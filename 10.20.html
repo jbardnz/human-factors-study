@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="robots" content="noai, noimageai"><meta name="ai-restriction" content="no-summary">
+    <script type="text/javascript" src="10.20_files/jquery.min.js"></script>
+    <title>
+
+</title><link rel="shortcut icon" href="https://www.courseware.training/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+         .DragHandleClass
+         {
+              width: 12px;
+              height: 12px;
+              background-color: red;
+              cursor:move;
+              margin: 0px 10px 0px 0px;
+         }
+    </style>
+    <style id="Style1" type="text/css">
+    <!--
+        html{
+            height:100%;
+       }
+    
+	    body {
+		    margin:0px 0px 0px 0px;
+		    background:#FFFFFF;
+		    height:100%;
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    input {
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    select {
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    .bodytext {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    .confirmation {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:14px;
+		    color:#009900;
+	    }
+	
+	    .error {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:14px;
+		    color:#FF0000;
+	    }
+	
+	
+	    .header {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    font-weight:bold;
+		    text-transform:uppercase;
+	    }
+	
+	    .items {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    line-height:18px;
+		    color:#000000;
+		    font-weight:bold;
+		
+	    }
+	
+	    .input {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    background:#FFFFFF;
+		    border-width:1px;
+		    border-color:#000000;
+		    border-style:solid;
+	    }
+	
+	    .inputbutton {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:11px;
+		    color:#000000;
+		    background:#FFFFFF;
+		    border-width:1px;
+		    border-color:#000000;
+		    border-style:solid;
+		    text-transform:uppercase;
+	    }
+	
+	    .lidiv{
+	
+	    }
+	
+	    .lidiv ul{
+	        list-style-type:none;
+	        padding:0px 0px 0px 20px;
+            margin:0px;
+	    }
+	
+	    .lidiv li{
+	        padding: 3px 3px 3px 3px;
+	    }
+	    .pagetitle{
+	        font-size:16px;
+	        font-weight:bold;
+	    }
+	
+	    .required{
+	        font-size:18px;
+	        color:#FF0000;
+            font-weight:bold;	
+	    }
+	
+	    #top {
+		    background:#000066;
+	    }
+	
+	    #topmenu {
+		    background:#E1E1E1;
+		    height:17px;
+		    margin:0px 0px 0px 0px;
+		    padding:0px 0px 0px 0px;
+		    background-image:URL("images/common/topmenubacker.gif");
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	    #topmenuitems {
+		    float:left;
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    text-transform:uppercase;
+		    margin:1px 0px 0px 0px;
+		
+		
+	    }
+	
+	    #hordivider {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+	    }
+	    #hordividertop {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	
+	    #hordividerbase {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	
+	    #vertdivider {
+		    background-image:URL('images/common/verdots.gif');
+		    background-repeat:repeat-Y;
+		    height:95%;
+		    float:left;
+	    }
+	
+	    #contentholder {
+		    float:left;
+		    margin:10px 0px 0px 20px;
+	    }
+
+	    #leftmenu {
+		    background:#000000;
+		    width:179px;
+		    float:left;
+		    height:95%;
+		    padding:5px 0px 0px 10px;
+		
+	    /*
+		    background-image:URL("images/common/cockpit.jpg");
+		    background-position:bottom;
+		    background-repeat:no-repeat;
+	    */
+	    }
+	
+	    /*
+	    #leftmenuitems {
+		    font-family:Arial,Verdana,Helvetica,Sans-Serif;
+		    font-size:10px;
+		    font-weight:bold;
+		    text-transform:uppercase;
+		    color:#000000;
+		    padding:0px 0px 0px 0px;
+	    }
+	    */
+	    .leftmenuitems {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	
+	    .leftmenuitems a{
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	    .leftmenuitems a:visited{
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	    .leftmenuitemsnorm {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    color:#000000;
+	    }
+	
+	    #footer {
+		    background:#000000;
+		    height:17px;
+		    margin:0px 0px 0px 0px;
+		    padding:2px 2px 2px 2px;
+	    }
+	
+	    #PageContent{
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    #PageContent td{
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	
+    //-->
+    </style>
+    <script language="javascript" type="text/javascript">		
+        function autoSaveExam(){
+            document.form1.hdnIsSnapShot.value="1";
+            document.form1.submit();
+        }
+	
+        function saveexam(){
+            document.form1.hdnIsSnapShot.value="1";
+            $('#btnSave').attr("disabled","disabled");
+            $('#btnSave').attr("value","Processing...");
+            //alert("Value of snapshot field should now be set to 1");
+            //document.form1.submit(); //not required cause the action of clicking a button submits the form anyway.
+        }
+	
+        function submitexam(){
+            document.form1.hdnIsSnapShot.value="0";
+            $('#btnSubmit').attr("disabled","disabled");
+            $('#btnSubmit').attr("value","Processing...");
+            //document.form1.submit();
+        }
+
+		
+        function show(obj) {
+            //alert(obj);
+            //alert('running');
+            if(document.all){
+                //alert("trying the document.all");
+                eval("document.all." + obj + ".style.display='block'");
+            }
+            else
+            {
+                if(document.getElementById){
+                    //alert("It's Showing");
+                    eval("document.getElementById('" + obj + "').style.display='block'");
+                }
+            }
+		
+        }
+	
+        function hide(obj) {
+            //alert(obj);
+            //alert('running');
+            if(document.all){
+                eval("document.all." + obj + ".style.display='none'");
+            }
+            else
+            {
+                if(document.getElementById){
+                    //alert("It's Showing");
+                    eval("document.getElementById('" + obj + "').style.display='none'");
+                }
+            }
+	
+        }
+	
+        //String trim functions
+        function trim(stringToTrim) {
+            return stringToTrim.replace(/^\s+|\s+$/g,"");
+        }
+        function ltrim(stringToTrim) {
+            return stringToTrim.replace(/^\s+/,"");
+        }
+        function rtrim(stringToTrim) {
+            return stringToTrim.replace(/\s+$/,"");
+        }
+	
+        function CheckAnswer(Question,QuestionType){
+            if(QuestionType == "MCR"){
+                // firstly let's check to see if the user did actually select an answer first.
+                var x;
+                var questionelements = eval("document.form1." + Question + ".length");
+                var notanswered = true;
+                for(x=0;x<questionelements;x++){
+                    if(eval("document.form1." + Question + "[x].checked==true")){
+                        notanswered = false;
+                    }
+                }
+                if(notanswered){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    //alert("Check answer and give it here if incorrect.");
+                    var correctanswer = eval("document.form1." + Question + "Answer.value");
+                    //alert("Correct option is : " + correctanswer);
+				
+                    if(eval("document.form1." + Question + "[" + (correctanswer-1) + "].checked==true")){
+                        eval("hide('" + Question + "IncorrectMessage')");
+                        eval("show('" + Question + "CorrectMessage')");
+                    }
+                    else
+                    {
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+		
+            if(QuestionType == "MCC"){
+                // firstly let's check to see if the user did actually select an answer first.
+                var x;
+                var questionelements = eval("document.form1." + Question + ".length");
+                var notanswered = true;
+                for(x=0;x<questionelements;x++){
+                    if(eval("document.form1." + Question + "[x].checked==true")){
+                        notanswered = false;
+                    }
+                }
+                if(notanswered){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    //alert("Check answer and give it here if incorrect.");
+                    var correctanswer = eval("document.form1." + Question + "Answer.value");
+                    var correctAnswers = correctanswer.split("||^^||");
+				
+                    var correctAnswerLength = correctAnswers.length; // We know how many check boxes to look for now in terms of correct answers.
+                    var numOfAnswersGiven = 0;
+                    // Look for correct number of answers now by looping through the options and checking for how many are checked.
+				
+                    var questionelements = eval("document.form1." + Question + ".length");
+                    var notanswered = true;
+			    
+                    for(x=0;x<questionelements;x++){
+                        if(eval("document.form1." + Question + "[x].checked==true")){
+                            numOfAnswersGiven++;
+                        }
+                    }
+			   			    
+                    if(numOfAnswersGiven == correctAnswerLength){
+                        // check to see if the answers given match the supplied correct answers for the question
+                        // Have to build up the answer string based on the checked items.
+                        var givenAnswers = "";
+                        for(x=0;x<questionelements;x++){
+                            if(eval("document.form1." + Question + "[x].checked==true")){
+                                givenAnswers += (x+1) + "||^^||";
+                            }
+                        }
+                        givenAnswers = givenAnswers.substring(0,givenAnswers.length - 6);
+				    
+				    
+                        if(givenAnswers == correctanswer){
+                            eval("hide('" + Question + "IncorrectMessage')");
+                            eval("show('" + Question + "CorrectMessage')");
+                        }
+                        else
+                        {
+                            eval("show('" + Question + "IncorrectMessage')");
+                            eval("hide('" + Question + "CorrectMessage')");
+                        }
+				    
+                    }
+                    else
+                    {
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+		
+            if(QuestionType == "FIT"){
+                var x;
+                // Let's check the answer length to know how many fields we have to check the value of.
+                var noea = eval("document.form1." + Question + "Answer.value");
+                noea = noea.split("||^^||"); // Number Of Expected Answers
+                //alert("NOEA length is " + noea.length); 
+                // We can use the number above to build up a string of actual answers given.
+                // Let's build up the 'actual answers given' string
+                var answersGiven ="";
+                for(x=0;x<noea.length;x++){
+                    answersGiven += eval("document.form1." + Question + "_" + (x+1) + ".value") + "||^^||";
+                }
+                answersGiven = answersGiven.substring(0,answersGiven.length - 6);
+                // Now loop through those answers and make sure all inputs have been answered
+                answersGiven = answersGiven.split("||^^||");
+                var blankCount = 0;
+                for(x=0;x<answersGiven.length;x++){
+                    if(trim(answersGiven[x]) == ""){
+                        blankCount++;
+                    }
+                }
+                if(blankCount == noea.length){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    // declare a variable for the expected "correctCount"
+                    var correctCount = 0;
+                    // OK, take the list of question answers and break them up into an array.
+                    // ** already have them as "noea" above.
+                    // Now take the submitted answers and break them into an array.
+                    // ** already have as "answersGiven" above.
+                    // Loop through the each submitted answer and check for *exact* match
+                    // Make sure to lowercase it all.
+                    for(x=0;x<answersGiven.length;x++){
+                        //alert("Answer for this iteration of the loop is: " + answersGiven[x]); 
+                        if(answersGiven[x] != "" && trim(answersGiven[x]) != "" && answersGiven[x] != null && trim(answersGiven[x]) != null){
+                            // split the parts of the answers into a small array to use for matching
+                            // Grab the current answer we are working on and loop through the corresponding
+                            // correct answer in the same array position to look for a match.
+                            var answer = answersGiven[x].toLowerCase();
+                            //split the question answer parts
+                            var answerParts = noea[x].split("::^^::");
+                            for(p=0;p<answerParts.length;p++){
+                                if(trim(answerParts[p].toLowerCase()) == trim(answersGiven[x].toLowerCase())){
+                                    correctCount++;
+                                    //alert("CorrectCount added to");
+                                }
+			                
+                            }
+                        }
+                    }
+                    if(correctCount == noea.length){
+                        eval("hide('" + Question + "IncorrectMessage')");
+                        eval("show('" + Question + "CorrectMessage')");
+                    }
+                    else{
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+        }
+	
+        function checkdata(){
+            return true;
+        }
+    //-->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+    /*
+    var message = "";
+
+    function clickIE(){
+	    if (document.all){
+		    (message);return false;
+	    }
+    }
+
+    function clickNS(e){
+	    if(document.layers||(document.getElementById&&!document.all)){
+		    if (e.which==2||e.which==3){
+			    (message);return false;
+		    }
+	    }
+    }
+
+    if (document.layers){
+	    document.captureEvents(Event.MOUSEDOWN);
+	    document.onmousedown=clickNS;
+    }
+    else
+    {
+	    document.onmouseup=clickNS;
+	    document.oncontextmenu=clickIE;
+    }
+    //document.oncontextmenu = new Function("return false");
+    */
+    </script>
+    <script language="javascript" type="text/javascript">
+    <!--
+	
+        function popexam(ExamID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("exam.aspx?id=" + ExamID,"ExamWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+        }
+	
+	
+        function popexamresults(ExamID,ExamSitID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("examresults.aspx?eid=" + ExamID + "&id=" + ExamSitID,"ExamResultsViewWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1,menubar=1");
+        }
+	
+        function viewCourseTerms(CourseID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("p_viewcourseterms.aspx?id=" + CourseID,"CourseTermsWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1,menubar=1");
+        }
+    //-->
+    </script>
+
+
+
+</head>
+
+<body id="bodyTag" style="margin:0px 0px 0px 0px; " ondragstart="return false" onselectstart="return false">
+<script language="javascript" type="text/javascript">
+    function showhide(obj) {
+        //alert(obj);
+        //alert('running');
+        if(document.all){
+            //alert("trying the document.all");
+            if(eval("document.all." + obj + ".style.display=='none'")){
+                //alert("It's Hidden");
+                eval("document.all." + obj + ".style.display='block'");
+            }
+            else
+            {
+                //alert("It's Showing");
+                eval("document.all." + obj + ".style.display='none'");
+            }
+        }
+        else if(document.getElementById){
+            if(eval("document.getElementById('" + obj + "').style.display=='none'")){
+                //alert("It's Hidden");
+                eval("document.getElementById('" + obj + "').style.display='block'");
+            }
+            else
+            {
+                //alert("It's Showing");
+                eval("document.getElementById('" + obj + "').style.display='none'");
+            }
+        }
+    }
+    function popprint(ID){
+        var ScreenY = screen.availHeight/2;
+        var ScreenX = screen.availWidth/2;
+        var WindowX = 800;
+        var WindowY = 600;
+        var posx = ScreenX-(WindowX/2);
+        var posy = ScreenY-(WindowY/2);
+        window.open("/printpage.aspx?id=40328&pid=" + ID,"PrintPage","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+    }
+	
+    function popfeedback(ID){
+        var ScreenY = screen.availHeight/2;
+        var ScreenX = screen.availWidth/2;
+        var WindowX = 600;
+        var WindowY = 600;
+        var posx = ScreenX-(WindowX/2);
+        var posy = ScreenY-(WindowY/2);
+        window.open("/p_addfeedback.aspx?id=" + ID,"FeedbackPage","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+    }
+</script>
+
+<form name="form1" method="post" action="./course.aspx?id=40328&amp;pid=52553&amp;mid=42633" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE1MTE5MjE0Ng8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgICAw9kFgICAQ9kFgoCAQ8WAh4EVGV4dAW/ATx0YWJsZSB3aWR0aD0iMTAwJSIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIiBib3JkZXI9IjAiPjx0cj48dGQgc3R5bGU9InRleHQtYWxpZ246bGVmdDtiYWNrZ3JvdW5kOiMwMDAwMDA7Ij48aW1nIHNyYz0iL2ltYWdlcy9sb2dvcy9maW5hbC93dGRqdGRiZl8xIFN0b25leUNvdXJzZXRvcDIuanBnIj48L3RyPjwvdGFibGU+ZAICDxYCHwEFmAk8dGFibGUgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIj48dHI+PHRkIHN0eWxlPSJ3aWR0aDoxNjhweDtiYWNrZ3JvdW5kLWltYWdlOlVSTCgnL2ltYWdlcy9jb21tb24vdG9wbWVudWJhY2tlci5naWYnKTtiYWNrZ3JvdW5kLXJlcGVhdDpyZXBlYXQtWDtoZWlnaHQ6MTdweDsiPjxpbWcgYWx0PSIiIHNyYz0iL2ltYWdlcy9jb21tb24vc3BhY2VyLmdpZiIgd2lkdGg9IjE2OCIgaGVpZ2h0PSIxNyIgLz48YnIgLz48L3RkPjx0ZCBzdHlsZT0id2lkdGg6MTAwJTtiYWNrZ3JvdW5kLWltYWdlOlVSTCgnL2ltYWdlcy9jb21tb24vdG9wbWVudWJhY2tlci5naWYnKTtiYWNrZ3JvdW5kLXJlcGVhdDpyZXBlYXQtWDtoZWlnaHQ6MTdweDtwYWRkaW5nOjFweCAwcHggMHB4IDBweDsiIGlkPSJ0b3BtZW51aXRlbXMiPjxkaXYgc3R5bGU9ImZsb2F0OmxlZnQ7bWFyZ2luOjBweCAyMHB4IDBweCAwcHg7cGFkZGluZzoxcHggMXB4IDFweCAxcHg7aGVpZ2h0OjEzcHg7IiBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5iYWNrZ3JvdW5kPScjRkZGRkZGJzt0aGlzLnN0eWxlLmN1cnNvcj0naGFuZCc7IiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9Jyc7Ij48aW1nIGFsdD0iIiBzcmM9Ii9pbWFnZXMvY3VzdG9tL3JlZF9idWxsZXQuZ2lmIiBhbGlnbj0ibWlkZGxlIiBzdHlsZT0iYm9yZGVyLXN0eWxlOm5vbmU7IiAvPiZuYnNwOzxhIGhyZWY9ImphdmFzY3JpcHQ6cG9wZmVlZGJhY2soNDAzMjgpOyI+Q291cnNlIEZlZWRiYWNrPC9hPjwvZGl2PjxkaXYgc3R5bGU9ImZsb2F0OmxlZnQ7bWFyZ2luOjBweCAyMHB4IDBweCAwcHg7cGFkZGluZzoxcHggMXB4IDFweCAxcHg7aGVpZ2h0OjEzcHg7IiBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5iYWNrZ3JvdW5kPScjRkZGRkZGJzt0aGlzLnN0eWxlLmN1cnNvcj0naGFuZCc7IiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9Jyc7Ij48aW1nIGFsdD0iIiBzcmM9Ii9pbWFnZXMvY3VzdG9tL3JlZF9idWxsZXQuZ2lmIiBhbGlnbj0ibWlkZGxlIiBzdHlsZT0iYm9yZGVyLXN0eWxlOm5vbmU7IiAvPiZuYnNwOzxhIGhyZWY9ImphdmFzY3JpcHQ6dmlld0NvdXJzZVRlcm1zKDQwMzI4KTsiPlRlcm1zICYgQ29uZGl0aW9uczwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT5kAgMPFgIfAQWkbDx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGJyIC8+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0ZGRkZGRi5naWYiPjxiciAvPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxiciAvPjxhIGhyZWY9Ii8iPkhvbWUvTWVudSBQYWdlPC9hPjxiciAvPjwvdGQ+PC90cj48L3RhYmxlPjxiciAvPjx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0NDQ0M2Ni5naWYiIGFsaWduPSJhYnNtaWRkbGUiPjxiciAvPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9ImphdmFzY3JpcHQ6c2hvd2hpZGUoJ01lbnVfNDAzMjhfNDI2MzMnKTsiIG9uQ2xpY2s9ImRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzZXR0ZXJGcmFtZScpLnNyYyA9ICcvc2V0dGVyLmFzcHg/TWVudV80MDMyOF80MjYzMyc7Ij48c3BhbiBjbGFzcz0ibGVmdG1lbnVpdGVtczIiPlBQTCBIdW1hbiBGYWN0b3JzPC9zcGFuPjwvYT48YnIgLz48L3RkPjwvdHI+PC90YWJsZT48dGFibGUgaWQ9Ik1lbnVfNDAzMjhfNDI2MzMiIHN0eWxlPSJkaXNwbGF5OmJsb2NrOyI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI2NDkmbWlkPTQyNjMzIj5QUEwgSHVtYW4gRmFjdG9ycyBJbnRybzwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDUmbWlkPTQyNjMzIj5TeWxsYWJ1czwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDYmbWlkPTQyNjMzIj4xMC4yIEFpcm1hbnNoaXAgYW5kIFJlc3BvbnNpYmlsaXR5PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3MiZtaWQ9NDI2MzMiPjEwLjQgSHVtYW4gRmFjdG9ycyBNb2RlbHMgYW5kIFByb2dyYW1tZXM8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTYzOCI+U0hPUlQgVEVTVCAxMC4yPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU0OCZtaWQ9NDI2MzMiPjEwLjYgQXRtb3NwaGVyZTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3NzMmbWlkPTQyNjMzIj4xMC44IENpcmN1bGF0aW9uIGFuZCBSZXNwaXJhdG9yeSBTeXN0ZW1zPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2MzkiPlNIT1JUIFRFU1QgMTAuNjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDkmbWlkPTQyNjMzIj4xMC4xMCBIeXBveGlhPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NCZtaWQ9NDI2MzMiPjEwLjEyIEh5cGVydmVudGlsYXRpb248L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0MCI+U0hPUlQgVEVTVCAxMC4xMDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDcmbWlkPTQyNjMzIj4xMC4xNCBFbnRyYXBwZWQgR2Fzc2VzPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NSZtaWQ9NDI2MzMiPjEwLjE2IERlY29tcHJlc3Npb24gU2lja25lc3M8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0MSI+UFBMIEhGIDEwLjE0PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1MSZtaWQ9NDI2MzMiPjEwLjE4IFZpc2lvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTImbWlkPTQyNjMzIj4xMC4xOCBWaXN1YWwgUGVyY2VwdGlvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQyIj5TSE9SVCBURVNUIDEwLjE4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1MyZtaWQ9NDI2MzMiPjEwLjIwIEhlYXJpbmcgYW5kIEJhbGFuY2U8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTYyNzc2Jm1pZD00MjYzMyI+MTAuMjIgU3BhY2lhbCBPcmllbnRhdGlvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQzIj5TSE9SVCBURVNUIDEwLjIwPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1NiZtaWQ9NDI2MzMiPjEwLjI0IEdyYXZpdGF0aW9uYWwgRm9yY2VzPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NyZtaWQ9NDI2MzMiPjEwLjI2LTI4IE1vdGlvbiBTaWNrbmVzcywgRmxpZ2h0IEFueGlldHk8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NCI+U0hPUlQgVEVTVCAxMC4yNDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTcmbWlkPTQyNjMzIj4xMC4zMCBGaXRuZXNzIHRvIEZseTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3NzgmbWlkPTQyNjMzIj4xMC4zMi0zNCBBbGNvaG9sIGFuZCBEcnVncywgQmxvb2QgRG9uYXRpb248L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NSI+U0hPUlQgVEVTVCAxMC4zMDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTAmbWlkPTQyNjMzIj4xMC4zNiBFbnZpcm9ubWVudGFsIEhhemFyZHM8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NiI+U0hPUlQgVEVTVCAxMC4zNjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTgmbWlkPTQyNjMzIj4xMC4zOCBTdHJlc3MgTWFuYWdlbWVudDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQ3Ij5TSE9SVCBURVNUIDEwLjM4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01NDI2OSZtaWQ9NDI2MzMiPjEwLjQwIFNsZWVwIGFuZCBGYXRpZ3VlIDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQ4Ij5TSE9SVCBURVNUIDEwLjQwPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3OSZtaWQ9NDI2MzMiPjEwLjQyIEFnaW5nPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1OSZtaWQ9NDI2MzMiPjEwLjQ0IEluZm9ybWF0aW9uIFByb2Nlc3Npbmc8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0OSI+U0hPUlQgVEVTVCAxMC40NDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTc4ODUmbWlkPTQyNjMzIj4xMC40NiBTaXR1YXRpb25hbCBBd2FyZW5lc3M8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD00Mjk4MCI+U0hPUlQgVEVTVCAxMC40NjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NjAmbWlkPTQyNjMzIj4xMC40OCBKdWRnZW1lbnQgYW5kIERlY2lzaW9uIE1ha2luZzwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjUwIj5TSE9SVCBURVNUIDEwLjQ4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU2MSZtaWQ9NDI2MzMiPjEwLjUwIEZsaWdodCBEZWNrIE1hbmFnZW1lbnQ8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY1MSI+U0hPUlQgVGVzdCAxMC41MDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NjImbWlkPTQyNjMzIj4xMC41MiBUaHJlYXQgYW5kIEVycm9yIE1hbmFnZW1lbnQ8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTYyNzgxJm1pZD00MjYzMyI+MTAuNTQgQ3VsdHVyZTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjUyIj5TSE9SVCBURVNUIDEwLjUyPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU2MyZtaWQ9NDI2MzMiPjEwLjYwIEluc3RydW1lbnRhdGlvbiwgRGlzcGxheXMgYW5kIEFsZXJ0czwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3ODMmbWlkPTQyNjMzIj4xMC42MiBEb2N1bWVudGF0aW9uPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTMiPlNIT1JUIFRFU1QgMTAuNjI8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTUyNTY0Jm1pZD00MjYzMyI+MTAuNjQgRmlyc3QgQWlkPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc4NSZtaWQ9NDI2MzMiPjEwLjY2IFN1cnZpdmFsPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTQiPlNIT1JUIFRFU1QgMTAuNjQ8L2E+PGJyIC8+PC90ZD48L3RyPjwvdGFibGU+PHRhYmxlIGJvcmRlcj0iMCIgd2lkdGg9IjE1OCIgY2VsbHBhZGRpbmc9IjIiIGNlbGxzcGFjaW5nPSIwIj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDo3cHg7Ij48aW1nIHNyYz0iL2ltYWdlcy9jdXN0b20vQ0NDQzY2LmdpZiIgYWxpZ249ImFic21pZGRsZSI+PGJyIC8+PC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTUiPlBSQUNUSUNFIEVYQU1TPC9hPjxiciAvPjwvdGQ+PC90cj48L3RhYmxlPjxiciAvPjx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0NDQ0M2Ni5naWYiIGFsaWduPSJhYnNtaWRkbGUiPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9ImphdmFzY3JpcHQ6cG9wZmVlZGJhY2soNDAzMjgpOyI+Q291cnNlIEZlZWRiYWNrPC9hPjwvdGQ+PC90cj48L3RhYmxlPmQCBg8WAh8BBdfmAjxkaXY+PHRhYmxlIHdpZHRoPSIiIGFsaWduPSIiIHN0eWxlPSJib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDogNzAwcHg7IGJvcmRlcjogbm9uZTsiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXI6IG5vbmU7Ij48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgc3R5bGU9IndpZHRoOiA2OTdweDsgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgYmFja2dyb3VuZC1pbWFnZTogdXJsKCZxdW90O2h0dHA6Ly93d3cuY291cnNld2FyZS5jby5uei9pbWFnZXMvZmluYWwvNDI4OTMuanBnJnF1b3Q7KTsgYmFja2dyb3VuZC1hdHRhY2htZW50OiBpbml0aWFsOyBiYWNrZ3JvdW5kLXNpemU6IGluaXRpYWw7IGJhY2tncm91bmQtb3JpZ2luOiBpbml0aWFsOyBiYWNrZ3JvdW5kLWNsaXA6IGluaXRpYWw7IGJhY2tncm91bmQtcG9zaXRpb246IDAlIDAlOyBiYWNrZ3JvdW5kLXJlcGVhdDogaW5pdGlhbDsiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXItdG9wOiAxcHggc29saWQgcmdiKDAsIDAsIDApOyB0ZXh0LWFsaWduOiBjZW50ZXI7IHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7IGxldHRlci1zcGFjaW5nOiAwcHg7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7Ij4mbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsmbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7IGZvbnQtc2l6ZTogMTBwdDsgbGV0dGVyLXNwYWNpbmc6IDBweDsiPiZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7Jm5ic3A7PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTRwdDsgY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgbGV0dGVyLXNwYWNpbmc6IDBweDsiPjEwLjIwJm5ic3A7IEhlYXJpbmcgYW5kIEJhbGFuY2U8L3NwYW4+PC9kaXY+PGJyPjwvc3Bhbj48L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPjwvZGl2PjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MTAuMjAuMiBEZXNjcmliZSB0aGUgYW5hdG9teSBvZiB0aGUgZWFyLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHAgc3R5bGU9Im1hcmdpbjogMGNtIDBjbSA3LjVwdDsgZm9udC1mYW1pbHk6ICZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90OzsgbGluZS1oZWlnaHQ6IDE1cHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXdlaWdodDogYm9sZDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5CYXNpYyBBbmF0b215IG9mIHRoZSBlYXI8bzpwPjwvbzpwPjwvc3Bhbj48L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSBlYXIgaXMgdGhlIG9yZ2FuIG9mIGhlYXJpbmcgYW5kIGJhbGFuY2UuIFRoZSBwYXJ0cyBvZiB0aGUgZWFyIGluY2x1ZGU6PC9zcGFuPjwvc3Bhbj48L3A+PHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsgbWFyZ2luOiAwY20gMGNtIDcuNXB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsiPjxpbWcgaGVpZ2h0PSIyNjUiIHNyYz0iaHR0cDovL3d3dy5jb3Vyc2V3YXJlLmNvLm56L2ltYWdlcy9oZi9IcFBpYzIxLmdpZiIgd2lkdGg9IjM5OSIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMy4zMzMzcHg7Ij48L3A+PHAgc3R5bGU9Im1hcmdpbjogMGNtIDBjbSA3LjVwdDsgZm9udC1mYW1pbHk6ICZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90OzsgbGluZS1oZWlnaHQ6IDE1cHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5FeHRlcm5hbCBvciBvdXRlciBlYXIsPC9zcGFuPjxzcGFuIGNsYXNzPSJhcHBsZS1jb252ZXJ0ZWQtc3BhY2UiIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDs8L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPmNvbnNpc3Rpbmcgb2Y6PG86cD48L286cD48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0IDM2cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyBmb250LXN0cmV0Y2g6IG5vcm1hbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+UGlubmEgb3IgYXVyaWNsZTwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij4uIFRoaXMgaXMgdGhlIG91dHNpZGUgcGFydCBvZiB0aGUgZWFyLjxvOnA+PC9vOnA+PC9zcGFuPjwvc3Bhbj48L3A+PHAgc3R5bGU9Im1hcmdpbjogMGNtIDBjbSA3LjVwdCAzNnB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsgZm9udC1zdHJldGNoOiBub3JtYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyBmb250LXdlaWdodDogYm9sZDsiPkV4dGVybmFsIGF1ZGl0b3J5IGNhbmFsIG9yIHR1YmUuPHNwYW4gY2xhc3M9ImFwcGxlLWNvbnZlcnRlZC1zcGFjZSIgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwOzwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+VGhpcyBpcyB0aGUgdHViZSB0aGF0IGNvbm5lY3RzIHRoZSBvdXRlciBlYXIgdG8gdGhlIGluc2lkZSBvciBtaWRkbGUgZWFyLjxvOnA+PC9vOnA+PC9zcGFuPjwvc3Bhbj48L3A+PHAgc3R5bGU9Im1hcmdpbjogMGNtIDBjbSA3LjVwdCAzNnB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsgZm9udC1zdHJldGNoOiBub3JtYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyBmb250LXdlaWdodDogYm9sZDsiPlR5bXBhbmljIG1lbWJyYW5lPC9zcGFuPjxzcGFuIGNsYXNzPSJhcHBsZS1jb252ZXJ0ZWQtc3BhY2UiIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDs8L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4oYWxzbyBjYWxsZWQgdGhlIGVhcmRydW0pLjxzcGFuIGNsYXNzPSJhcHBsZS1jb252ZXJ0ZWQtc3BhY2UiIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDs8L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSB0eW1wYW5pYyBtZW1icmFuZSBkaXZpZGVzIHRoZSBleHRlcm5hbCBlYXIgZnJvbSB0aGUgbWlkZGxlIGVhci48L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7IGZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4mbmJzcDs8L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5NaWRkbGUgZWFyPC9zcGFuPjxzcGFuIGNsYXNzPSJhcHBsZS1jb252ZXJ0ZWQtc3BhY2UiIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDs8L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4odHltcGFuaWMgY2F2aXR5KSwmbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+Y29uc2lzdGluZyBvZjo8bzpwPjwvbzpwPjwvc3Bhbj48L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQgMzZwdDsgZm9udC1mYW1pbHk6ICZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90OzsgbGluZS1oZWlnaHQ6IDE1cHQ7IGZvbnQtc3RyZXRjaDogbm9ybWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5Pc3NpY2xlcy4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+VGhyZWUgc21hbGwgYm9uZXMgdGhhdCBhcmUgY29ubmVjdGVkIGFuZCB0cmFuc21pdCB0aGUgc291bmQgd2F2ZXMgdG8gdGhlIGlubmVyIGVhci4gVGhlIGJvbmVzIGFyZSBjYWxsZWQ6PG86cD48L286cD48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0IDcycHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyBmb250LXN0cmV0Y2g6IG5vcm1hbDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+TWFsbGV1czxvOnA+PC9vOnA+PC9zcGFuPjwvc3Bhbj48L3A+PHAgc3R5bGU9Im1hcmdpbjogMGNtIDBjbSA3LjVwdCA3MnB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsgZm9udC1zdHJldGNoOiBub3JtYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPkluY3VzPG86cD48L286cD48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0IDcycHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyBmb250LXN0cmV0Y2g6IG5vcm1hbDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+U3RhcGVzPG86cD48L286cD48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0IDM2cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyBmb250LXN0cmV0Y2g6IG5vcm1hbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+RXVzdGFjaGlhbiB0dWJlPC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPi4mbmJzcDtBIGNhbmFsIHRoYXQgbGlua3MgdGhlIG1pZGRsZSBlYXIgd2l0aCB0aGUgYmFjayBvZiB0aGUgbm9zZS4gVGhlIGV1c3RhY2hpYW4gdHViZSBoZWxwcyB0byBlcXVhbGlzZSB0aGUgcHJlc3N1cmUmbmJzcDtpbiB0aGUgbWlkZGxlIGVhci4mbmJzcDtFcXVhbGlzZWQgcHJlc3N1cmUgaXMgbmVlZGVkJm5ic3A7Zm9yIHRoZSBwcm9wZXIgdHJhbnNmZXIgb2Ygc291bmQgd2F2ZXMuIFRoZSBldXN0YWNoaWFuIHR1YmUgaXMgbGluZWQgd2l0aCBtdWNvdXMsIGp1c3QgbGlrZSB0aGUgaW5zaWRlIG9mIHRoZSBub3NlIGFuZCB0aHJvYXQuPC9zcGFuPjwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyBmb250LWZhbWlseTogQXJpYWw7IGZvbnQtd2VpZ2h0OiBib2xkOyI+Jm5ic3A7PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0OyBmb250LWZhbWlseTogJnF1b3Q7VGltZXMgTmV3IFJvbWFuJnF1b3Q7OyBsaW5lLWhlaWdodDogMTVwdDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+SW5uZXIgZWFyPC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPiwgY29uc2lzdGluZyBvZjo8bzpwPjwvbzpwPjwvc3Bhbj48L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQgMzZwdDsgZm9udC1mYW1pbHk6ICZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90OzsgbGluZS1oZWlnaHQ6IDE1cHQ7IGZvbnQtc3RyZXRjaDogbm9ybWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5Db2NobGVhPHNwYW4gY2xhc3M9ImFwcGxlLWNvbnZlcnRlZC1zcGFjZSIgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwOzwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+KGNvbnRhaW5zIHRoZSBuZXJ2ZXMgZm9yIGhlYXJpbmcpPG86cD48L286cD48L3NwYW4+PC9zcGFuPjwvcD48cCBzdHlsZT0ibWFyZ2luOiAwY20gMGNtIDcuNXB0IDM2cHQ7IGZvbnQtZmFtaWx5OiAmcXVvdDtUaW1lcyBOZXcgUm9tYW4mcXVvdDs7IGxpbmUtaGVpZ2h0OiAxNXB0OyBmb250LXN0cmV0Y2g6IG5vcm1hbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+VmVzdGlidWxlPHNwYW4gY2xhc3M9ImFwcGxlLWNvbnZlcnRlZC1zcGFjZSIgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwOzwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+KGNvbnRhaW5zIHJlY2VwdG9ycyBmb3IgYmFsYW5jZSk8bzpwPjwvbzpwPjwvc3Bhbj48L3NwYW4+PC9wPjxwIHN0eWxlPSJtYXJnaW46IDBjbSAwY20gNy41cHQgMzZwdDsgZm9udC1mYW1pbHk6ICZxdW90O1RpbWVzIE5ldyBSb21hbiZxdW90OzsgbGluZS1oZWlnaHQ6IDE1cHQ7IGZvbnQtc3RyZXRjaDogbm9ybWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5TZW1pY2lyY3VsYXIgY2FuYWxzPHNwYW4gY2xhc3M9ImFwcGxlLWNvbnZlcnRlZC1zcGFjZSIgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwOzwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+KGNvbnRhaW4gcmVjZXB0b3JzIGZvciBiYWxhbmNlKTwvc3Bhbj48L3NwYW4+PC9wPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjEwLjIwLjQmbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTZweDsgZm9udC13ZWlnaHQ6IDcwMDsiPkRlc2NyaWJlIHRoZSBwaHlzaW9sb2d5IG9mIHRoZSBlYXIuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxwIGFsaWduPSJsZWZ0IiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5UaGUgZWFyIHBlcmZvcm1zIHR3byBxdWl0ZSBkaWZmZXJlbnQgZnVuY3Rpb25zLiBJdCBpcyB1c2VkIHRvIGRldGVjdCBzb3VuZHMgYnkgcmVjZWl2aW5nIHZpYnJhdGlvbnMgaW4gdGhlIGFpciwgYW5kIHNlY29uZGx5LCBpdCBpcyByZXNwb25zaWJsZSBmb3IgYmFsYW5jZSBhbmQgc2Vuc2luZyBhY2NlbGVyYXRpb24uIEl0IGlzIG5lY2Vzc2FyeSB0byBoYXZlIGEgYmFzaWMgYXBwcmVjaWF0aW9uIG9mIGhvdyB0aGUgZWFyIHdvcmtzLjwvc3Bhbj48L3A+PHAgYWxpZ249ImxlZnQiIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSBodW1hbiBhdWRpdG9yeSBzeXN0ZW0gaXMgYW4gZW5naW5lZXJpbmcgbWFydmVsLiBJdCBjb252ZXJ0cyBzb3VuZCBlbmVyZ3kgdG8gbWVjaGFuaWNhbCBlbmVyZ3kgdG8gZWxlY3RyaWNhbCBlbmVyZ3kuIFRoZSBvdXRlciBlYXIgY29sbGVjdHMgc291bmQgd2F2ZXMgYW5kIGNoYW5uZWxzIHRoZW0gdG8gdGhlIG1pZGRsZSBlYXIgdmlhIHRoZSBlYXJkcnVtLiBUaHJlZSB0aW55IGJvbmVzICh0aGUgb3NzaWNsZXMpIGNvbnZlcnQgdGhlIHNvdW5kIHdhdmVzIGludG8gdmlicmF0aW9uYWwgZW5lcmd5LiBUaGlzIGVuZXJneSwgaW4gdHVybiwgaXMgdHJhbnNtaXR0ZWQgdmlhIHRoZSBmbHVpZCBvZiB0aGUgaW5uZXIgZWFyIHRvIHRoZSBjb2NobGVhIHdoZXJlIGl0IGlzIHRyYW5zZm9ybWVkIGludG8gbmVydmUgaW1wdWxzZXMuIFRoZXNlIG5lcnZlIGltcHVsc2VzIGFyZSB0cmFuc21pdHRlZCB0byB0aGUgYnJhaW4gZm9yIGludGVycHJldGF0aW9uIGFuZCByZWNvZ25pdGlvbi48L3NwYW4+PC9wPjxwIGFsaWduPSJsZWZ0IiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvcD48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48aW1nIGhlaWdodD0iMjM0IiBzcmM9Imh0dHA6Ly93d3cuY291cnNld2FyZS5jby5uei9pbWFnZXMvaGYvSGVhcmluZy1BbmltYXRpb24lNUIxJTVELmdpZiIgd2lkdGg9IjMwMCI+PC9zcGFuPjwvcD48ZGl2IGFsaWduPSJsZWZ0IiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgYWxpZ249ImxlZnQiIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSBtaWRkbGUgZWFyIGFsc28gY29udGFpbnMgdHdvIG11c2NsZXMgd2hpY2ggaGVscCB0byBwcm90ZWN0IHRoZSBlYXIgZnJvbSBzb3VuZHMgYWJvdmUgODAgZEIgYnkgbWVhbnMgb2YgdGhlIGFjb3VzdGljIG9yIGF1cmFsIHJlZmxleCwgcmVkdWNpbmcgdGhlIG5vaXNlIGxldmVsIGJ5IHVwIHRvIDIwIGRCLiBIb3dldmVyLCB0aGlzIHByb3RlY3Rpb24gY2FuIG9ubHkgYmUgcHJvdmlkZWQgZm9yIGEgbWF4aW11bSBvZiBhYm91dCAxNSBtaW51dGVzLCBhbmQgZG9lcyBub3QgcHJvdmlkZSBwcm90ZWN0aW9uIGFnYWluc3Qgc3VkZGVuIGltcHVsc2Ugbm9pc2Ugc3VjaCBhcyBndW5maXJlLiBJdCBkb2VzIGV4cGxhaW4gd2h5IGEgcGVyc29uIGlzIHRlbXBvcmFyaWx5IOKAmGRlYWZlbmVk4oCZIGZvciBhIGZldyBzZWNvbmRzIGFmdGVyIGEgc3VkZGVuIGxvdWQgbm9pc2UuPC9zcGFuPjwvZGl2PjxkaXYgYWxpZ249ImxlZnQiIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj5UaGUgbWlkZGxlIGVhciBpcyB1c3VhbGx5IGZpbGxlZCB3aXRoIGFpciB3aGljaCBpcyByZWZyZXNoZWQgYnkgd2F5IG9mIHRoZSBldXN0YWNoaWFuIHR1YmUgd2hpY2ggY29ubmVjdHMgdGhpcyBwYXJ0IG9mIHRoZSBlYXIgd2l0aCB0aGUgYmFjayBvZiB0aGUgbm9zZSBhbmQgbW91dGguPC9zcGFuPjwvZGl2PjxkaXYgYWxpZ249ImxlZnQiIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PHAgYWxpZ249ImxlZnQiIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsgdGV4dC1hbGlnbjogY2VudGVyOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGltZyBoZWlnaHQ9IjI5MSIgc3JjPSJodHRwOi8vd3d3LmNvdXJzZXdhcmUuY28ubnovaW1hZ2VzL2hmL2FpcnR1YmUuZ2lmIiB3aWR0aD0iNDEyIj48L3NwYW4+PC9wPjxwIGFsaWduPSJsZWZ0IiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5Ib3dldmVyLCB0aGlzIHR1YmUgY2FuIGFsbG93IG11Y3VzIHRvIHRyYXZlbCB0byB0aGUgbWlkZGxlIGVhciB3aGljaCBjYW4gYnVpbGQgdXAsIGludGVyZmVyaW5nIHdpdGggbm9ybWFsIGhlYXJpbmcuPC9zcGFuPjwvcD48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4xMC4yMC42IERlc2NyaWJlIHRoZSBlZmZlY3Qgb2YgcHJvbG9uZ2VkIG5vaXNlIGV4cG9zdXJlIG9uIGhlYXJpbmcuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHAgYWxpZ249ImNlbnRlciI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPlNvdW5kPC9zcGFuPjwvcD48cCBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+VGhlIGh1bWFuIGF1ZGl0b3J5IHN5c3RlbSBpcyBleHRyZW1lbHkgc2Vuc2l0aXZlIGFuZCByZXNwb25kcyB0byBhIHdpZGVyIHJhbmdlIG9mIHN0aW11bGkgdGhhbiBhbnkgb2YgdGhlIG90aGVyIHNlbnNlcy4gVGhlIHNvZnRlc3Qgc291bmQgdGhhdCB3ZSBjYW4gaGVhciBtb3ZlcyB0aGUgZWFyZHJ1bSBhIGRpc3RhbmNlIGVxdWl2YWxlbnQgdG8gdGhlIGRpYW1ldGVyIG9mIGEgaHlkcm9nZW4gbW9sZWN1bGUuIElmIHdlIGFzc3VtZSB0aGF0IHRoZSBzb2Z0ZXN0IHNvdW5kIHRoYXQgd2UgY2FuIGhlYXIgaXMgYXQgMCBkQiBhbmQgdGhlIHVwcGVyIGxpbWl0IGlzIDEzMiBkQiAodGhlIHBvaW50IG9mIHBhaW4pLCB0aGVuIHdlIGNhbiBoZWFyIDMyIFggMTAxMiBvciAzMiB0cmlsbGlvbiBzb3VuZHMuPC9zcGFuPjwvcD48cCBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+U291bmQgaW50ZW5zaXR5IGlzIG1lYXN1cmVkIGluIHVuaXRzIG9mIHNvdW5kIHByZXNzdXJlIGxldmVsIChTUEwpLiBUbyBoYW5kbGUgc291bmQgbWVhc3VyZW1lbnRzIGFuZCBjYWxjdWxhdGlvbnMgb3ZlciBhIHJhbmdlIG9mIDMyIHRyaWxsaW9uIHVuaXRzLCBhIGxvZ2FyaXRobWljIHNjYWxlIGlzIHVzZWQuPGJyPjxicj5UaGUgdW5pdHMgb2YgdGhpcyBzY2FsZSBhcmUgZGVjaWJlbHMgKGRCKS4gV2hlbiBtZWFzdXJpbmcgc291bmQgZm9yIGh1bWFuIGhlYXJpbmcgYXBwbGljYXRpb25zLCB0eXBpY2FsbHkgYW4gIkEiIHdlaWdodGVkIHNjYWxlIGlzIHVzZWQuIFRoaXMgYXBwcm94aW1hdGVzIHRoZSByZXNwb25zZSBvZiB0aGUgaHVtYW4gYXVkaXRvcnkgc3lzdGVtIHRvIHNvdW5kIGZyZXF1ZW5jeS48YnI+PGJyPkJlY2F1c2UgZGVjaWJlbHMgYXJlIG9uIGEgbG9nLXNjYWxlOiBhIDMgZEIgaW5jcmVhc2UgZXF1YXRlcyB0byB0d2ljZSBhcyBtdWNoIHNvdW5kIChwb3dlcik7IGEgNiBkQiBpbmNyZWFzZSA0IHRpbWVzIGFzIG11Y2g7IDYwIGRCIGluY3JlYXNlIGlzIG9uZS1taWxsaW9uIHRpbWVzIG1vcmUgcG93ZXIsIGFuZCBhIDEyMCBkQiBpbmNyZWFzZSBpcyBvbmUtbWlsbGlvbiB0aW1lcyBvbmUtbWlsbGlvbiBhcyBtdWNoIHBvd2VyLiBUaGUgZm9sbG93aW5nIGFyZSBleGFtcGxlcyBvZiB0aGUgc291bmQgcHJlc3N1cmUgbGV2ZWxzIGluIGRlY2liZWxzIG9mIGZhbWlsaWFyIHNvdW5kcy48L3NwYW4+PC9wPjwvZGl2PjwvZGl2PjxibG9ja3F1b3RlIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsgbWFyZ2luOiAwcHggMHB4IDBweCA0MHB4OyBib3JkZXI6IG5vbmU7IHBhZGRpbmc6IDBweDsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij7igKImbmJzcDs8c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjE0MCBkQiAtIEpldCBhaXJjcmFmdCBzdGFydDxicj7igKIgMTMwIGRCIC0gUGFpbiB0aHJlc2hvbGQ8YnI+4oCiIDEyMCBkQiAtIFByb3BlbGxlciBhaXJjcmFmdCBzdGFydDxicj7igKIgMTEwIGRiIC0gUm9jayBiYW5kIChhbXBsaWZpZWQpPGJyPuKAoiAxMDAgZEIgLSBQb3dlciBjaGFpbiBzYXc8YnI+4oCiIDkwIGRCIC0gRGlzY288YnI+4oCiIDgwIGRCIC0gQ2lyY3VsYXIgU2F3PGJyPuKAoiA3MCBkQiAtIFJvYWQgdHJhZmZpYy9mYWN0b3J5IGZsb29yIChoZWF2eSBpbmR1c3RyeSk8YnI+4oCiIDYwIGRCIC0gTm9ybWFsIGNvbnZlcnNhdGlvbjxicj7igKIgNTAgZEIgLSBPZmZpY2UgZW52aXJvbm1lbnQ8YnI+4oCiIDQwIGRCIC0gTGl2aW5nIHJvb208YnI+4oCiIDMwIGRCIC0gV2hpc3Blcjxicj7igKIgMjAgZEIgLSBCZWRyb29tPGJyPuKAoiAxMCBkYiAtIFJlY29yZGluZyBzdHVkaW88YnI+4oCiIDE1IGRCIC0gVGhyZXNob2xkIG9mIGhlYXJpbmc8YnI+4oCiIDAgZEIgLSBBY3V0ZSB0aHJlc2hvbGQgb2YgaGVhcmluZyAod2Vha2VzdCBzb3VuZCBkZXRlY3RhYmxlKTwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+4oCiIDEzMCBkQiAtIFBhaW4gdGhyZXNob2xkPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMTIwIGRCIC0gUHJvcGVsbGVyIGFpcmNyYWZ0IHN0YXJ0PC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMTEwIGRiIC0gUm9jayBiYW5kIChhbXBsaWZpZWQpPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMTAwIGRCIC0gUG93ZXIgY2hhaW4gc2F3PC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgOTAgZEIgLSBEaXNjbzwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+4oCiIDgwIGRCIC0gQ2lyY3VsYXIgU2F3PC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgNzAgZEIgLSBSb2FkIHRyYWZmaWMvZmFjdG9yeSBmbG9vciAoaGVhdnkgaW5kdXN0cnkpPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgNjAgZEIgLSBOb3JtYWwgY29udmVyc2F0aW9uPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgNTAgZEIgLSBPZmZpY2UgZW52aXJvbm1lbnQ8L3NwYW4+PC9kaXY+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogbGVmdDsiPjxkaXYgYWxpZ249ImxlZnQiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPuKAoiA0MCBkQiAtIExpdmluZyByb29tPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMzAgZEIgLSBXaGlzcGVyPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMjAgZEIgLSBCZWRyb29tPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMTAgZGIgLSBSZWNvcmRpbmcgc3R1ZGlvPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij7igKIgMTUgZEIgLSBUaHJlc2hvbGQgb2YgaGVhcmluZzwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+4oCiIDAgZEIgLSBBY3V0ZSB0aHJlc2hvbGQgb2YgaGVhcmluZyAod2Vha2VzdCBzb3VuZCBkZXRlY3RhYmxlKTwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48L2Jsb2NrcXVvdGU+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7IHRleHQtYWxpZ246IGNlbnRlcjsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48L3NwYW4+PC9kaXY+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPkxvdWRuZXNzPC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjwvc3Bhbj48L2Rpdj48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48L3NwYW4+PC9kaXY+PGRpdiBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+TG91ZG5lc3MgaXMgYSBzZW5zYXRpb24gd2hpY2ggZGVwZW5kcyBncmVhdGx5IG9uIGEgbnVtYmVyIG9mIHZhcmlhYmxlcywgaW5jbHVkaW5nIHRoZSBzb3VuZCBmcmVxdWVuY2llcyBiZWluZyBoZWFyZC48L3NwYW4+PC9kaXY+PHAgYWxpZ249ImxlZnQiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPlRoZSBudW1iZXIgb2YgdmlicmF0aW9ucyB0aGF0IGFyZSBwcm9kdWNlZCBwZXIgc2Vjb25kIGlzIGNhbGxlZCBmcmVxdWVuY3kuIEZyZXF1ZW5jeSB2YXJpZXMgZm9yIGVhY2ggc291bmQgYW5kIGlzIG1lYXN1cmVkIGluIGhlcnR6LiBPbmUgaGVydHogaXMgZXF1YWwgdG8gb25lIHZpYnJhdGlvbiBwZXIgc2Vjb25kLiBBIHNvdW5kIHdpdGggYSBsb3cgZnJlcXVlbmN5IHdpbGwgaGF2ZSBhIGxvdyBwaXRjaCwgc3VjaCBhcyBhIGh1bWFuJ3MgaGVhcnRiZWF0LiBBIHNvdW5kIHdpdGggYSBoaWdoIGZyZXF1ZW5jeSB3aWxsIGhhdmUgYSBoaWdoIHBpdGNoLCBzdWNoIGFzIGEgZG9nIHdoaXN0bGUuIEh1bWFucyBjYW5ub3QgaGVhciBzb3VuZHMgb2YgZXZlcnkgZnJlcXVlbmN5LiBUaGUgcmFuZ2Ugb2YgaGVhcmluZyBmb3IgYSBoZWFsdGh5IHlvdW5nIHBlcnNvbiBpcyAyMCB0byAyMCwwMDAgaGVydHouIFRoZSBzb3VuZHMgb2Ygc3BlZWNoIGFyZSBpbiB0aGUgcmFuZ2Ugb2YgMjUwIEh6IHRvIDQwMDAgSHouPC9zcGFuPjwvcD48ZGl2IGFsaWduPSJjZW50ZXIiPjxpbWcgaGVpZ2h0PSIyOTAiIHNyYz0iaHR0cDovL3d3dy5jb3Vyc2V3YXJlLmNvLm56L2ltYWdlcy9oZi9IcFBpYzIyLmdpZiIgd2lkdGg9IjQxNiI+PC9kaXY+PGRpdiBhbGlnbj0iY2VudGVyIj4mbmJzcDs8L2Rpdj48ZGl2IGFsaWduPSJjZW50ZXIiPjxkaXYgYWxpZ249ImxlZnQiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPlNvdW5kcyBvZiBkaWZmZXJlbnQgZnJlcXVlbmN5IGFuZCB0aGUgc2FtZSBpbnRlbnNpdHkgZG8gbm90IHNlZW0gZXF1YWxseSBsb3VkIHRvIHVzLiBXZSBhcmUgbW9yZSBzZW5zaXRpdmUgdG8gc29tZSBmcmVxdWVuY2llcyB0aGFuIHRvIG90aGVycy4gVGhpcyBtZWFucyB3ZSBjYW4gaGVhciB0aGVzZSBmcmVxdWVuY2llcyBtb3JlIGVhc2lseSwgb3IgYXQgbG93ZXIgaW50ZW5zaXR5PC9zcGFuPjwvZGl2PjxwIGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij5IZXJlIGlzIGEgZ3JhcGggdGhhdCBzaG93cyB0aGlzIG1vcmUgY2xlYXJseTo8L3NwYW4+PC9wPjxwIGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48YnI+PC9zcGFuPjwvcD48cCBhbGlnbj0ibGVmdCI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGltZyBoZWlnaHQ9IjI2MSIgc3JjPSJodHRwOi8vd3d3LmNvdXJzZXdhcmUuY28ubnovaW1hZ2VzL2hmL0hwUGljMjMuZ2lmIiB3aWR0aD0iMzk3Ij48L3NwYW4+PC9wPjxwIGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij5UaGUgZnJlcXVlbmNpZXMgbW9zdCBlYXNpbHkgaGVhcmQgYXJlIGZyb20gMjAwMCB0byA1MDAwSHosIHRoZSB1cHBlciByYW5nZSBvZiBzcGVlY2guIE9uIHRoaXMgZ3JhcGgsIGEgMTAwMEh6IHNvdW5kIGF0IDgwIGRCIGlzIHRha2VuIGFzIGEgbG91ZG5lc3Mgc3RhbmRhcmQuIEFsbCBvdGhlciBmcmVxdWVuY2llcyBhdCB0aGUgZEIgbGV2ZWxzIG9uIHRoZSBsaW5lIHNvdW5kIGVxdWFsbHkgbG91ZC48L3NwYW4+PC9wPjxwIGFsaWduPSJsZWZ0Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+Tm9pc2U8L3NwYW4+PC9wPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5Ob2lzZSBpcyB1bndhbnRlZCBzb3VuZCBlbmVyZ3kuIEl0IGlzIG1lYXN1cmVkIGluIGRlY2liZWxzLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SWYgbG91ZCBlbm91Z2ggb3IgaWYgcHJlc2VudCBmb3IgcHJvbG9uZ2VkIHBlcmlvZHMgbm9pc2UgY2FuIHBlcm1hbmVudGx5IGRhbWFnZSBodW1hbiBoZWFyaW5nLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48aWZyYW1lIHdpZHRoPSI1NjAiIGhlaWdodD0iMzE1IiBzcmM9Imh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL2VtYmVkL19VU1Fnb0ZNeUY4IiB0aXRsZT0iWW91VHViZSB2aWRlbyBwbGF5ZXIiIGZyYW1lYm9yZGVyPSIwIiBhbGxvdz0iYWNjZWxlcm9tZXRlcjsgYXV0b3BsYXk7IGNsaXBib2FyZC13cml0ZTsgZW5jcnlwdGVkLW1lZGlhOyBneXJvc2NvcGU7IHBpY3R1cmUtaW4tcGljdHVyZSIgYWxsb3dmdWxsc2NyZWVuPSIiPjwvaWZyYW1lPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5Ob2lzZSBJbmR1Y2VkIEhlYXJpbmcgTG9zczwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBzdGFydDsiPjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+RXhjZXNzaXZlIG5vaXNlIGV4cG9zdXJlIGNhbiBjYXVzZSBub2lzZSBpbmR1Y2VkIGhlYXJpbmcgbG9zcyAoTklITCkuIFN1Y2ggbG9zcyBjYW4gb2NjdXIgZ3JhZHVhbGx5IG92ZXIgYSBudW1iZXIgb2YgeWVhcnMgb3Igb2NjdXIgYXMgdGhlIHJlc3VsdCBvZiBhIG9uZSB0aW1lIGFjb3VzdGljIHRyYXVtYS4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+Tm9pc2UgaW5kdWNlZCBoZWFyaW5nIGxvc3MgYmVnaW5zIHN1YnRseSBhbmQgaXMgb2Z0ZW4gbm90IHJlY29nbmlzZWQgYnkgdGhlIGluZGl2aWR1YWwuJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxicj48YnI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+4oCiIE5JSEw8L3NwYW4+Jm5ic3A7LSZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij5OSUhMIGlzIGEgdHlwZSBvZiBzZW5zb3JpbmV1cmFsIGhlYXJpbmcgbG9zcyBjYXVzZWQgYnkgZXhwb3N1cmUgdG8gbG91ZCBzb3VuZHMgb3ZlciB0aW1lIG9yIGEgc2luZ2xlLCB2ZXJ5IGxvdWQgaW1wdWxzZSBzb3VuZC4gVGhlIGRhbWFnZSBvY2N1cnMgaW4gdGhlIGNvY2hsZWEsIGEgc25haWwtc2hhcGVkIHBhcnQgb2YgdGhlIGlubmVyIGVhci4gSW5zaWRlIHRoZSBjb2NobGVhIGFyZSB0aG91c2FuZHMgb2YgdGlueSwgZGVsaWNhdGUgaGFpciBjZWxscy4gVGhlc2UmbmJzcDs8c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij5jb2NobGVhIGhhaXIgY2VsbHM8L3NwYW4+Jm5ic3A7dmlicmF0ZSBpbiByZXNwb25zZSB0byBzb3VuZCB3YXZlcyBhbmQgY29udmVydCB0aGVtIGludG8gZWxlY3RyaWNhbCBzaWduYWxzIHRoYXQgYXJlIHNlbnQgdG8gdGhlIGJyYWluIHRvIGJlIGludGVycHJldGVkIGFzIHNvdW5kLiBXaGVuIGV4cG9zZWQgdG8gbG91ZCBub2lzZSwgdGhlc2UgaGFpciBjZWxscyBiZWNvbWUgb3ZlcnN0aW11bGF0ZWQgYW5kIGNhbiBiZSBiZW50IG9yIGV2ZW4gZGVzdHJveWVkLiBVbmZvcnR1bmF0ZWx5LCBvbmNlIHRoZXNlIGNlbGxzIGFyZSBkYW1hZ2VkIGluIGh1bWFucywgdGhleSBkbyBub3QgZ3JvdyBiYWNrLiBUaGUgZGFtYWdlIGZyb20gbm9pc2UgZXhwb3N1cmUgaXMgY3VtdWxhdGl2ZSwgbWVhbmluZyBlYWNoIGV4cG9zdXJlIGNhbiBjYXVzZSBtb3JlIGhhcm0uPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIGlkPSJkb2NzLWludGVybmFsLWd1aWQtYjcyNDE2ZTYtN2ZmZi02MmM3LTQ2MGMtZmExZDU2MGEwNmQxIj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlByb2xvbmdlZCBleHBvc3VyZSBvdmVyIGEgbnVtYmVyIG9mIHllYXJzIHRvIHJlbGF0aXZlbHkgbG93IGxldmVscyBvZiBub2lzZSAoNzAg4oCTIDgwIGRCKSBjYW4gbGVhZCB0byZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5ub2lzZSBpbmR1Y2VkIGhlYXJpbmcgbG9zcyBhbmQgaXMgdGhlIG1vc3QgaW1wb3J0YW50IGZvcm0gb2YgaGVhcmluZyBsb3NzIGluIGF2aWF0aW9uLjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj5UaGUgZmlyc3QgaW5kaWNhdGlvbiBpcyBhIHRlbXBvcmFyeSBzaGlmdCBpbiBoZWFyaW5nIGFiaWxpdHkgYmVmb3JlIGFuZCBhZnRlciBleHBvc3VyZS4gVGhpcyBpcyB0ZXJtZWQgYSB0ZW1wb3JhcnkgdGhyZXNob2xkIHNoaWZ0IChUVFMpLiBJdCBpcyB0ZXJtZWQgInRlbXBvcmFyeSIgYmVjYXVzZSBoZWFyaW5nIHJldHVybnMgdG8gbm9ybWFsIGFmdGVyIGEgcGVyaW9kIG9mIHRpbWUgYXdheSBmcm9tIHRoZSBub2lzZSB0aGF0IGNhdXNlZCB0aGUgc2hpZnQuIEhvd2V2ZXIsIG92ZXIgdGltZSB3aXRoIHJlcGVhdGVkIGV4cG9zdXJlLCB0aGUgdGVtcG9yYXJ5IHRocmVzaG9sZCBzaGlmdCBiZWNvbWUgYSBwZXJtYW5lbnQgdGhyZXNob2xkIHNoaWZ0IChQVFMpLiBQVFMgaXMgcGVybWFuZW50LCBpcnJldmVyc2libGUgc2Vuc29yaW5ldXJhbCBsb3NzLjwvZGl2Pjwvc3Bhbj48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogc3RhcnQ7Ij48cCBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij7igKIgQWNvdXN0aWMgVHJhdW1hPC9zcGFuPiZuYnNwOy0gSGVhcmluZyBsb3NzIGR1ZSB0byBhY291c3RpYyB0cmF1bWEgaXMgY2F1c2VkIGJ5IGhlYWQgb3IgZWFyIHRyYXVtYSBvciBhIG9uZSB0aW1lIGV4cG9zdXJlIHRvIGEgdmVyeSBpbnRlbnNlIHN1ZGRlbiBub2lzZSwgc3VjaCBhcyBhbiBleHBsb3Npb24uIFRoZSBlYXJkcnVtIGNhbiBiZSBwZXJmb3JhdGVkIG9yIHRoZSBtaWRkbGUgZWFyIG9zc2ljbGVzIGFmZmVjdGVkLiBVc3VhbGx5LCB0aGlzIHR5cGUgb2YgaGVhcmluZyBsb3NzIGlzIHRlbXBvcmFyeSBhbmQgcmVjb3ZlcmFibGUuPC9wPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IHN0YXJ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+RXhwb3N1cmUgdG8gbW9kZXJhdGUgYW1vdW50cyBvZiBub2lzZSAoOTAg4oCTIDEwMCBkQikgZm9yIGEgc2hvcnQgdGltZSBjYW4gbGVhZCB0byBhIHRlbXBvcmFyeSByZWR1Y3Rpb24gaW4gaGVhcmluZyBhYmlsaXR5LiZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5JZiB0aGUgbm9pc2UgaXMgdGhlbiBhdm9pZGVkLCBoZWFyaW5nIHdpbGwgcmV0dXJuIHRvIG5vcm1hbCBvdmVyIHRoZSBuZXh0IDEyIGhvdXJzLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBzdGFydDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogc3RhcnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPkV4cG9zdXJlIHRvIHZlcnkgbG91ZCBub2lzZXMgKDE1MCBkQiBvciBncmVhdGVyKSB3aWxsIGluc3RhbnRseSBkYW1hZ2UgdGhlIGVhcuKAmXMgaGVhcmluZyBtZWNoYW5pc21zIGFuZCBjYW4gY2F1c2UgaW1tZWRpYXRlIHBhaW4gYW5kIHBlcm1hbmVudCBoZWFyaW5nIGxvc3MuPC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjxzcGFuIHN0eWxlPSJmb250LXdlaWdodDogYm9sZDsiPuKAoiBBZ2UmbmJzcDs8L3NwYW4+LSBUaGUgaGVhcmluZyByYW5nZSBvZiBodW1hbnMgZ2V0cyB3b3JzZSB3aXRoIGFnZS4gUGVvcGxlIGxvc2UgdGhlIGFiaWxpdHkgdG8gaGVhciBzb3VuZHMgb2YgaGlnaCBmcmVxdWVuY3kgYXMgdGhleSBnZXQgb2xkZXIuIEFsc28sIHRoZSBoZWFyaW5nIHJhbmdlIGZvciBtZW4gd29yc2VucyBtb3JlIHF1aWNrbHkgdGhhbiB0aGUgaGVhcmluZyByYW5nZSBmb3Igd29tZW4uIFRoaXMgbWVhbnMgdGhhdCB3b21lbiB3aWxsIGhhdmUgdGhlIGFiaWxpdHkgdG8gaGVhciBub3RlcyBvZiBoaWdoZXIgcGl0Y2ggdGhhbiBtZW4gb2YgdGhlIHNhbWUgYWdlIGRvLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBzdGFydDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogc3RhcnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IHN0YXJ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+QXVkaW9ncmFtPC9zcGFuPjwvc3Bhbj48L2Rpdj48cCBzdHlsZT0idGV4dC1hbGlnbjogc3RhcnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij5UaGUgZ2VuZXJhbGx5IGFjY2VwdGVkIHdheSBvZiBhc3Nlc3Npbmcgc29tZW9uZeKAmXMgaGVhcmluZyBpcyB3aXRoIGFuIGF1ZGlvZ3JhbS4gVGhpcyBpcyBhIHJlbGF0aXZlbHkgc2ltcGxlIHByb2NlZHVyZSB3aGVyZSBhbiBpbmRpdmlkdWFsIGxpc3RlbnMgZm9yIHNvdW5kcyB0cmFuc21pdHRlZCBhdCB2YXJ5aW5nIGZyZXF1ZW5jaWVzIGFuZCB2b2x1bWVzLiBUaGUgcmVzdWx0cyBhcmUgdHlwaWNhbGx5IGRpc3BsYXllZCBhcyBhIGdyYXBoIHNpbWlsYXIgdG8gdGhlIGV4YW1wbGUgYmVsb3c6PGJyPjwvc3Bhbj48L3A+PHAgc3R5bGU9InRleHQtYWxpZ246IHN0YXJ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjwvc3Bhbj48L3A+PHAgYWxpZ249ImxlZnQiPjxpbWcgaGVpZ2h0PSIzMDgiIHNyYz0iaHR0cDovL3d3dy5jb3Vyc2V3YXJlLmNvLm56L2ltYWdlcy9oZi9IcFBpYzI1LmdpZiIgd2lkdGg9IjQ2MSI+PC9wPjxkaXYgYWxpZ249ImxlZnQiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPlRoaXMgZ3JhcGggc2hvd3MgaGVhcmluZyBsb3NzIGFzIGEgZnVuY3Rpb24gb2YgZnJlcXVlbmN5IGFzIG1lYXN1cmVkIGJ5IGFuIGF1ZGlvbWV0ZXIuIDAgZEIgb24gYW4gYXVkaW9ncmFtIGRlbm90ZXMgdGhlIGhlYXJpbmcgdGhyZXNob2xkIGxldmVsIHJlZ2FyZGVkIGFzIHRoZSBub3JtYWwgYXVkaW9tZXRyaWMgc3RhbmRhcmQgYXQgdGhhdCBmcmVxdWVuY3kuIFBvaW50cyBiZWxvdyAwIG9uIHRoZSBzY2FsZSBkZW5vdGUgbG91ZGVyIHRocmVzaG9sZCBsZXZlbHMsIHdoZXJlYXMgdGhvc2UgYWJvdmUsIGV4cHJlc3NlZCBpbiBuZWdhdGl2ZSBkZWNpYmVscyB3aXRoIHJlc3BlY3QgdG8gdGhlIHplcm8gbGV2ZWwsIGFyZSBsZXNzIGludGVuc2UgbGV2ZWxzIHdoaWNoLCBiZWNhdXNlIG9mIGluZGl2aWR1YWwgaGVhcmluZyBkaWZmZXJlbmNlcywgc29tZSBwZW9wbGUgbWF5IG5vcm1hbGx5IGhlYXIuPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjEwLjIwLjggRGVzY3JpYmUgbWV0aG9kcyBvZiBwcm90ZWN0aW5nIGhlYXJpbmcuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxwIHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPlRoZSBnb29kIG5ld3MgaXMgdGhhdCBub2lzZSBpbmR1Y2VkIGhlYXJpbmcgbG9zcyAoTklITCkgaXMgcHJldmVudGFibGUuIFRvIHByZXZlbnQgTklITCwgZXhwb3N1cmUgbXVzdCBiZSBjb250cm9sbGVkIGF0IHdvcmsgYW5kIGFsc28gaW4gaG9tZSwgbGVpc3VyZSwgYW5kIG90aGVyIGVudmlyb25tZW50cy48YnI+PGJyPldoaWxlIG1vc3Qgd29ya2VycyB1bmRlcnN0YW5kIHRoYXQgZXhwb3N1cmUgdG8gZGFtYWdpbmcgbm9pc2UgY2FuIG9jY3VyIGluIHRoZSB3b3JrIHBsYWNlLCBtYW55IGRvIG5vdCByZWFsaXplIHRoZSBwb3RlbnRpYWwgZm9yIGRhbWFnZSBpbiBub24td29yayBleHBvc3VyZXMuIFVzZSBvZiBsYXduIG1vd2VycywgdHJhY3RvcnMsIGxlYWYgYW5kIHNub3cgYmxvd2Vycywgc2F3cywgc2FuZGVycywgZ3JpbmRlcnMsIG9mZi10ZXJyYWluIHZlaGljbGVzLCBzbm93IG1vYmlsZXMsIG1vdG9yY3ljbGVzLCBwb3dlciBib2F0cywgYW5kIGF0dGVuZGFuY2UgYXQgcm9jayBjb25jZXJ0cy0tYXJlIGFsbCBhY3Rpdml0aWVzIHRoYXQgY2FuIGluZHVjZSBoZWFyaW5nIGxvc3MuPGJyPjxicj5NZWFzdXJlcyB0byBwcmV2ZW50IGhlYXJpbmcgbG9zcyBhcmU6PGJyPjxicj7igKIgQXZvaWQgZXhwb3N1cmUgdG8gaGlnaCBub2lzZSBsZXZlbHMsPGJyPjxicj7igKIgV2VhciB3ZWxsLWZpdHRpbmcgZWFyIHBsdWdzIG9yIGhpZ2ggcXVhbGl0eSBwcm90ZWN0aXZlIGVhcm11ZmZzIHdoZW4gaW4gaGlnaCBub2lzZSBlbnZpcm9ubWVudHMtLXRoaXMgaW5jbHVkZXMgaG9tZSBhbmQgcmVjcmVhdGlvbmFsIGFjdGl2aXRpZXMuIEVhciBwbHVncyB0aGF0IGFyZSBpbmRpdmlkdWFsbHkgZml0dGVkIGFyZSBiZXN0Ljwvc3Bhbj48L3A+PHAgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjwvc3Bhbj48L3A+PHAgYWxpZ249ImxlZnQiIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7IGZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGltZyBoZWlnaHQ9IjI0OCIgc3JjPSJodHRwOi8vd3d3LmNvdXJzZXdhcmUuY28ubnovaW1hZ2VzL2hmL0hwUGljMjYuanBnIiB3aWR0aD0iMjE2Ij48aW1nIGhlaWdodD0iMTU1IiBzcmM9Imh0dHA6Ly93d3cuY291cnNld2FyZS5jby5uei9pbWFnZXMvaGYvSHBQaWMyNy5qcGciIHdpZHRoPSIxNTAiPjxpbWcgaGVpZ2h0PSIxNjQiIHNyYz0iaHR0cDovL3d3dy5jb3Vyc2V3YXJlLmNvLm56L2ltYWdlcy9oZi9IcFBpYzI4LmpwZyIgd2lkdGg9IjEyOSI+PC9zcGFuPjwvcD48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5MZXZlbHMgb2Ygbm9pc2UgaW4gZGVjaWJlbHMgYXQgd2hpY2ggdmFyaW91cyBncmFkZXMgb2YgaGVhcmluZyBwcm90ZWN0aW9uIGFyZSByZXF1aXJlZC48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij5XaGVuIG5vaXNlIGxldmVscyBleGNlZWQgMTAwZEJBLCB3ZWFyIGJvdGggZWFycGx1Z3MgYW5kIGVhcm11ZmZzLiBOb2lzZSBsZXZlbHMgY2FuIGJlIHJlZHVjZWQgKGF0dGVudWF0ZWQpIGJ5IHVwIHRvIDIwIGRlY2liZWxzIHVzaW5nIGVhciBwbHVncyBhbmQgNDAgZGVjaWJlbHMgdXNpbmcgZWFyIG11ZmZzLiBIb3dldmVyLCB1c2luZyBlYXIgcHJvdGVjdGlvbiB3aWxsIHRlbmQgdG8gYWR2ZXJzZWx5IGludGVyZmVyZSB3aXRoIHZlcmJhbCBjb21tdW5pY2F0aW9uLiBEZXNwaXRlIHRoaXMsIGl0IG11c3QgYmUgdXNlZCBjb25zaXN0ZW50bHkgYW5kIGFzIGluc3RydWN0ZWQgdG8gYmUgZWZmZWN0aXZlLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+QSBnb29kIGhlYWRzZXQgd2lsbCBoZWxwIHByZXZlbnQgbm9pc2UgaW5kdWNlZCBoZWFyaW5nIGxvc3MgYW5kIGlzIGEgd29ydGh3aGlsZSBpbnZlc3RtZW50LiBIZWFkc2V0cyBtYXkgYmUgZ3JhZGVkIG9uIGEgc2NhbGUgb2YgMS01LCB3aXRoIDEgYmVpbmcgcG9vciBhbmQgNSBiZWluZyB2ZXJ5IGdvb2QsIGluIHRlcm1zIG9mIG5vaXNlIHJlZHVjdGlvbi48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMy4zMzMzcHg7IGZvbnQtd2VpZ2h0OiBib2xkOyI+R3JhZGVzIG9mIGhlYXJpbmcgcHJvdGVjdGlvbi48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij5IZWFyaW5nIHByb3RlY3Rpb24gaXMgbm8gbG9uZ2VyIGdyYWRlZC4gR3JhZGVzIDEtNSBoYXZlIGJlZW4gcmVwbGFjZWQgd2l0aCBDbGFzcyAxLTUgLiBIZWFyaW5nIHByb3RlY3Rpb24gZGV2aWNlcyBhcmUgY2xhc3NlZCBhY2NvcmRpbmcgdG8gdGhlaXIgZWZmaWNpZW5jeSBpbiBwcm90ZWN0aW5nIGhlYXJpbmcsIGFuZCBoaWdoZXIgZ3JhZGVkIGVxdWlwbWVudCBpcyBuZWNlc3NhcnkgYXMgdGhlIGxldmVsIG9mIGV4cG9zdXJlIGluY3JlYXNlcy4gVGhlIGZvbGxvd2luZyB0YWJsZSBpcyBvZmZlcmVkIGFzIGEgZ3VpZGU6PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij48aW1nIHNyYz0iaHR0cHM6Ly93d3cuY291cnNld2FyZS50cmFpbmluZy9pbWFnZXMvZmluYWwvNDM0NzAuanBnIiBhbHQ9IiIgYWxpZ249IiIgYm9yZGVyPSIwcHgiPjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+Tm9pc2UgbGV2ZWxzIGF0IHdoaWNoIGhlYXJpbmcgZGFtYWdlIG1heSBvY2N1ci48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48ZGl2IGFsaWduPSJsZWZ0Ij5Ob2lzZSBpbmR1Y2VkIGhlYXJpbmcgZGFtYWdlIGRlcGVuZHMgb246PGJyPjxicj48L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PGJsb2NrcXVvdGUgc3R5bGU9Im1hcmdpbjogMHB4IDBweCAwcHggNDBweDsgYm9yZGVyOiBub25lOyBwYWRkaW5nOiAwcHg7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxkaXYgYWxpZ249ImxlZnQiPuKAoiBOb2lzZSBsZXZlbCBhbmQgc3BlY3RydW0sPC9kaXY+PC9zcGFuPjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PGRpdiBhbGlnbj0ibGVmdCI+4oCiIEV4cG9zdXJlIGR1cmF0aW9uLDwvZGl2Pjwvc3Bhbj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxkaXYgYWxpZ249ImxlZnQiPuKAoiBEYWlseSBleHBvc3VyZSw8L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48ZGl2IGFsaWduPSJsZWZ0Ij7igKIgQ3VtdWxhdGl2ZSB5ZWFycyBvZiBleHBvc3VyZSw8L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48ZGl2IGFsaWduPSJsZWZ0Ij7igKIgSW5kaXZpZHVhbCBzdXNjZXB0aWJpbGl0eS48L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PC9ibG9ja3F1b3RlPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxwIGFsaWduPSJsZWZ0Ij5Tb21lIGNvbW1vbiBydWxlcyBvZiB0aHVtYiBmb3IgbWFuYWdlcnMgd2FudGluZyB0byBlc3RpbWF0ZSB3aGV0aGVyIHBvdGVudGlhbGx5IGhhemFyZG91cyBub2lzZSBsZXZlbHMgZXhpc3QgaW4gdGhlaXIgd29ya3BsYWNlcyBhcmU6PGJyPjxicj48L3A+PC9zcGFuPjwvZGl2PjwvZGl2PjxibG9ja3F1b3RlIHN0eWxlPSJtYXJnaW46IDBweCAwcHggMHB4IDQwcHg7IGJvcmRlcjogbm9uZTsgcGFkZGluZzogMHB4OyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFZlcmRhbmEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48cCBhbGlnbj0ibGVmdCI+4oCiIElmIG5vaXNlIGxldmVscyBhcmUgYXMgbG91ZCBhcyBvciBsb3VkZXIgdGhhbiBoZWF2eSBjaXR5IHRyYWZmaWM7PC9wPjwvc3Bhbj48L2Rpdj48L2Rpdj48L2Jsb2NrcXVvdGU+PGJsb2NrcXVvdGUgc3R5bGU9Im1hcmdpbjogMHB4IDBweCAwcHggNDBweDsgYm9yZGVyOiBub25lOyBwYWRkaW5nOiAwcHg7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxwIGFsaWduPSJsZWZ0Ij7igKIgSWYgdm9pY2VzIGhhdmUgdG8gYmUgcmFpc2VkIHRvIGNvbW11bmljYXRlIHdpdGggc29tZW9uZSBhYm91dCAxIG1ldHJlIGF3YXk7PC9wPjwvc3Bhbj48L2Rpdj48L2Rpdj48L2Jsb2NrcXVvdGU+PGJsb2NrcXVvdGUgc3R5bGU9Im1hcmdpbjogMHB4IDBweCAwcHggNDBweDsgYm9yZGVyOiBub25lOyBwYWRkaW5nOiAwcHg7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxwIGFsaWduPSJsZWZ0Ij7igKIgSWYgcGVvcGxlIHdobyBoYXZlIHdvcmtlZCBpbiB0aGUgbm9pc2UgZm9yIGEgd2hpbGUgc2VlbSB0byBiZSBhIGJpdCBkZWFmLjwvcD48L3NwYW4+PC9kaXY+PC9kaXY+PC9ibG9ja3F1b3RlPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHAgYWxpZ249ImxlZnQiPlRoZSBjb21iaW5hdGlvbiBvZiBkdXJhdGlvbiBhbmQgaW50ZW5zaXR5IG9mIG5vaXNlIGNhbiBiZSBkZXNjcmliZWQgYXMmbmJzcDs8c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij5ub2lzZSBkb3NlLjwvc3Bhbj4mbmJzcDtFeHBvc3VyZSB0byBhbnkgc291bmQgb3ZlciA4MCBkQiBjb25zdGl0dXRlcyBhIG5vaXNlIGRvc2UsIGFuZCBjYW4gYmUgbWVhc3VyZWQgb3ZlciB0aGUgZGF5IGFzIGFuIDggaG91ciBUaW1lIFdlaWdodGVkIEF2ZXJhZ2Ugc291bmQgbGV2ZWwgKFRXQSkuPC9wPjxwPkZvciBleGFtcGxlLCBhIHBlcnNvbiBzdWJqZWN0ZWQgdG8gOTUgZGVjaWJlbHMgZm9yIDMuNSBob3VycywgdGhlbiAxMDUgZGVjaWJlbHMgZm9yIDAuNSBob3VycywgdGhlbiA4NSBkZWNpYmVscyBmb3IgNCBob3VycywgcmVzdWx0cyBpbiBhIFRXQSBvZiA5My41IHdoaWNoIGV4Y2VlZHMgdGhlIHJlY29tbWVuZGVkIG1heGltdW0gVFdBIG9mIDkwIGRlY2liZWxzLiBJdCBpcyBub3JtYWxseSBhY2NlcHRlZCB0aGF0IGEgVFdBIG5vaXNlIGxldmVsIGV4Y2VlZGluZyA4NSBkQiBmb3IgOCBob3VycyBpcyBoYXphcmRvdXMgYW5kIHBvdGVudGlhbGx5IGRhbWFnaW5nIHRvIHRoZSBpbm5lciBlYXIuIEV4cG9zdXJlIHRvIG5vaXNlIGluIGV4Y2VzcyBvZiAxMTUgZGVjaWJlbHMgd2l0aG91dCBlYXIgcHJvdGVjdGlvbiwgZXZlbiBmb3IgYSBzaG9ydCBkdXJhdGlvbiwgaXMgbm90IHJlY29tbWVuZGVkLjwvcD48ZGl2PlRoZSBmb2xsb3dpbmcgc2NhbGUgaXMgcHJlc2VudGVkIGZvciBwZW9wbGUgbm90IHdlYXJpbmcgaGVhcmluZyBwcm90ZWN0aW9uIGFuZCBzZXRzIG91dCBtYXhpbXVtIHRpbWUgbGltaXRzIG9uZSBjb3VsZCBiZSBleHBvc2VkIHdpdGhvdXQgc3VmZmVyaW5nIHBlcm1hbmVudCBoZWFyaW5nIGxvc3MuIFRoZSBzY2FsZSBhc3N1bWVzIGNvbnN0YW50IHNvdW5kIHdpdGggbm8gZmx1Y3R1YXRpb25zLjwvZGl2PjxkaXY+PGJyPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxpbWcgc3JjPSJodHRwczovL3d3dy5jb3Vyc2V3YXJlLnRyYWluaW5nL2ltYWdlcy9maW5hbC80MzQ2OS5qcGciIGFsdD0iIiBhbGlnbj0iIiBib3JkZXI9IjBweCI+PC9kaXY+PHA+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+Rm9vdG5vdGU6PC9zcGFuPiZuYnNwO1doZW4gdGhlIGRhaWx5IG5vaXNlIGV4cG9zdXJlIGlzIGNvbXBvc2VkIG9mIHR3byBvciBtb3JlIHBlcmlvZHMgb2Ygbm9pc2UgZXhwb3N1cmUgb2YgZGlmZmVyZW50IGxldmVscywgdGhlaXIgY29tYmluZWQgZWZmZWN0IHNob3VsZCBiZSBjb25zaWRlcmVkLCByYXRoZXIgdGhhbiB0aGUgaW5kaXZpZHVhbCBlZmZlY3Qgb2YgZWFjaC48L3A+PGRpdiBhbGlnbj0ibGVmdCI+U2NpZW50aWZpYyBzdHVkaWVzIGluIG5vaXN5IGluZHVzdHJpZXMgc2hvdyB0aGF0IGEgc2lnbmlmaWNhbnQgcmlzayBvZiBoZWFyaW5nIGRhbWFnZSByZW1haW5zIGV2ZW4gd2hlbiBkYWlseSBub2lzZSBleHBvc3VyZXMgYXJlIHJlZHVjZWQgdG8gYW4gOC1ob3VyIGF2ZXJhZ2Ugb2YgODUgZEIoQSkuPC9kaXY+PGRpdiBhbGlnbj0ibGVmdCI+Jm5ic3A7PC9kaXY+PGRpdiBhbGlnbj0ibGVmdCI+QXV0aG9yaXRpZXMgc3VjaCBhcyB0aGUgSW50ZXJuYXRpb25hbCBPcmdhbmlzYXRpb24gZm9yIFN0YW5kYXJkaXNhdGlvbiAoSVNPKSAodGhyb3VnaCBJU08gSW50ZXJuYXRpb25hbCBTdGFuZGFyZCAxOTk5KSBjbGFpbSB0aGF0IHJpc2sgYmVjb21lcyBuZWdsaWdpYmxlIG9ubHkgd2hlbiBleHBvc3VyZXMgYXJlIHJlZHVjZWQgdG8gNzUgLSA4MCBkQihBKS48L2Rpdj48ZGl2IGFsaWduPSJsZWZ0Ij4mbmJzcDs8L2Rpdj48ZGl2IGFsaWduPSJsZWZ0Ij5UaGUgbG93ZXJpbmcgb2YgdGhlIG1heGltdW0gcGVybWlzc2libGUgZXhwb3N1cmUgbGV2ZWwgdG8gODUgZEIoQSkgaXMgdW5kZXIgY29uc2lkZXJhdGlvbiBieSBhIG51bWJlciBvZiBTdGF0ZXMgaW4gQXVzdHJhbGlhLiBJdCBpcyB0aGUgbWF4aW11bSByZWNvbW1lbmRlZCBieSB0aGUgTmF0aW9uYWwgSGVhbHRoIGFuZCBNZWRpY2FsIFJlc2VhcmNoIENvdW5jaWwuIEl0IGlzIGFsc28gdGhlIGxldmVsIHNwZWNpZmllZCBpbiByZWd1bGF0aW9ucyBpbiBOZXcgWmVhbGFuZCwgdGhlIFVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSwgVW5pdGVkIEtpbmdkb20gYW5kIEV1cm9wZS48L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGJyPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjEwLjIwLjEwIEV4cGxhaW4gdGhlIGVmZmVjdHMgb2YgYWdlIGluZHVjZWQgaGVhcmluZyBsb3NzIChwcmVzYnljdXNpcykuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlByZXNieWN1c2lzIGlzIGEgbmF0dXJhbCBsb3NzIG9mIGhlYXJpbmcgYWJpbGl0eSB3aXRoIGluY3JlYXNpbmcgYWdlLCBlc3BlY2lhbGx5IGluIHRoZSBoaWdoZXIgZnJlcXVlbmNpZXMgKGRvd24gYnkgNSUgYnkgYWdlIDYwIGFuZCAxMCUgYnkgYWdlIDcwKTwvc3Bhbj48L2Rpdj48ZGl2Pjxicj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsgY29sb3I6IHJnYigyMSwgMTU1LCAxNjQpOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjEwLjIwLjEyIEV4cGxhaW4gdGhlIGVmZmVjdHMgb2YgcHJlc3N1cmUgY2hhbmdlcyBvbiB0aGUgbWlkZGxlIGVhciBhbmQgZXVzdGFjaGlhbiB0dWJlcy48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjoganVzdGlmeTsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7IHRleHQtYWxpZ246IGxlZnQ7Ij5XaXRoIGFuIGluY3JlYXNlIGluIGFsdGl0dWRlIGFuZCB0aGUgY29ycmVzcG9uZGluZyBkZWNyZWFzZSBpbiBwcmVzc3VyZSwgYW55IHRyYXBwZWQgZ2FzIHRlbmRzIHRvIGV4cGFuZC4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsgdGV4dC1hbGlnbjogbGVmdDsiPlRoZXJlIHdpbGwgYmUgYW4gSU5DUkVBU0UgaW4gcHJlc3N1cmUgZGlmZmVyZW50aWFsIGFjcm9zcyB0aGUgd2FsbCBvZiB3aGF0ZXZlciBpcyB0cmFwcGluZyBpdC4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsgdGV4dC1hbGlnbjogbGVmdDsiPkFzIHRoZSBhaXIgcHJlc3N1cmUgaW5jcmVhc2VzIGFnYWluIHdoZW4gd2UgY29tZSBiYWNrIHRvd2FyZCBlYXJ0aCwgYW55IGdhcyB0aGF0IGlzIHRyYXBwZWQgd2lsbCB0ZW5kIHRvIENPTlRSQUNULCBhbmQgY3JlYXRlcyBhIFZBQ1VVTS48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PldlIGNhbiBleHBlcmllbmNlIHBhaW4gb24gdGhlIGNsaW1iIE9SIHRoZSBkZXNjZW50LCBidXQgYXJlIG1vcmUgbGlrZWx5IHRvIGV4cGVyaWVuY2UgcGFpbiBpbiB0aGUgbWlkZGxlIGVhciAoT3RpYyBCYXJvdHJhdW1hKSBhbmQgc2ludXNlcyBvbiB0aGUgREVTQ0VOVC48L2Rpdj48ZGl2Pjxicj48L2Rpdj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij48aW1nIHNyYz0iaHR0cDovL3d3dy5jb3Vyc2V3YXJlLmNvLm56L2ltYWdlcy9maW5hbC80Mjg3Ny5qcGciIGFsdD0iIiBhbGlnbj0iIiBib3JkZXI9IjBweCI+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiByZ2IoMjEsIDE1NSwgMTY0KTsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MTAuMjAuMTQgRXhwbGFpbiB0aGUgZWZmZWN0cyBvZiBjb2xkczsgaGF5IGZldmVyOyBhbmQvb3IgYWxsZXJnaWVzIG9uIHRoZSBzaW51c2VzIGFuZCBldXN0YWNoaWFuIHR1YmVzLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+QSBjb2xkIGlzIGEgdmlyYWwgaWxsbmVzcyB0aGF0IHVzdWFsbHkgbGFzdHMgdGhyZWUgdG8gZml2ZSBkYXlzLiZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPlRoZXJlIGlzIG5vIHByb3ZlbiBjdXJlLCBvciBzdXJlIHdheSB0byBwcmV2ZW50IGdldHRpbmcgYSBjb2xkLCBpdCZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPndpbGwgbWFrZSB0aGUgcGlsb3QgbGVzcyBhYmxlIHRvIHRoaW5rIGFuZCByZWFjdCBkZWNpc2l2ZWx5LCBwYXJ0aWN1bGFybHkgaW4gYW4gZW1lcmdlbmN5Ljwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMy4zMzMzcHg7Ij48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMy4zMzMzcHg7IGZvbnQtZmFtaWx5OiBBcmlhbDsiPkEgY29sZCB3aWxsIGNhdXNlIGNvbmdlc3Rpb24gaW4gdGhlIG5vc2UsIHNpbnVzZXMgYW5kIGVhcnMuPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij5JbiBwYXJ0aWN1bGFyIGEgY29sZCBjYW4gYmxvY2sgdGhlIEV1c3RhY2hpYW4gdHViZXMgdGhhdCBjb25uZWN0IHRoZSBiYWNrIG9mIHRoZSB0aHJvYXQgdG8gdGhlIGluc2lkZSBvZiBlYWNoIGVhcmRydW0gYW5kIGNhbiBhbHNvIGxlYWQgdG8gYmxvY2tlZCBzaW51c2VzLjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+SWYgdGhlc2UgYmVjb21lIGJsb2NrZWQgdGhlIHBpbG90IHdpbGwgYmUgdW5hYmxlIHRvIGVxdWFsaXNlIHRoZSBwcmVzc3VyZXMgaW5zaWRlIGFuZCBvdXRzaWRlIHRoZSBlYXJzIGR1cmluZyB0aGUgY2xpbWIgb3IgZGVzY2VudCwgYW5kIHNldmVyZSBwYWluIGNhbiByZXN1bHQgYmVjYXVzZSBvZiB0aGUgdHJhcHBlZCBhaXIgd2l0aGluIHRoZW0uPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMy4zMzMzcHg7IGZvbnQtZmFtaWx5OiBBcmlhbDsiPklmIHRoZSBlYXJkcnVtIHJ1cHR1cmVzIHRoaXMgY2FuIGxlYWQgdG8gcHJvYmxlbXMgd2l0aCBoZWFyaW5nIGFuZCB1bmZpdG5lc3MgdG8gZmx5IGxhc3Rpbmcgc2V2ZXJhbCBtb250aHMgb3IgbG9uZ2VyLjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+UGlsb3RzIGFyZSB0aGVyZWZvcmUgYWR2aXNlZCBub3QgdG8gZmx5IHdoZW4gdGhleSBoYXZlIGEgaGVhdnkgY29sZC48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMy4zMzMzcHg7IGZvbnQtZmFtaWx5OiBBcmlhbDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMy4zMzMzcHg7IGZvbnQtZmFtaWx5OiBBcmlhbDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PGltZyBzcmM9Imh0dHBzOi8vd3d3LmNvdXJzZXdhcmUudHJhaW5pbmcvaW1hZ2VzL2ZpbmFsLzQzNDc2LmpwZyIgYWx0PSIiIGFsaWduPSIiIGJvcmRlcj0iMHB4Ij48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsgZm9udC1mYW1pbHk6IEFyaWFsOyI+SWYgdGhlIGNvbGQgaXMgbGlnaHQgb3IgdGhlIHBpbG90IGlzIHJlY292ZXJpbmcgZnJvbSBhIGNvbGQgYSBnb29kIHByZS1mbGlnaHQgdGVzdCBvZiBmaXRuZXNzIHRvIGZseSBpcyB0byBzZWUgd2hldGhlciB0aGUgcGlsb3QgY2FuIGNsZWFyIHRoZSBlYXJzIHVzaW5nIHRoZSBWQUxTQUxWQSBNQU5PRVVWUkUuPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij5UaGUgcGlsb3QgcGluY2hlcyB0aGUgbm9zZSwgdGlsdHMgdGhlIGhlYWQgYmFjayBzbGlnaHRseSwgYW5kIHN3YWxsb3dzLCBjYXVzaW5nIHRoZSBlYXJzIHRvIHBvcC4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMy4zMzMzcHg7Ij5JZiB0aGUgZWFycyBjYW5ub3QgYmUgY2xlYXJlZCBpbiB0aGlzIHdheSBvciBjYW4gb25seSBiZSBjbGVhcmVkIHdpdGggbXVjaCBkaWZmaWN1bHR5IHRoZSBwaWxvdCBzaG91bGQgbm90IGZseS48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+SGF5IEZldmVyPC9zcGFuPjwvZGl2PjxkaXY+PGJyPjwvZGl2PjxkaXY+SGF5IGZldmVyIGlzIHVzdWFsbHkgY2F1c2VkIGJ5IGFuIGFsbGVyZ3kgdG8gc29tZXRoaW5nIGxpa2UgcG9sbGVuLCB3aGljaCBpcyBicmVhdGhlZCBpbi48L2Rpdj48ZGl2Pjxicj48L2Rpdj48ZGl2Pkl0IGNhdXNlcyBjb25nZXN0aW9uIG9mIHRoZSBub3NlIGFuZCBzaW51c2VzLCBhbmQgc3ltcHRvbXMgc2ltaWxhciB0byBhIGNvbGQuPC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj5JdCBjYW4gYmUgdHJvdWJsZXNvbWUgdG8gYSBwaWxvdCBpbiB0aGUgc2FtZSB3YXkgYSBjb2xkIGNhbiwgYW5kIG1heSBsZWFkIHRvIGJsb2NrZWQgc2ludXNlcyBhbmQgYmxvY2tlZCBvciBidXJzdCBlYXJkcnVtcy4mbmJzcDtVbmxpa2UgYSBjb2xkLCBoYXkgZmV2ZXIgY2FuIGJlIHRyZWF0ZWQsIHVzaW5nIGFuIGFwcHJvdmVkIFNURVJPSUQgTkFTQUwgU1BSQVkuPC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj5BTlRJLUhJU1RBTUlORSBwaWxscyBsaWtlIENvbGRyZXggYXJlIG5vdCB0byBiZSB1c2VkIGFzIHRoZXkgbGVhZCB0byBzbGVlcGluZXNzIGFuZCBpbmF0dGVudGlvbi48L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PC9kaXY+PHRhYmxlIHN0eWxlPSJib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDogNzAwcHg7IGJvcmRlcjogbm9uZTsiIHdpZHRoPSIiIGFsaWduPSIiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXI6IG5vbmU7Ij48YnI+PGJyPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+ZAIJDxYCHwEFnAQ8dGFibGUgYm9yZGVyPSIwIiBzdHlsZT0id2lkdGg6MTAwJTtib3JkZXItd2lkdGg6MXB4O2JvcmRlci1zdHlsZTpzb2xpZDtib3JkZXItY29sb3I6IzAwMDAwMDsiIGNlbGxwYWRkaW5nPSI1IiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0iYm9keXRleHQiIGFsaWduPSJsZWZ0Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0MiIgYWx0PSJTSE9SVCBURVNUIDEwLjE4IiB0aXRsZT0iU0hPUlQgVEVTVCAxMC4xOCI+UHJldiBQYWdlPC9hPjwvdGQ+PCEtLTx0ZCBjbGFzcz0iYm9keXRleHQiIGFsaWduPSJjZW50ZXIiPlBhZ2UgMTggb2YgNTAgKDEwLjIwIEhlYXJpbmcgYW5kIEJhbGFuY2UpPC90ZD4vLy0tPjx0ZCBjbGFzcz0iYm9keXRleHQiIGFsaWduPSJyaWdodCI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NiIgYWx0PSIxMC4yMiBTcGFjaWFsIE9yaWVudGF0aW9uIiB0aXRsZT0iMTAuMjIgU3BhY2lhbCBPcmllbnRhdGlvbiI+TmV4dCBQYWdlPC9hPjwvdGQ+PC90YWJsZT5kZPXGrvNjERJ/guW85voqStzDhqkMYlPK+jjfPej1Vi5H">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="10.20_files/WebResource.js" type="text/javascript"></script>
+
+
+<script src="10.20_files/ScriptResource.js" type="text/javascript"></script>
+<script src="10.20_files/ScriptResource_002.js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="832A5EF1">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tpnlCookies',''], [], [], 90, '');
+//]]>
+</script>
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td style="text-align:left;background:#000000;"><img src="10.20_files/wtdjtdbf_1%20StoneyCoursetop2.jpg"></td></tr></tbody></table>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:168px;background-image:URL('/images/common/topmenubacker.gif');background-repeat:repeat-X;height:17px;"><img alt="" src="10.20_files/spacer.gif" width="168" height="17"><br></td><td style="width:100%;background-image:URL('/images/common/topmenubacker.gif');background-repeat:repeat-X;height:17px;padding:1px 0px 0px 0px;" id="topmenuitems"><div style="float:left;margin:0px 20px 0px 0px;padding:1px 1px 1px 1px;height:13px;" onmouseover="this.style.background='#FFFFFF';this.style.cursor='hand';" onmouseout="this.style.background='';"><img alt="" src="10.20_files/red_bullet.gif" align="middle" style="border-style:none;">&nbsp;<a href="javascript:popfeedback(40328);">Course Feedback</a></div><div style="float:left;margin:0px 20px 0px 0px;padding:1px 1px 1px 1px;height:13px;" onmouseover="this.style.background='#FFFFFF';this.style.cursor='hand';" onmouseout="this.style.background='';"><img alt="" src="10.20_files/red_bullet.gif" align="middle" style="border-style:none;">&nbsp;<a href="javascript:viewCourseTerms(40328);">Terms &amp; Conditions</a></div></td></tr></tbody></table>
+    
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%; height:90%;">
+		<tbody><tr style="height:100%;">
+				<td align="left" class="leftmenuitems" valign="top" style="height:100%; width:170px; background:#000000;">
+				    <table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><br><img src="10.20_files/FFFFFF.gif"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><br><a href="https://www.courseware.training/">Home/Menu Page</a><br></td></tr></tbody></table><br><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.20_files/CCCC66.gif" align="absmiddle"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="javascript:showhide('Menu_40328_42633');" onclick="document.getElementById('setterFrame').src = '/setter.aspx?Menu_40328_42633';"><span class="leftmenuitems2">PPL Human Factors</span></a><br></td></tr></tbody></table><table id="Menu_40328_42633" style="display:block;"><tbody><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52649&amp;mid=42633">PPL Human Factors Intro</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52545&amp;mid=42633">Syllabus</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52546&amp;mid=42633">10.2 Airmanship and Responsibility</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62772&amp;mid=42633">10.4 Human Factors Models and Programmes</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39638">SHORT TEST 10.2</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52548&amp;mid=42633">10.6 Atmosphere</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62773&amp;mid=42633">10.8 Circulation and Respiratory Systems</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39639">SHORT TEST 10.6</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52549&amp;mid=42633">10.10 Hypoxia</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62774&amp;mid=42633">10.12 Hyperventilation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39640">SHORT TEST 10.10</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52547&amp;mid=42633">10.14 Entrapped Gasses</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62775&amp;mid=42633">10.16 Decompression Sickness</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39641">PPL HF 10.14</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52551&amp;mid=42633">10.18 Vision</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52552&amp;mid=42633">10.18 Visual Perception</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39642">SHORT TEST 10.18</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52553&amp;mid=42633">10.20 Hearing and Balance</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62776&amp;mid=42633">10.22 Spacial Orientation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39643">SHORT TEST 10.20</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52556&amp;mid=42633">10.24 Gravitational Forces</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62777&amp;mid=42633">10.26-28 Motion Sickness, Flight Anxiety</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39644">SHORT TEST 10.24</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52557&amp;mid=42633">10.30 Fitness to Fly</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62778&amp;mid=42633">10.32-34 Alcohol and Drugs, Blood Donation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39645">SHORT TEST 10.30</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52550&amp;mid=42633">10.36 Environmental Hazards</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39646">SHORT TEST 10.36</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52558&amp;mid=42633">10.38 Stress Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39647">SHORT TEST 10.38</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=54269&amp;mid=42633">10.40 Sleep and Fatigue </a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39648">SHORT TEST 10.40</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62779&amp;mid=42633">10.42 Aging</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52559&amp;mid=42633">10.44 Information Processing</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39649">SHORT TEST 10.44</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=57885&amp;mid=42633">10.46 Situational Awareness</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=42980">SHORT TEST 10.46</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52560&amp;mid=42633">10.48 Judgement and Decision Making</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39650">SHORT TEST 10.48</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52561&amp;mid=42633">10.50 Flight Deck Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39651">SHORT Test 10.50</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52562&amp;mid=42633">10.52 Threat and Error Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62781&amp;mid=42633">10.54 Culture</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39652">SHORT TEST 10.52</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52563&amp;mid=42633">10.60 Instrumentation, Displays and Alerts</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62783&amp;mid=42633">10.62 Documentation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39653">SHORT TEST 10.62</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52564&amp;mid=42633">10.64 First Aid</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62785&amp;mid=42633">10.66 Survival</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39654">SHORT TEST 10.64</a><br></td></tr></tbody></table><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.20_files/CCCC66.gif" align="absmiddle"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39655">PRACTICE EXAMS</a><br></td></tr></tbody></table><br><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.20_files/CCCC66.gif" align="absmiddle"></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="javascript:popfeedback(40328);">Course Feedback</a></td></tr></tbody></table>
+				    <br>
+					<iframe src="10.20_files/setter.html" id="setterFrame" width="0" height="0" style="visibility: hidden;"></iframe>
+                    <!-- document.getElementById(iframeId).src = url; -->
+					<div id="pnlCookies">
+
+</div>
+				</td>
+				<td valign="top" style="padding: 20px 20px 20px 20px;" align="left">
+				    <div class="bodytext" style="width:680px;" id="PageContent">
+                        <div><table width="" align="" style="border-collapse: collapse; width: 700px; border: none;"><tbody><tr><td style="border: none;"><div style="text-align: center;"><table width="" align="" style="width: 697px; border-collapse: collapse; background-image: url(&quot;http://www.courseware.co.nz/images/final/42893.jpg&quot;); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0% 0%; background-repeat: initial;"><tbody><tr><td style="border-top: 1px solid rgb(0, 0, 0); text-align: center; vertical-align: middle; letter-spacing: 0px;"><span style="font-family: Arial;"><div style="font-size: 10pt;"><span style="color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: rgb(255, 255, 255); font-size: 10pt; letter-spacing: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></div><div><span style="font-size: 14pt; color: rgb(255, 255, 255); letter-spacing: 0px;">10.20&nbsp; Hearing and Balance</span></div><br></span></td></tr></tbody></table></div></td></tr></tbody></table><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.2 Describe the anatomy of the ear.</span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-family: Arial; font-weight: bold;"><span style="font-size: 10pt;">Basic Anatomy of the ear<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt;">The ear is the organ of hearing and balance. The parts of the ear include:</span></span></p><p style="text-align: center; margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><img height="265" src="10.20_files/HpPic21.gif" width="399" style="font-family: Arial; font-size: 13.3333px;"></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;"><br></span></span></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;"><br></span></span></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">External or outer ear,</span><span class="apple-converted-space" style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">consisting of:<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Pinna or auricle</span><span style="font-family: Arial; font-size: 10pt;">. This is the outside part of the ear.<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">External auditory canal or tube.<span class="apple-converted-space" style="font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">This is the tube that connects the outer ear to the inside or middle ear.<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Tympanic membrane</span><span class="apple-converted-space" style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">(also called the eardrum).<span class="apple-converted-space" style="font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">The tympanic membrane divides the external ear from the middle ear.</span></span><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">&nbsp;</span></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Middle ear</span><span class="apple-converted-space" style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">(tympanic cavity),&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">consisting of:<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Ossicles.&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">Three small bones that are connected and transmit the sound waves to the inner ear. The bones are called:<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 72pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-family: Arial;"><span style="font-size: 10pt;">Malleus<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 72pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-family: Arial;"><span style="font-size: 10pt;">Incus<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 72pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-family: Arial;"><span style="font-size: 10pt;">Stapes<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Eustachian tube</span><span style="font-family: Arial; font-size: 10pt;">.&nbsp;A
+ canal that links the middle ear with the back of the nose. The 
+eustachian tube helps to equalise the pressure&nbsp;in the middle 
+ear.&nbsp;Equalised pressure is needed&nbsp;for the proper transfer of 
+sound waves. The eustachian tube is lined with mucous, just like the 
+inside of the nose and throat.</span></span><span style="font-size: 10pt; font-family: Arial; font-weight: bold;">&nbsp;</span></p><p style="margin: 0cm 0cm 7.5pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Inner ear</span><span style="font-family: Arial; font-size: 10pt;">, consisting of:<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Cochlea<span class="apple-converted-space" style="font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">(contains the nerves for hearing)<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Vestibule<span class="apple-converted-space" style="font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">(contains receptors for balance)<o:p></o:p></span></span></p><p style="margin: 0cm 0cm 7.5pt 36pt; font-family: &quot;Times New Roman&quot;; line-height: 15pt; font-stretch: normal;"><span style="font-size: 10pt;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Semicircular canals<span class="apple-converted-space" style="font-size: 10pt;">&nbsp;</span></span><span style="font-family: Arial; font-size: 10pt;">(contain receptors for balance)</span></span></p></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.4&nbsp;</span><span style="font-size: 16px; font-weight: 700;">Describe the physiology of the ear.</span></div><div style="font-family: Arial;"><p align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">The
+ ear performs two quite different functions. It is used to detect sounds
+ by receiving vibrations in the air, and secondly, it is responsible for
+ balance and sensing acceleration. It is necessary to have a basic 
+appreciation of how the ear works.</span></p><p align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">The
+ human auditory system is an engineering marvel. It converts sound 
+energy to mechanical energy to electrical energy. The outer ear collects
+ sound waves and channels them to the middle ear via the eardrum. Three 
+tiny bones (the ossicles) convert the sound waves into vibrational 
+energy. This energy, in turn, is transmitted via the fluid of the inner 
+ear to the cochlea where it is transformed into nerve impulses. These 
+nerve impulses are transmitted to the brain for interpretation and 
+recognition.</span></p><p align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></p><p align="center" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><img height="234" src="10.20_files/Hearing-Animation[1].gif" width="300"></span></p><div align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">The
+ middle ear also contains two muscles which help to protect the ear from
+ sounds above 80 dB by means of the acoustic or aural reflex, reducing 
+the noise level by up to 20 dB. However, this protection can only be 
+provided for a maximum of about 15 minutes, and does not provide 
+protection against sudden impulse noise such as gunfire. It does explain
+ why a person is temporarily ‘deafened’ for a few seconds after a sudden
+ loud noise.</span></div><div align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br>The
+ middle ear is usually filled with air which is refreshed by way of the 
+eustachian tube which connects this part of the ear with the back of the
+ nose and mouth.</span></div><div align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><p align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif; text-align: center;"><span style="font-family: Arial; font-size: 10pt;"><img height="291" src="10.20_files/airtube.gif" width="412"></span></p><p align="left" style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">However, this tube can allow mucus to travel to the middle ear which can build up, interfering with normal hearing.</span></p></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.6 Describe the effect of prolonged noise exposure on hearing.</span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif; text-align: center;"><div style="text-align: left;"><p align="center"><span style="font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;">Sound</span></p><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">The
+ human auditory system is extremely sensitive and responds to a wider 
+range of stimuli than any of the other senses. The softest sound that we
+ can hear moves the eardrum a distance equivalent to the diameter of a 
+hydrogen molecule. If we assume that the softest sound that we can hear 
+is at 0 dB and the upper limit is 132 dB (the point of pain), then we 
+can hear 32 X 1012 or 32 trillion sounds.</span></p><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Sound
+ intensity is measured in units of sound pressure level (SPL). To handle
+ sound measurements and calculations over a range of 32 trillion units, a
+ logarithmic scale is used.<br><br>The units of this scale are decibels 
+(dB). When measuring sound for human hearing applications, typically an 
+"A" weighted scale is used. This approximates the response of the human 
+auditory system to sound frequency.<br><br>Because decibels are on a 
+log-scale: a 3 dB increase equates to twice as much sound (power); a 6 
+dB increase 4 times as much; 60 dB increase is one-million times more 
+power, and a 120 dB increase is one-million times one-million as much 
+power. The following are examples of the sound pressure levels in 
+decibels of familiar sounds.</span></p></div></div><blockquote style="font-family: calibri, verdana, arial, helvetica, sans-serif; margin: 0px 0px 0px 40px; border: none; padding: 0px;"><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-weight: bold;">•&nbsp;<span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">140 dB - Jet aircraft start<br>• 130 dB - Pain threshold<br>• 120 dB - Propeller aircraft start<br>• 110 db - Rock band (amplified)<br>• 100 dB - Power chain saw<br>• 90 dB - Disco<br>• 80 dB - Circular Saw<br>• 70 dB - Road traffic/factory floor (heavy industry)<br>• 60 dB - Normal conversation<br>• 50 dB - Office environment<br>• 40 dB - Living room<br>• 30 dB - Whisper<br>• 20 dB - Bedroom<br>• 10 db - Recording studio<br>• 15 dB - Threshold of hearing<br>• 0 dB - Acute threshold of hearing (weakest sound detectable)</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 130 dB - Pain threshold</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 120 dB - Propeller aircraft start</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 110 db - Rock band (amplified)</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 100 dB - Power chain saw</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 90 dB - Disco</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 80 dB - Circular Saw</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 70 dB - Road traffic/factory floor (heavy industry)</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 60 dB - Normal conversation</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 50 dB - Office environment</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 40 dB - Living room</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 30 dB - Whisper</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 20 dB - Bedroom</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 10 db - Recording studio</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 15 dB - Threshold of hearing</span></div></div></div><div style="text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">• 0 dB - Acute threshold of hearing (weakest sound detectable)</span></div></div></div></blockquote><div style="font-family: calibri, verdana, arial, helvetica, sans-serif; text-align: center;"><div style="text-align: left;"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span></div><div align="left"><span style="font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div align="left"><span style="font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;">Loudness</span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span></div><div align="left"><span style="font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span></div><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Loudness is a sensation which depends greatly on a number of variables, including the sound frequencies being heard.</span></div><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">The
+ number of vibrations that are produced per second is called frequency. 
+Frequency varies for each sound and is measured in hertz. One hertz is 
+equal to one vibration per second. A sound with a low frequency will 
+have a low pitch, such as a human's heartbeat. A sound with a high 
+frequency will have a high pitch, such as a dog whistle. Humans cannot 
+hear sounds of every frequency. The range of hearing for a healthy young
+ person is 20 to 20,000 hertz. The sounds of speech are in the range of 
+250 Hz to 4000 Hz.</span></p><div align="center"><img height="290" src="10.20_files/HpPic22.gif" width="416"></div><div align="center">&nbsp;</div><div align="center"><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Sounds
+ of different frequency and the same intensity do not seem equally loud 
+to us. We are more sensitive to some frequencies than to others. This 
+means we can hear these frequencies more easily, or at lower intensity</span></div><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Here is a graph that shows this more clearly:</span></p><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></p><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><img height="261" src="10.20_files/HpPic23.gif" width="397"></span></p><p align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">The
+ frequencies most easily heard are from 2000 to 5000Hz, the upper range 
+of speech. On this graph, a 1000Hz sound at 80 dB is taken as a loudness
+ standard. All other frequencies at the dB levels on the line sound 
+equally loud.</span></p><p align="left"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Noise</span></p><div style="text-align: left;"><span style="font-family: Arial; font-size: 10pt;">Noise is unwanted sound energy. It is measured in decibels.</span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 10pt;">If loud enough or if present for prolonged periods noise can permanently damage human hearing.</span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><iframe width="560" height="315" src="10.20_files/_USQgoFMyF8.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><div style="text-align: left;"><span style="font-family: Arial; font-size: 13.3333px; font-weight: bold;"><br></span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 13.3333px; font-weight: bold;">Noise Induced Hearing Loss</span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="text-align: start;"><div><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Excessive
+ noise exposure can cause noise induced hearing loss (NIHL). Such loss 
+can occur gradually over a number of years or occur as the result of a 
+one time acoustic trauma.&nbsp;</span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">Noise induced hearing loss begins subtly and is often not recognised by the individual.&nbsp;</span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br><br><span style="font-weight: bold;">• NIHL</span>&nbsp;-&nbsp;</span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">NIHL
+ is a type of sensorineural hearing loss caused by exposure to loud 
+sounds over time or a single, very loud impulse sound. The damage occurs
+ in the cochlea, a snail-shaped part of the inner ear. Inside the 
+cochlea are thousands of tiny, delicate hair cells. These&nbsp;<span style="font-weight: bold;">cochlea hair cells</span>&nbsp;vibrate
+ in response to sound waves and convert them into electrical signals 
+that are sent to the brain to be interpreted as sound. When exposed to 
+loud noise, these hair cells become overstimulated and can be bent or 
+even destroyed. Unfortunately, once these cells are damaged in humans, 
+they do not grow back. The damage from noise exposure is cumulative, 
+meaning each exposure can cause more harm.</span></div><div><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span id="docs-internal-guid-b72416e6-7fff-62c7-460c-fa1d560a06d1"><div><span style="font-family: Arial; font-size: 10pt;">Prolonged exposure over a number of years to relatively low levels of noise (70 – 80 dB) can lead to&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">noise induced hearing loss and is the most important form of hearing loss in aviation.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div>The
+ first indication is a temporary shift in hearing ability before and 
+after exposure. This is termed a temporary threshold shift (TTS). It is 
+termed "temporary" because hearing returns to normal after a period of 
+time away from the noise that caused the shift. However, over time with 
+repeated exposure, the temporary threshold shift become a permanent 
+threshold shift (PTS). PTS is permanent, irreversible sensorineural 
+loss.</div></span></span></div></div><div style="text-align: start;"><p style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-weight: bold;">• Acoustic Trauma</span>&nbsp;-
+ Hearing loss due to acoustic trauma is caused by head or ear trauma or a
+ one time exposure to a very intense sudden noise, such as an explosion.
+ The eardrum can be perforated or the middle ear ossicles affected. 
+Usually, this type of hearing loss is temporary and recoverable.</p></div><div style="text-align: start;"><span style="font-family: Arial; font-size: 10pt;">Exposure to moderate amounts of noise (90 – 100 dB) for a short time can lead to a temporary reduction in hearing ability.&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">If the noise is then avoided, hearing will return to normal over the next 12 hours.</span></div><div style="text-align: start;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="text-align: start;"><span style="font-family: Arial; font-size: 13.3333px;">Exposure
+ to very loud noises (150 dB or greater) will instantly damage the ear’s
+ hearing mechanisms and can cause immediate pain and permanent hearing 
+loss.</span><span style="font-family: Arial; font-size: 10pt;"><br></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br><span style="font-weight: bold;">• Age&nbsp;</span>-
+ The hearing range of humans gets worse with age. People lose the 
+ability to hear sounds of high frequency as they get older. Also, the 
+hearing range for men worsens more quickly than the hearing range for 
+women. This means that women will have the ability to hear notes of 
+higher pitch than men of the same age do.</span></div><div style="text-align: start;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div style="text-align: start;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-weight: bold;"></span></span></div><div style="text-align: start;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-weight: bold;">Audiogram</span></span></div><p style="text-align: start;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">The
+ generally accepted way of assessing someone’s hearing is with an 
+audiogram. This is a relatively simple procedure where an individual 
+listens for sounds transmitted at varying frequencies and volumes. The 
+results are typically displayed as a graph similar to the example below:<br></span></p><p style="text-align: start;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></p><p align="left"><img height="308" src="10.20_files/HpPic25.gif" width="461"></p><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">This
+ graph shows hearing loss as a function of frequency as measured by an 
+audiometer. 0 dB on an audiogram denotes the hearing threshold level 
+regarded as the normal audiometric standard at that frequency. Points 
+below 0 on the scale denote louder threshold levels, whereas those 
+above, expressed in negative decibels with respect to the zero level, 
+are less intense levels which, because of individual hearing 
+differences, some people may normally hear.</span></div></div></div></div></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.8 Describe methods of protecting hearing.</span></div><div style="font-family: Arial;"><p style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">The
+ good news is that noise induced hearing loss (NIHL) is preventable. To 
+prevent NIHL, exposure must be controlled at work and also in home, 
+leisure, and other environments.<br><br>While most workers understand 
+that exposure to damaging noise can occur in the work place, many do not
+ realize the potential for damage in non-work exposures. Use of lawn 
+mowers, tractors, leaf and snow blowers, saws, sanders, grinders, 
+off-terrain vehicles, snow mobiles, motorcycles, power boats, and 
+attendance at rock concerts--are all activities that can induce hearing 
+loss.<br><br>Measures to prevent hearing loss are:<br><br>• Avoid exposure to high noise levels,<br><br>•
+ Wear well-fitting ear plugs or high quality protective earmuffs when in
+ high noise environments--this includes home and recreational 
+activities. Ear plugs that are individually fitted are best.</span></p><p style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></p><p align="left" style="text-align: center; font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><img height="248" src="10.20_files/HpPic26.jpg" width="216"><img height="155" src="10.20_files/HpPic27.jpg" width="150"><img height="164" src="10.20_files/HpPic28.jpg" width="129"></span></p></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 10pt; font-weight: bold;">Levels of noise in decibels at which various grades of hearing protection are required.</span></div><div style="font-family: Arial;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div style="font-family: Arial;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">When
+ noise levels exceed 100dBA, wear both earplugs and earmuffs. Noise 
+levels can be reduced (attenuated) by up to 20 decibels using ear plugs 
+and 40 decibels using ear muffs. However, using ear protection will tend
+ to adversely interfere with verbal communication. Despite this, it must
+ be used consistently and as instructed to be effective.</span></div><div style="font-family: Arial;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">A
+ good headset will help prevent noise induced hearing loss and is a 
+worthwhile investment. Headsets may be graded on a scale of 1-5, with 1 
+being poor and 5 being very good, in terms of noise reduction.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 13.3333px; font-weight: bold;">Grades of hearing protection.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 13.3333px; font-weight: bold;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-size: 13.3333px; font-family: Arial;">Hearing
+ protection is no longer graded. Grades 1-5 have been replaced with 
+Class 1-5 . Hearing protection devices are classed according to their 
+efficiency in protecting hearing, and higher graded equipment is 
+necessary as the level of exposure increases. The following table is 
+offered as a guide:</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif; text-align: center;"><img src="10.20_files/43470.jpg" alt="" align="" border="0px"></div></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-weight: bold;"><span style="font-size: 10pt;">Noise levels at which hearing damage may occur.</span></span></div><div style="font-family: Arial;"><span style="font-weight: bold;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">Noise induced hearing damage depends on:<br><br></div></span></div></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">• Noise level and spectrum,</div></span></div></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">• Exposure duration,</div></span></div></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">• Daily exposure,</div></span></div></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">• Cumulative years of exposure,</div></span></div></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><div align="left">• Individual susceptibility.</div></span></div></div></blockquote><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><p align="left">Some
+ common rules of thumb for managers wanting to estimate whether 
+potentially hazardous noise levels exist in their workplaces are:<br><br></p></span></div></div><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><p align="left">• If noise levels are as loud as or louder than heavy city traffic;</p></span></div></div></blockquote><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><p align="left">• If voices have to be raised to communicate with someone about 1 metre away;</p></span></div></div></blockquote><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px;"><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><p align="left">• If people who have worked in the noise for a while seem to be a bit deaf.</p></span></div></div></blockquote><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><p align="left">The combination of duration and intensity of noise can be described as&nbsp;<span style="font-weight: bold;">noise dose.</span>&nbsp;Exposure
+ to any sound over 80 dB constitutes a noise dose, and can be measured 
+over the day as an 8 hour Time Weighted Average sound level (TWA).</p><p>For
+ example, a person subjected to 95 decibels for 3.5 hours, then 105 
+decibels for 0.5 hours, then 85 decibels for 4 hours, results in a TWA 
+of 93.5 which exceeds the recommended maximum TWA of 90 decibels. It is 
+normally accepted that a TWA noise level exceeding 85 dB for 8 hours is 
+hazardous and potentially damaging to the inner ear. Exposure to noise 
+in excess of 115 decibels without ear protection, even for a short 
+duration, is not recommended.</p><div>The following scale is presented 
+for people not wearing hearing protection and sets out maximum time 
+limits one could be exposed without suffering permanent hearing loss. 
+The scale assumes constant sound with no fluctuations.</div><div><br></div><div style="text-align: center;"><img src="10.20_files/43469.jpg" alt="" align="" border="0px"></div><p><span style="font-weight: bold;">Footnote:</span>&nbsp;When
+ the daily noise exposure is composed of two or more periods of noise 
+exposure of different levels, their combined effect should be 
+considered, rather than the individual effect of each.</p><div align="left">Scientific
+ studies in noisy industries show that a significant risk of hearing 
+damage remains even when daily noise exposures are reduced to an 8-hour 
+average of 85 dB(A).</div><div align="left">&nbsp;</div><div align="left">Authorities
+ such as the International Organisation for Standardisation (ISO) 
+(through ISO International Standard 1999) claim that risk becomes 
+negligible only when exposures are reduced to 75 - 80 dB(A).</div><div align="left">&nbsp;</div><div align="left">The
+ lowering of the maximum permissible exposure level to 85 dB(A) is under
+ consideration by a number of States in Australia. It is the maximum 
+recommended by the National Health and Medical Research Council. It is 
+also the level specified in regulations in New Zealand, the United 
+States of America, United Kingdom and Europe.</div></span></div></div><div style="font-family: Arial;"><br></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.10 Explain the effects of age induced hearing loss (presbycusis).</span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">Presbycusis
+ is a natural loss of hearing ability with increasing age, especially in
+ the higher frequencies (down by 5% by age 60 and 10% by age 70)</span></div><div><br></div></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold; color: rgb(21, 155, 164);"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.12 Explain the effects of pressure changes on the middle ear and eustachian tubes.</span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><div style="text-align: justify;"><span style="font-size: 10pt; text-align: left;">With an increase in altitude and the corresponding decrease in pressure, any trapped gas tends to expand.&nbsp;</span><span style="font-size: 10pt; text-align: left;">There will be an INCREASE in pressure differential across the wall of whatever is trapping it.&nbsp;</span><span style="font-size: 10pt; text-align: left;">As
+ the air pressure increases again when we come back toward earth, any 
+gas that is trapped will tend to CONTRACT, and creates a VACUUM.</span></div><div><span style="font-size: 10pt;"><br></span></div><div>We
+ can experience pain on the climb OR the descent, but are more likely to
+ experience pain in the middle ear (Otic Barotrauma) and sinuses on the 
+DESCENT.</div><div><br></div></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif; text-align: center;"><img src="10.20_files/42877.jpg" alt="" align="" border="0px"></div></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold; color: rgb(21, 155, 164);"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.20.14 Explain the effects of colds; hay fever; and/or allergies on the sinuses and eustachian tubes.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-size: 13.3333px; font-family: Arial;">A cold is a viral illness that usually lasts three to five days.&nbsp;</span><span style="font-family: Arial; font-size: 13.3333px;">There is no proven cure, or sure way to prevent getting a cold, it&nbsp;</span><span style="font-family: Arial; font-size: 13.3333px;">will make the pilot less able to think and react decisively, particularly in an emergency.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><div><span style="font-family: Arial; font-size: 13.3333px;"></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">A cold will cause congestion in the nose, sinuses and ears.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">In
+ particular a cold can block the Eustachian tubes that connect the back 
+of the throat to the inside of each eardrum and can also lead to blocked
+ sinuses.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">If
+ these become blocked the pilot will be unable to equalise the pressures
+ inside and outside the ears during the climb or descent, and severe 
+pain can result because of the trapped air within them.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">If the eardrum ruptures this can lead to problems with hearing and unfitness to fly lasting several months or longer.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;">Pilots are therefore advised not to fly when they have a heavy cold.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div style="text-align: center;"><img src="10.20_files/43476.jpg" alt="" align="" border="0px"></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">If
+ the cold is light or the pilot is recovering from a cold a good 
+pre-flight test of fitness to fly is to see whether the pilot can clear 
+the ears using the VALSALVA MANOEUVRE.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div><div><span style="font-size: 13.3333px; font-family: Arial;">The pilot pinches the nose, tilts the head back slightly, and swallows, causing the ears to pop.&nbsp;</span><span style="font-family: Arial; font-size: 13.3333px;">If the ears cannot be cleared in this way or can only be cleared with much difficulty the pilot should not fly.</span></div></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 13.3333px;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 13.3333px;"><div><span style="font-weight: bold;">Hay Fever</span></div><div><br></div><div>Hay fever is usually caused by an allergy to something like pollen, which is breathed in.</div><div><br></div><div>It causes congestion of the nose and sinuses, and symptoms similar to a cold.</div><div><br></div><div>It
+ can be troublesome to a pilot in the same way a cold can, and may lead 
+to blocked sinuses and blocked or burst eardrums.&nbsp;Unlike a cold, 
+hay fever can be treated, using an approved STEROID NASAL SPRAY.</div><div><br></div><div>ANTI-HISTAMINE pills like Coldrex are not to be used as they lead to sleepiness and inattention.</div></span></div></div></div><table style="border-collapse: collapse; width: 700px; border: none;" width="" align=""><tbody><tr><td style="border: none;"><br><br></td></tr></tbody></table>
+				        
+                        <br>
+                        
+                        <br>
+                        <table border="0" style="width:100%;border-width:1px;border-style:solid;border-color:#000000;" cellpadding="5" cellspacing="0"><tbody><tr><td class="bodytext" align="left"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39642" alt="SHORT TEST 10.18" title="SHORT TEST 10.18">Prev Page</a></td><!--<td class="bodytext" align="center">Page 18 of 50 (10.20 Hearing and Balance)</td>//--><td class="bodytext" align="right"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62776" alt="10.22 Spacial Orientation" title="10.22 Spacial Orientation">Next Page</a></td></tr></tbody></table><br>
+                        <br>
+                        
+                    </div>
+                </td>
+      	 </tr>
+	</tbody></table> 
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+	    <tbody><tr>
+		    <td style="background:#000000;"><img alt="" src="10.20_files/spacer.gif" width="1" height="1"><br></td>
+	    </tr>
+	    <tr>
+		    <td style="background:#FFFFFF;"><img alt="" src="10.20_files/spacer.gif" width="1" height="2"><br></td>
+	    </tr>
+    </tbody></table>
+	<div id="footer">
+		<div style="width:183px;float:left;">
+		</div>
+		<div style="float:left;width:600px;color:white;font-family:verdana,arial,helvetica,geneva,sans-serif;font-size:11px;font-weight:normal;">
+			©&nbsp;2026&nbsp;Aviation Data Services - All Rights Reserved
+		</div>
+	</div>
+	</form>
+    
+
+
+
+</body></html>

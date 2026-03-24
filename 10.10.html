@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="robots" content="noai, noimageai"><meta name="ai-restriction" content="no-summary">
+    <script type="text/javascript" src="10.10_files/jquery.min.js"></script>
+    <title>
+
+</title><link rel="shortcut icon" href="https://www.courseware.training/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+         .DragHandleClass
+         {
+              width: 12px;
+              height: 12px;
+              background-color: red;
+              cursor:move;
+              margin: 0px 10px 0px 0px;
+         }
+    </style>
+    <style id="Style1" type="text/css">
+    <!--
+        html{
+            height:100%;
+       }
+    
+	    body {
+		    margin:0px 0px 0px 0px;
+		    background:#FFFFFF;
+		    height:100%;
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    input {
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    select {
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    .bodytext {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    .confirmation {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:14px;
+		    color:#009900;
+	    }
+	
+	    .error {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:14px;
+		    color:#FF0000;
+	    }
+	
+	
+	    .header {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    font-weight:bold;
+		    text-transform:uppercase;
+	    }
+	
+	    .items {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    line-height:18px;
+		    color:#000000;
+		    font-weight:bold;
+		
+	    }
+	
+	    .input {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    background:#FFFFFF;
+		    border-width:1px;
+		    border-color:#000000;
+		    border-style:solid;
+	    }
+	
+	    .inputbutton {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:11px;
+		    color:#000000;
+		    background:#FFFFFF;
+		    border-width:1px;
+		    border-color:#000000;
+		    border-style:solid;
+		    text-transform:uppercase;
+	    }
+	
+	    .lidiv{
+	
+	    }
+	
+	    .lidiv ul{
+	        list-style-type:none;
+	        padding:0px 0px 0px 20px;
+            margin:0px;
+	    }
+	
+	    .lidiv li{
+	        padding: 3px 3px 3px 3px;
+	    }
+	    .pagetitle{
+	        font-size:16px;
+	        font-weight:bold;
+	    }
+	
+	    .required{
+	        font-size:18px;
+	        color:#FF0000;
+            font-weight:bold;	
+	    }
+	
+	    #top {
+		    background:#000066;
+	    }
+	
+	    #topmenu {
+		    background:#E1E1E1;
+		    height:17px;
+		    margin:0px 0px 0px 0px;
+		    padding:0px 0px 0px 0px;
+		    background-image:URL("images/common/topmenubacker.gif");
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	    #topmenuitems {
+		    float:left;
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+		    text-transform:uppercase;
+		    margin:1px 0px 0px 0px;
+		
+		
+	    }
+	
+	    #hordivider {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+	    }
+	    #hordividertop {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	
+	    #hordividerbase {
+		    background-image:URL('images/common/hordots.gif');
+		    background-repeat:repeat-X;
+		    clear:both;
+	    }
+	
+	    #vertdivider {
+		    background-image:URL('images/common/verdots.gif');
+		    background-repeat:repeat-Y;
+		    height:95%;
+		    float:left;
+	    }
+	
+	    #contentholder {
+		    float:left;
+		    margin:10px 0px 0px 20px;
+	    }
+
+	    #leftmenu {
+		    background:#000000;
+		    width:179px;
+		    float:left;
+		    height:95%;
+		    padding:5px 0px 0px 10px;
+		
+	    /*
+		    background-image:URL("images/common/cockpit.jpg");
+		    background-position:bottom;
+		    background-repeat:no-repeat;
+	    */
+	    }
+	
+	    /*
+	    #leftmenuitems {
+		    font-family:Arial,Verdana,Helvetica,Sans-Serif;
+		    font-size:10px;
+		    font-weight:bold;
+		    text-transform:uppercase;
+		    color:#000000;
+		    padding:0px 0px 0px 0px;
+	    }
+	    */
+	    .leftmenuitems {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	
+	    .leftmenuitems a{
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	    .leftmenuitems a:visited{
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    text-transform:uppercase;
+		    color:#FFFFFF;
+		
+	    }
+	
+	    .leftmenuitemsnorm {
+		    font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    font-weight:normal;
+		    color:#000000;
+	    }
+	
+	    #footer {
+		    background:#000000;
+		    height:17px;
+		    margin:0px 0px 0px 0px;
+		    padding:2px 2px 2px 2px;
+	    }
+	
+	    #PageContent{
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	    #PageContent td{
+	        font-family:calibri,arial,verdana,helvetica,sans-serif;
+		    font-size:12px;
+		    color:#000000;
+	    }
+	
+	
+    //-->
+    </style>
+    <script language="javascript" type="text/javascript">		
+        function autoSaveExam(){
+            document.form1.hdnIsSnapShot.value="1";
+            document.form1.submit();
+        }
+	
+        function saveexam(){
+            document.form1.hdnIsSnapShot.value="1";
+            $('#btnSave').attr("disabled","disabled");
+            $('#btnSave').attr("value","Processing...");
+            //alert("Value of snapshot field should now be set to 1");
+            //document.form1.submit(); //not required cause the action of clicking a button submits the form anyway.
+        }
+	
+        function submitexam(){
+            document.form1.hdnIsSnapShot.value="0";
+            $('#btnSubmit').attr("disabled","disabled");
+            $('#btnSubmit').attr("value","Processing...");
+            //document.form1.submit();
+        }
+
+		
+        function show(obj) {
+            //alert(obj);
+            //alert('running');
+            if(document.all){
+                //alert("trying the document.all");
+                eval("document.all." + obj + ".style.display='block'");
+            }
+            else
+            {
+                if(document.getElementById){
+                    //alert("It's Showing");
+                    eval("document.getElementById('" + obj + "').style.display='block'");
+                }
+            }
+		
+        }
+	
+        function hide(obj) {
+            //alert(obj);
+            //alert('running');
+            if(document.all){
+                eval("document.all." + obj + ".style.display='none'");
+            }
+            else
+            {
+                if(document.getElementById){
+                    //alert("It's Showing");
+                    eval("document.getElementById('" + obj + "').style.display='none'");
+                }
+            }
+	
+        }
+	
+        //String trim functions
+        function trim(stringToTrim) {
+            return stringToTrim.replace(/^\s+|\s+$/g,"");
+        }
+        function ltrim(stringToTrim) {
+            return stringToTrim.replace(/^\s+/,"");
+        }
+        function rtrim(stringToTrim) {
+            return stringToTrim.replace(/\s+$/,"");
+        }
+	
+        function CheckAnswer(Question,QuestionType){
+            if(QuestionType == "MCR"){
+                // firstly let's check to see if the user did actually select an answer first.
+                var x;
+                var questionelements = eval("document.form1." + Question + ".length");
+                var notanswered = true;
+                for(x=0;x<questionelements;x++){
+                    if(eval("document.form1." + Question + "[x].checked==true")){
+                        notanswered = false;
+                    }
+                }
+                if(notanswered){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    //alert("Check answer and give it here if incorrect.");
+                    var correctanswer = eval("document.form1." + Question + "Answer.value");
+                    //alert("Correct option is : " + correctanswer);
+				
+                    if(eval("document.form1." + Question + "[" + (correctanswer-1) + "].checked==true")){
+                        eval("hide('" + Question + "IncorrectMessage')");
+                        eval("show('" + Question + "CorrectMessage')");
+                    }
+                    else
+                    {
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+		
+            if(QuestionType == "MCC"){
+                // firstly let's check to see if the user did actually select an answer first.
+                var x;
+                var questionelements = eval("document.form1." + Question + ".length");
+                var notanswered = true;
+                for(x=0;x<questionelements;x++){
+                    if(eval("document.form1." + Question + "[x].checked==true")){
+                        notanswered = false;
+                    }
+                }
+                if(notanswered){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    //alert("Check answer and give it here if incorrect.");
+                    var correctanswer = eval("document.form1." + Question + "Answer.value");
+                    var correctAnswers = correctanswer.split("||^^||");
+				
+                    var correctAnswerLength = correctAnswers.length; // We know how many check boxes to look for now in terms of correct answers.
+                    var numOfAnswersGiven = 0;
+                    // Look for correct number of answers now by looping through the options and checking for how many are checked.
+				
+                    var questionelements = eval("document.form1." + Question + ".length");
+                    var notanswered = true;
+			    
+                    for(x=0;x<questionelements;x++){
+                        if(eval("document.form1." + Question + "[x].checked==true")){
+                            numOfAnswersGiven++;
+                        }
+                    }
+			   			    
+                    if(numOfAnswersGiven == correctAnswerLength){
+                        // check to see if the answers given match the supplied correct answers for the question
+                        // Have to build up the answer string based on the checked items.
+                        var givenAnswers = "";
+                        for(x=0;x<questionelements;x++){
+                            if(eval("document.form1." + Question + "[x].checked==true")){
+                                givenAnswers += (x+1) + "||^^||";
+                            }
+                        }
+                        givenAnswers = givenAnswers.substring(0,givenAnswers.length - 6);
+				    
+				    
+                        if(givenAnswers == correctanswer){
+                            eval("hide('" + Question + "IncorrectMessage')");
+                            eval("show('" + Question + "CorrectMessage')");
+                        }
+                        else
+                        {
+                            eval("show('" + Question + "IncorrectMessage')");
+                            eval("hide('" + Question + "CorrectMessage')");
+                        }
+				    
+                    }
+                    else
+                    {
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+		
+            if(QuestionType == "FIT"){
+                var x;
+                // Let's check the answer length to know how many fields we have to check the value of.
+                var noea = eval("document.form1." + Question + "Answer.value");
+                noea = noea.split("||^^||"); // Number Of Expected Answers
+                //alert("NOEA length is " + noea.length); 
+                // We can use the number above to build up a string of actual answers given.
+                // Let's build up the 'actual answers given' string
+                var answersGiven ="";
+                for(x=0;x<noea.length;x++){
+                    answersGiven += eval("document.form1." + Question + "_" + (x+1) + ".value") + "||^^||";
+                }
+                answersGiven = answersGiven.substring(0,answersGiven.length - 6);
+                // Now loop through those answers and make sure all inputs have been answered
+                answersGiven = answersGiven.split("||^^||");
+                var blankCount = 0;
+                for(x=0;x<answersGiven.length;x++){
+                    if(trim(answersGiven[x]) == ""){
+                        blankCount++;
+                    }
+                }
+                if(blankCount == noea.length){
+                    alert("You have not answered this question yet.");
+                }
+                else
+                {
+                    // declare a variable for the expected "correctCount"
+                    var correctCount = 0;
+                    // OK, take the list of question answers and break them up into an array.
+                    // ** already have them as "noea" above.
+                    // Now take the submitted answers and break them into an array.
+                    // ** already have as "answersGiven" above.
+                    // Loop through the each submitted answer and check for *exact* match
+                    // Make sure to lowercase it all.
+                    for(x=0;x<answersGiven.length;x++){
+                        //alert("Answer for this iteration of the loop is: " + answersGiven[x]); 
+                        if(answersGiven[x] != "" && trim(answersGiven[x]) != "" && answersGiven[x] != null && trim(answersGiven[x]) != null){
+                            // split the parts of the answers into a small array to use for matching
+                            // Grab the current answer we are working on and loop through the corresponding
+                            // correct answer in the same array position to look for a match.
+                            var answer = answersGiven[x].toLowerCase();
+                            //split the question answer parts
+                            var answerParts = noea[x].split("::^^::");
+                            for(p=0;p<answerParts.length;p++){
+                                if(trim(answerParts[p].toLowerCase()) == trim(answersGiven[x].toLowerCase())){
+                                    correctCount++;
+                                    //alert("CorrectCount added to");
+                                }
+			                
+                            }
+                        }
+                    }
+                    if(correctCount == noea.length){
+                        eval("hide('" + Question + "IncorrectMessage')");
+                        eval("show('" + Question + "CorrectMessage')");
+                    }
+                    else{
+                        eval("show('" + Question + "IncorrectMessage')");
+                        eval("hide('" + Question + "CorrectMessage')");
+                    }
+                }
+            }
+        }
+	
+        function checkdata(){
+            return true;
+        }
+    //-->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+    /*
+    var message = "";
+
+    function clickIE(){
+	    if (document.all){
+		    (message);return false;
+	    }
+    }
+
+    function clickNS(e){
+	    if(document.layers||(document.getElementById&&!document.all)){
+		    if (e.which==2||e.which==3){
+			    (message);return false;
+		    }
+	    }
+    }
+
+    if (document.layers){
+	    document.captureEvents(Event.MOUSEDOWN);
+	    document.onmousedown=clickNS;
+    }
+    else
+    {
+	    document.onmouseup=clickNS;
+	    document.oncontextmenu=clickIE;
+    }
+    //document.oncontextmenu = new Function("return false");
+    */
+    </script>
+    <script language="javascript" type="text/javascript">
+    <!--
+	
+        function popexam(ExamID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("exam.aspx?id=" + ExamID,"ExamWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+        }
+	
+	
+        function popexamresults(ExamID,ExamSitID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("examresults.aspx?eid=" + ExamID + "&id=" + ExamSitID,"ExamResultsViewWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1,menubar=1");
+        }
+	
+        function viewCourseTerms(CourseID){
+            var ScreenY = screen.availHeight/2;
+            var ScreenX = screen.availWidth/2;
+            var WindowX = 700;
+            var WindowY = 700;
+            var posx = ScreenX-(WindowX/2);
+            var posy = ScreenY-(WindowY/2);
+            window.open("p_viewcourseterms.aspx?id=" + CourseID,"CourseTermsWindow","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1,menubar=1");
+        }
+    //-->
+    </script>
+
+
+
+</head>
+
+<body id="bodyTag" style="margin:0px 0px 0px 0px; " ondragstart="return false" onselectstart="return false">
+<script language="javascript" type="text/javascript">
+    function showhide(obj) {
+        //alert(obj);
+        //alert('running');
+        if(document.all){
+            //alert("trying the document.all");
+            if(eval("document.all." + obj + ".style.display=='none'")){
+                //alert("It's Hidden");
+                eval("document.all." + obj + ".style.display='block'");
+            }
+            else
+            {
+                //alert("It's Showing");
+                eval("document.all." + obj + ".style.display='none'");
+            }
+        }
+        else if(document.getElementById){
+            if(eval("document.getElementById('" + obj + "').style.display=='none'")){
+                //alert("It's Hidden");
+                eval("document.getElementById('" + obj + "').style.display='block'");
+            }
+            else
+            {
+                //alert("It's Showing");
+                eval("document.getElementById('" + obj + "').style.display='none'");
+            }
+        }
+    }
+    function popprint(ID){
+        var ScreenY = screen.availHeight/2;
+        var ScreenX = screen.availWidth/2;
+        var WindowX = 800;
+        var WindowY = 600;
+        var posx = ScreenX-(WindowX/2);
+        var posy = ScreenY-(WindowY/2);
+        window.open("/printpage.aspx?id=40328&pid=" + ID,"PrintPage","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+    }
+	
+    function popfeedback(ID){
+        var ScreenY = screen.availHeight/2;
+        var ScreenX = screen.availWidth/2;
+        var WindowX = 600;
+        var WindowY = 600;
+        var posx = ScreenX-(WindowX/2);
+        var posy = ScreenY-(WindowY/2);
+        window.open("/p_addfeedback.aspx?id=" + ID,"FeedbackPage","width=" + WindowX + ",height=" + WindowY + ",screenx=" + posx + ",left=" + posx + ",screeny=" + posy + ",top=" + posy + ",scrollbars=1,resizable=1");
+    }
+</script>
+
+<form name="form1" method="post" action="./course.aspx?id=40328&amp;pid=52549&amp;mid=42633" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE1MTE5MjE0Ng8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgICAw9kFgICAQ9kFgoCAQ8WAh4EVGV4dAW/ATx0YWJsZSB3aWR0aD0iMTAwJSIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIiBib3JkZXI9IjAiPjx0cj48dGQgc3R5bGU9InRleHQtYWxpZ246bGVmdDtiYWNrZ3JvdW5kOiMwMDAwMDA7Ij48aW1nIHNyYz0iL2ltYWdlcy9sb2dvcy9maW5hbC93dGRqdGRiZl8xIFN0b25leUNvdXJzZXRvcDIuanBnIj48L3RyPjwvdGFibGU+ZAICDxYCHwEFmAk8dGFibGUgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIj48dHI+PHRkIHN0eWxlPSJ3aWR0aDoxNjhweDtiYWNrZ3JvdW5kLWltYWdlOlVSTCgnL2ltYWdlcy9jb21tb24vdG9wbWVudWJhY2tlci5naWYnKTtiYWNrZ3JvdW5kLXJlcGVhdDpyZXBlYXQtWDtoZWlnaHQ6MTdweDsiPjxpbWcgYWx0PSIiIHNyYz0iL2ltYWdlcy9jb21tb24vc3BhY2VyLmdpZiIgd2lkdGg9IjE2OCIgaGVpZ2h0PSIxNyIgLz48YnIgLz48L3RkPjx0ZCBzdHlsZT0id2lkdGg6MTAwJTtiYWNrZ3JvdW5kLWltYWdlOlVSTCgnL2ltYWdlcy9jb21tb24vdG9wbWVudWJhY2tlci5naWYnKTtiYWNrZ3JvdW5kLXJlcGVhdDpyZXBlYXQtWDtoZWlnaHQ6MTdweDtwYWRkaW5nOjFweCAwcHggMHB4IDBweDsiIGlkPSJ0b3BtZW51aXRlbXMiPjxkaXYgc3R5bGU9ImZsb2F0OmxlZnQ7bWFyZ2luOjBweCAyMHB4IDBweCAwcHg7cGFkZGluZzoxcHggMXB4IDFweCAxcHg7aGVpZ2h0OjEzcHg7IiBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5iYWNrZ3JvdW5kPScjRkZGRkZGJzt0aGlzLnN0eWxlLmN1cnNvcj0naGFuZCc7IiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9Jyc7Ij48aW1nIGFsdD0iIiBzcmM9Ii9pbWFnZXMvY3VzdG9tL3JlZF9idWxsZXQuZ2lmIiBhbGlnbj0ibWlkZGxlIiBzdHlsZT0iYm9yZGVyLXN0eWxlOm5vbmU7IiAvPiZuYnNwOzxhIGhyZWY9ImphdmFzY3JpcHQ6cG9wZmVlZGJhY2soNDAzMjgpOyI+Q291cnNlIEZlZWRiYWNrPC9hPjwvZGl2PjxkaXYgc3R5bGU9ImZsb2F0OmxlZnQ7bWFyZ2luOjBweCAyMHB4IDBweCAwcHg7cGFkZGluZzoxcHggMXB4IDFweCAxcHg7aGVpZ2h0OjEzcHg7IiBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5iYWNrZ3JvdW5kPScjRkZGRkZGJzt0aGlzLnN0eWxlLmN1cnNvcj0naGFuZCc7IiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmJhY2tncm91bmQ9Jyc7Ij48aW1nIGFsdD0iIiBzcmM9Ii9pbWFnZXMvY3VzdG9tL3JlZF9idWxsZXQuZ2lmIiBhbGlnbj0ibWlkZGxlIiBzdHlsZT0iYm9yZGVyLXN0eWxlOm5vbmU7IiAvPiZuYnNwOzxhIGhyZWY9ImphdmFzY3JpcHQ6dmlld0NvdXJzZVRlcm1zKDQwMzI4KTsiPlRlcm1zICYgQ29uZGl0aW9uczwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT5kAgMPFgIfAQWkbDx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGJyIC8+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0ZGRkZGRi5naWYiPjxiciAvPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxiciAvPjxhIGhyZWY9Ii8iPkhvbWUvTWVudSBQYWdlPC9hPjxiciAvPjwvdGQ+PC90cj48L3RhYmxlPjxiciAvPjx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0NDQ0M2Ni5naWYiIGFsaWduPSJhYnNtaWRkbGUiPjxiciAvPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9ImphdmFzY3JpcHQ6c2hvd2hpZGUoJ01lbnVfNDAzMjhfNDI2MzMnKTsiIG9uQ2xpY2s9ImRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzZXR0ZXJGcmFtZScpLnNyYyA9ICcvc2V0dGVyLmFzcHg/TWVudV80MDMyOF80MjYzMyc7Ij48c3BhbiBjbGFzcz0ibGVmdG1lbnVpdGVtczIiPlBQTCBIdW1hbiBGYWN0b3JzPC9zcGFuPjwvYT48YnIgLz48L3RkPjwvdHI+PC90YWJsZT48dGFibGUgaWQ9Ik1lbnVfNDAzMjhfNDI2MzMiIHN0eWxlPSJkaXNwbGF5OmJsb2NrOyI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI2NDkmbWlkPTQyNjMzIj5QUEwgSHVtYW4gRmFjdG9ycyBJbnRybzwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDUmbWlkPTQyNjMzIj5TeWxsYWJ1czwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDYmbWlkPTQyNjMzIj4xMC4yIEFpcm1hbnNoaXAgYW5kIFJlc3BvbnNpYmlsaXR5PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3MiZtaWQ9NDI2MzMiPjEwLjQgSHVtYW4gRmFjdG9ycyBNb2RlbHMgYW5kIFByb2dyYW1tZXM8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTYzOCI+U0hPUlQgVEVTVCAxMC4yPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU0OCZtaWQ9NDI2MzMiPjEwLjYgQXRtb3NwaGVyZTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3NzMmbWlkPTQyNjMzIj4xMC44IENpcmN1bGF0aW9uIGFuZCBSZXNwaXJhdG9yeSBTeXN0ZW1zPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2MzkiPlNIT1JUIFRFU1QgMTAuNjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDkmbWlkPTQyNjMzIj4xMC4xMCBIeXBveGlhPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NCZtaWQ9NDI2MzMiPjEwLjEyIEh5cGVydmVudGlsYXRpb248L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0MCI+U0hPUlQgVEVTVCAxMC4xMDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NDcmbWlkPTQyNjMzIj4xMC4xNCBFbnRyYXBwZWQgR2Fzc2VzPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NSZtaWQ9NDI2MzMiPjEwLjE2IERlY29tcHJlc3Npb24gU2lja25lc3M8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0MSI+UFBMIEhGIDEwLjE0PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1MSZtaWQ9NDI2MzMiPjEwLjE4IFZpc2lvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTImbWlkPTQyNjMzIj4xMC4xOCBWaXN1YWwgUGVyY2VwdGlvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQyIj5TSE9SVCBURVNUIDEwLjE4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1MyZtaWQ9NDI2MzMiPjEwLjIwIEhlYXJpbmcgYW5kIEJhbGFuY2U8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTYyNzc2Jm1pZD00MjYzMyI+MTAuMjIgU3BhY2lhbCBPcmllbnRhdGlvbjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQzIj5TSE9SVCBURVNUIDEwLjIwPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1NiZtaWQ9NDI2MzMiPjEwLjI0IEdyYXZpdGF0aW9uYWwgRm9yY2VzPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3NyZtaWQ9NDI2MzMiPjEwLjI2LTI4IE1vdGlvbiBTaWNrbmVzcywgRmxpZ2h0IEFueGlldHk8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NCI+U0hPUlQgVEVTVCAxMC4yNDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTcmbWlkPTQyNjMzIj4xMC4zMCBGaXRuZXNzIHRvIEZseTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3NzgmbWlkPTQyNjMzIj4xMC4zMi0zNCBBbGNvaG9sIGFuZCBEcnVncywgQmxvb2QgRG9uYXRpb248L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NSI+U0hPUlQgVEVTVCAxMC4zMDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTAmbWlkPTQyNjMzIj4xMC4zNiBFbnZpcm9ubWVudGFsIEhhemFyZHM8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0NiI+U0hPUlQgVEVTVCAxMC4zNjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NTgmbWlkPTQyNjMzIj4xMC4zOCBTdHJlc3MgTWFuYWdlbWVudDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQ3Ij5TSE9SVCBURVNUIDEwLjM4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01NDI2OSZtaWQ9NDI2MzMiPjEwLjQwIFNsZWVwIGFuZCBGYXRpZ3VlIDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjQ4Ij5TSE9SVCBURVNUIDEwLjQwPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc3OSZtaWQ9NDI2MzMiPjEwLjQyIEFnaW5nPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU1OSZtaWQ9NDI2MzMiPjEwLjQ0IEluZm9ybWF0aW9uIFByb2Nlc3Npbmc8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY0OSI+U0hPUlQgVEVTVCAxMC40NDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTc4ODUmbWlkPTQyNjMzIj4xMC40NiBTaXR1YXRpb25hbCBBd2FyZW5lc3M8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD00Mjk4MCI+U0hPUlQgVEVTVCAxMC40NjwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NjAmbWlkPTQyNjMzIj4xMC40OCBKdWRnZW1lbnQgYW5kIERlY2lzaW9uIE1ha2luZzwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjUwIj5TSE9SVCBURVNUIDEwLjQ4PC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU2MSZtaWQ9NDI2MzMiPjEwLjUwIEZsaWdodCBEZWNrIE1hbmFnZW1lbnQ8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPWUmZXhpZD0zOTY1MSI+U0hPUlQgVGVzdCAxMC41MDwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NTI1NjImbWlkPTQyNjMzIj4xMC41MiBUaHJlYXQgYW5kIEVycm9yIE1hbmFnZW1lbnQ8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTYyNzgxJm1pZD00MjYzMyI+MTAuNTQgQ3VsdHVyZTwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9ZSZleGlkPTM5NjUyIj5TSE9SVCBURVNUIDEwLjUyPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD01MjU2MyZtaWQ9NDI2MzMiPjEwLjYwIEluc3RydW1lbnRhdGlvbiwgRGlzcGxheXMgYW5kIEFsZXJ0czwvYT48YnIgLz48L3RkPjwvdHI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBhbGlnbj0icmlnaHQiIHN0eWxlPSJ3aWR0aDo3cHg7Ij4tPC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXNub3JtMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3ODMmbWlkPTQyNjMzIj4xMC42MiBEb2N1bWVudGF0aW9uPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTMiPlNIT1JUIFRFU1QgMTAuNjI8L2E+PGJyIC8+PC90ZD48L3RyPjx0cj48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgYWxpZ249InJpZ2h0IiBzdHlsZT0id2lkdGg6N3B4OyI+LTwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zbm9ybTIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6MTM4cHg7Ij48YSBocmVmPSIvY291cnNlLmFzcHg/aWQ9NDAzMjgmcGlkPTUyNTY0Jm1pZD00MjYzMyI+MTAuNjQgRmlyc3QgQWlkPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD02Mjc4NSZtaWQ9NDI2MzMiPjEwLjY2IFN1cnZpdmFsPC9hPjxiciAvPjwvdGQ+PC90cj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIGFsaWduPSJyaWdodCIgc3R5bGU9IndpZHRoOjdweDsiPi08L3RkPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtc25vcm0yIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTQiPlNIT1JUIFRFU1QgMTAuNjQ8L2E+PGJyIC8+PC90ZD48L3RyPjwvdGFibGU+PHRhYmxlIGJvcmRlcj0iMCIgd2lkdGg9IjE1OCIgY2VsbHBhZGRpbmc9IjIiIGNlbGxzcGFjaW5nPSIwIj48dHI+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDo3cHg7Ij48aW1nIHNyYz0iL2ltYWdlcy9jdXN0b20vQ0NDQzY2LmdpZiIgYWxpZ249ImFic21pZGRsZSI+PGJyIC8+PC90ZD48dGQgY2xhc3M9ImxlZnRtZW51aXRlbXMyIiB2YWxpZ249Im1pZGRsZSIgc3R5bGU9IndpZHRoOjEzOHB4OyI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2NTUiPlBSQUNUSUNFIEVYQU1TPC9hPjxiciAvPjwvdGQ+PC90cj48L3RhYmxlPjxiciAvPjx0YWJsZSBib3JkZXI9IjAiIHdpZHRoPSIxNTgiIGNlbGxwYWRkaW5nPSIyIiBjZWxsc3BhY2luZz0iMCI+PHRyPjx0ZCBjbGFzcz0ibGVmdG1lbnVpdGVtczIiIHZhbGlnbj0ibWlkZGxlIiBzdHlsZT0id2lkdGg6N3B4OyI+PGltZyBzcmM9Ii9pbWFnZXMvY3VzdG9tL0NDQ0M2Ni5naWYiIGFsaWduPSJhYnNtaWRkbGUiPjwvdGQ+PHRkIGNsYXNzPSJsZWZ0bWVudWl0ZW1zMiIgdmFsaWduPSJtaWRkbGUiIHN0eWxlPSJ3aWR0aDoxMzhweDsiPjxhIGhyZWY9ImphdmFzY3JpcHQ6cG9wZmVlZGJhY2soNDAzMjgpOyI+Q291cnNlIEZlZWRiYWNrPC9hPjwvdGQ+PC90cj48L3RhYmxlPmQCBg8WAh8BBbzTAjx0YWJsZSBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMHB4OyBib3JkZXI6IG5vbmU7IiB3aWR0aD0iIiBhbGlnbj0iIj48dGJvZHk+PHRyPjx0ZCBzdHlsZT0iYm9yZGVyOiBub25lOyI+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PHRhYmxlIHdpZHRoPSIiIGFsaWduPSIiIHN0eWxlPSJib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDogNzAwcHg7IGJvcmRlcjogbm9uZTsiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXI6IG5vbmU7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgc3R5bGU9ImJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IHdpZHRoOiA3MDBweDsgYm9yZGVyOiBub25lOyI+PHRib2R5Pjx0cj48dGQgc3R5bGU9ImJvcmRlcjogbm9uZTsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDE0cHQ7Ij48L3NwYW4+PC9kaXY+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPjxkaXY+PHRhYmxlIHdpZHRoPSIiIGFsaWduPSIiIHN0eWxlPSJib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyB3aWR0aDogNzAwcHg7IGJvcmRlcjogbm9uZTsiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXI6IG5vbmU7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgc3R5bGU9ImJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IHdpZHRoOiA3MDBweDsgYm9yZGVyOiBub25lOyI+PHRib2R5Pjx0cj48dGQgc3R5bGU9ImJvcmRlcjogbm9uZTsiPjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDE0cHQ7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgc3R5bGU9ImJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IHdpZHRoOiA2OTdweDsgYmFja2dyb3VuZC1pbWFnZTogdXJsKCZxdW90O2h0dHA6Ly93d3cuY291cnNld2FyZS5jby5uei9pbWFnZXMvZmluYWwvNDI4OTMuanBnJnF1b3Q7KTsgYmFja2dyb3VuZC1hdHRhY2htZW50OiBpbml0aWFsOyBiYWNrZ3JvdW5kLXNpemU6IGluaXRpYWw7IGJhY2tncm91bmQtb3JpZ2luOiBpbml0aWFsOyBiYWNrZ3JvdW5kLWNsaXA6IGluaXRpYWw7IGJhY2tncm91bmQtcG9zaXRpb246IDAlIDAlOyBiYWNrZ3JvdW5kLXJlcGVhdDogaW5pdGlhbDsiPjx0Ym9keT48dHI+PHRkIHN0eWxlPSJib3JkZXI6IDFweCBzb2xpZCByZ2IoMCwgMCwgMCk7Ij48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTlweDsgdGV4dC1hbGlnbjogY2VudGVyOyBjb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpOyI+Jm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDs8L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDE5cHg7IHRleHQtYWxpZ246IGNlbnRlcjsgY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsiPiZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsxMC4xMCBIeXBveGlhPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxOXB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IGNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7Ij48YnI+PC9zcGFuPjwvZGl2PjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9zcGFuPjwvZGl2PjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtc2l6ZTogMTJwdDsiPjxicj48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGxlZnQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtc2l6ZTogMTJwdDsiPjEwLjEwLjImbmJzcDsgLSBEZWZpbmUmbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDEycHQ7Ij5IeXBveGlhPC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMnB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDEycHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij5IeXBveGlhPC9zcGFuPiZuYnNwO2lzIGEgY29uZGl0aW9uIHRoYXQgZXhpc3RzIHdoZW4gdGhlIGF2YWlsYWJsZSBveHlnZW4gaW4gdGhlIGJsb29kIGlzIGluYWRlcXVhdGUgZm9yIHRoZSZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5kZW1hbmRzIG9mIHRoZSBib2R5IGNlbGxzLjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgY2VsbHNwYWNpbmc9IjUiIGNlbGxwYWRkaW5nPSI1IiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIwLCAyMjAsIDIyMCk7Ij48dGJvZHk+PHRyPjx0ZCBzdHlsZT0iYm9yZGVyOiAxcHggc29saWQgcmdiKDAsIDAsIDApOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SFlQT1hJQSBpcyB0aGUgUkVTVUxUIG9mIElOU1VGRklDSUVOVCBPWFlHRU4gUFJFU1NVUkUuIFRoZSBPWFlHRU4gaXMgVU5BQkxFIHRvIERJRkZVU0UgVEhST1VHSCB0aGUgTFVORyBMSU5JTkcgSU5UTyB0aGUgQkxPT0QgU1VQUExZIHRvIFJFQUNIIHRoZSBDRUxMUy48L3NwYW4+PGJyPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkh5cG94aWEgaXMgY2F1c2VkIHdoZW4gdGhlIG94eWdlbiBicmVhdGhlZCBpbnRvIHRoZSBsdW5ncyBoYXMgbm90IGdvdCBzdWZmaWNpZW50IHByZXNzdXJlIHRvIGJlJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPmFibGUgdG8gZGlmZnVzZSB0aHJvdWdoIHRoZSBzZW1pLXBlcm1lYWJsZSBsaW5pbmcgb2YgdGhlIGx1bmdzIGludG8gdGhlIGJsb29kIHN0cmVhbS48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SW4gZmx5aW5nIHRoaXMgd2lsbCBtb3N0IGxpa2VseSBvY2N1ciBmcm9tIGEgcmVkdWNlZCBhdG1vc3BoZXJpYyBwcmVzc3VyZSBhdCBhbHRpdHVkZS48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij5IeXBveGlhPC9zcGFuPiZuYnNwO2lzIGEgY29uZGl0aW9uIHRoYXQgZXhpc3RzIHdoZW4gdGhlIGF2YWlsYWJsZSBveHlnZW4gaW4gdGhlIGJsb29kIGlzIGluYWRlcXVhdGUgZm9yIHRoZSZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5kZW1hbmRzIG9mIHRoZSBib2R5IGNlbGxzLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgY2VsbHNwYWNpbmc9IjUiIGNlbGxwYWRkaW5nPSI1IiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIwLCAyMjAsIDIyMCk7Ij48dGJvZHk+PHRyPjx0ZCBzdHlsZT0iYm9yZGVyOiAxcHggc29saWQgcmdiKDAsIDAsIDApOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SFlQT1hJQSBpcyB0aGUgUkVTVUxUIG9mIElOU1VGRklDSUVOVCBPWFlHRU4gUFJFU1NVUkUuIFRoZSBPWFlHRU4gaXMgVU5BQkxFIHRvIERJRkZVU0UgVEhST1VHSCB0aGUgTFVORyBMSU5JTkcgSU5UTyB0aGUgQkxPT0QgU1VQUExZIHRvIFJFQUNIIHRoZSBDRUxMUy48L3NwYW4+PGJyPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9zcGFuPjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsiPkluIGZseWluZyB0aGlzIHdpbGwgbW9zdCBsaWtlbHkgb2NjdXIgZnJvbSBhIHJlZHVjZWQgYXRtb3NwaGVyaWMgcHJlc3N1cmUgYXQgYWx0aXR1ZGUuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEzLjMzMzNweDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyI+VGhlIGtleSB0byBmbHlpbmcgc2FmZWx5IGF0IGFsdGl0dWRlIGlzIHRvIGJlIGFibGUgdG86IGlkZW50aWZ5IHRoZSBmbGlnaHQgY29uZGl0aW9uIGluIHdoaWNoIHlvdSBtYXkgYmVjb21lIGh5cG94aWMsIHJlY29nbmlzZSB5b3VyIHBlcnNvbmFsIGh5cG94aWEgc3ltcHRvbXMsIGFuZCB0byByZWNvdmVyIGZyb20gaHlwb3hpYSBiZWZvcmUgeW91IGhhdmUgZ29uZSBiZXlvbmQgeW91ciBhYmlsaXR5IG9yIGRlc2lyZSB0byBoZWxwIHlvdXJzZWxmLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MzQuMTAuNCBTdGF0ZSB0aGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW4gYm90aCBpbnNpZGUgYW5kIG91dHNpZGUgdGhlIGx1bmdzIGF0IHNlYSBsZXZlbC48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij5UaGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW4gZGVwZW5kcyBvbiBzZXZlcmFsIHZhcmlhYmxlcywgYnV0IG1haW5seSBvbiBiYXJvbWV0cmljIHByZXNzdXJlPC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij4uIFVuZGVyIHBoeXNpb2xvZ2ljYWwgY29uZGl0aW9ucywgdGhpcyByZWxhdGlvbnNoaXAgd2lsbCBiZSBhZmZlY3RlZCBieSBhbnkgY2hhbmdlIGluIGFsdGl0dWRlLjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigzMywgMzMsIDMzKTsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIGNhbWJyaWE9IiIgbWF0aCIsPSIiIHN0aXhnZW5lcmFsLD0iIiAidGltZXM9IiIgbmV3PSIiIHJvbWFuIiw9IiIgdGltZXMsPSIiIHNlcmlmOz0iIiBmb250LXNpemU6PSIiIDIwcHg7Ij0iIiBzdHlsZT0iY29sb3I6IHJnYigzMywgMzMsIDMzKTsgZm9udC1zaXplOiAxMHB0OyI+QXQgc2VhIGxldmVsIGF0bW9zcGhlcmljIGJhcm9tZXRyaWMgcHJlc3N1cmUgaXMgYWJvdXQgNzYwIG1tSGcsJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij50aGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW4gaXMgMjElIG9mIHRoYXQ6PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgY2VsbHNwYWNpbmc9IjUiIGNlbGxwYWRkaW5nPSI1IiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIwLCAyMjAsIDIyMCk7Ij48dGJvZHk+PHRyPjx0ZCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBib3JkZXI6IDFweCBzb2xpZCByZ2IoMCwgMCwgMCk7Ij48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigzMywgMzMsIDMzKTsgZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPlNlYSBsZXZlbCBwYXJ0aWFsIHByZXNzdXJlIG9mIG94eWdlbiA9IDE1OSBtbUhnPC9zcGFuPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+QmFyb21ldHJpYyBhbmQgT3h5Z2VuIHBhcnRpYWwgcHJlc3N1cmUgdnMgYWx0aXR1ZGU8L3NwYW4+PC9kaXY+PGRpdj4mbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7Jm5ic3A7PGltZyBzcmM9Imh0dHBzOi8vd3d3LmNvdXJzZXdhcmUudHJhaW5pbmcvaW1hZ2VzL2ZpbmFsLzQ4NTAxXzQ1MC5qcGciIGFsdD0iIiBhbGlnbj0iIiBib3JkZXI9IjBweCIgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgdGV4dC1hbGlnbjogY2VudGVyOyI+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+T3h5Z2VuJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJiYWNrZ3JvdW5kLWltYWdlOiBub25lOyBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBpbml0aWFsOyBiYWNrZ3JvdW5kLXNpemU6IGluaXRpYWw7IGJhY2tncm91bmQtcmVwZWF0OiBpbml0aWFsOyBiYWNrZ3JvdW5kLWF0dGFjaG1lbnQ6IGluaXRpYWw7IGJhY2tncm91bmQtb3JpZ2luOiBpbml0aWFsOyBiYWNrZ3JvdW5kLWNsaXA6IGluaXRpYWw7IGZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+cGFydGlhbCBwcmVzc3VyZSBpbiB0aGUgbHVuZ3M8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+Jm5ic3A7aXMgbG93ZXIgdGhhbiB0aGUgYXRtb3NwaGVyaWMgTzwvc3Bhbj48c3ViIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGxpbmUtaGVpZ2h0OiAxOyI+Mjwvc3ViPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwO3BhcnRpYWwgcHJlc3N1cmUgZm9yIHR3byByZWFzb25zLjwvc3Bhbj48L2Rpdj48L2Rpdj48ZGl2Pjx1bCBzdHlsZT0ibGlzdC1zdHlsZS1pbWFnZTogdXJsKCZxdW90Oy93L3NraW5zL1ZlY3Rvci9yZXNvdXJjZXMvY29tbW9uL2ltYWdlcy9idWxsZXQtaWNvbi5zdmc/ZDQ1MTUmcXVvdDspOyBtYXJnaW46IDAuM2VtIDBweCAwcHggMS42ZW07IHBhZGRpbmc6IDBweDsiPjxsaSBzdHlsZT0ibWFyZ2luLWJvdHRvbTogMC4xZW07Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5GaXJzdGx5LCBhcyB0aGUgYWlyIGVudGVycyB0aGUgbHVuZ3MsIGl0IGlzIGh1bWlkaWZpZWQgYnkgdGhlIHVwcGVyIGFpcndheSBhbmQgdGh1cyB0aGUgcGFydGlhbCBwcmVzc3VyZSBvZiB3YXRlciB2YXBvdXIgKDQ3IG1tSGcpIHJlZHVjZXMgdGhlIG94eWdlbiBwYXJ0aWFsIHByZXNzdXJlIHRvIGFib3V0IDE1MCBtbUhnLjwvc3Bhbj48L2xpPjwvdWw+PHVsIHN0eWxlPSJsaXN0LXN0eWxlLWltYWdlOiB1cmwoJnF1b3Q7L3cvc2tpbnMvVmVjdG9yL3Jlc291cmNlcy9jb21tb24vaW1hZ2VzL2J1bGxldC1pY29uLnN2Zz9kNDUxNSZxdW90Oyk7IG1hcmdpbjogMC4zZW0gMHB4IDBweCAxLjZlbTsgcGFkZGluZzogMHB4OyI+PGxpIHN0eWxlPSJtYXJnaW4tYm90dG9tOiAwLjFlbTsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSByZXN0IG9mIHRoZSBkaWZmZXJlbmNlIGlzIGR1ZSB0byB0aGUgY29udGludWFsIHVwdGFrZSBvZiBveHlnZW4gYnkgdGhlJm5ic3A7PHNwYW4gc3R5bGU9ImJhY2tncm91bmQtaW1hZ2U6IG5vbmU7IGJhY2tncm91bmQtcG9zaXRpb246IGluaXRpYWw7IGJhY2tncm91bmQtc2l6ZTogaW5pdGlhbDsgYmFja2dyb3VuZC1yZXBlYXQ6IGluaXRpYWw7IGJhY2tncm91bmQtYXR0YWNobWVudDogaW5pdGlhbDsgYmFja2dyb3VuZC1vcmlnaW46IGluaXRpYWw7IGJhY2tncm91bmQtY2xpcDogaW5pdGlhbDsgZm9udC1zaXplOiAxMHB0OyI+cHVsbW9uYXJ5PC9zcGFuPiZuYnNwOzxzcGFuIHN0eWxlPSJiYWNrZ3JvdW5kLWltYWdlOiBub25lOyBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBpbml0aWFsOyBiYWNrZ3JvdW5kLXNpemU6IGluaXRpYWw7IGJhY2tncm91bmQtcmVwZWF0OiBpbml0aWFsOyBiYWNrZ3JvdW5kLWF0dGFjaG1lbnQ6IGluaXRpYWw7IGJhY2tncm91bmQtb3JpZ2luOiBpbml0aWFsOyBiYWNrZ3JvdW5kLWNsaXA6IGluaXRpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPmNhcGlsbGFyaWVzPC9zcGFuPiwgYW5kIHRoZSBjb250aW51YWwgZGlmZnVzaW9uIG9mIENPPHN1YiBzdHlsZT0ibGluZS1oZWlnaHQ6IDE7Ij4yPC9zdWI+Jm5ic3A7b3V0IG9mIHRoZSBjYXBpbGxhcmllcyBpbnRvIHRoZSBhbHZlb2xpLjwvc3Bhbj48L2xpPjwvdWw+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgY2VsbHNwYWNpbmc9IjUiIGNlbGxwYWRkaW5nPSI1IiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIwLCAyMjAsIDIyMCk7Ij48dGJvZHk+PHRyPjx0ZCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBib3JkZXI6IDFweCBzb2xpZCByZ2IoMCwgMCwgMCk7Ij48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigzMywgMzMsIDMzKTsgZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEzLjMzMzNweDsiPkF0IHNlYSBsZXZlbCB0aGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW4gaW4gdGhlIGx1bmdzIGlzIDEwNCBtbUhnPC9zcGFuPjwvdGQ+PC90cj48L3Rib2R5PjwvdGFibGU+PC9zcGFuPjwvZGl2PjwvZGl2PjxkaXY+PGJyPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBhcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5UaGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW4gaW4gYWx2ZW9sYXIgYWlyIGlzIGFib3V0IDEwNCBtbSBIZywgd2hlcmVhcyB0aGUgcGFydGlhbCBwcmVzc3VyZSBvZiBveHlnZW5hdGVkIGJsb29kIGluIHB1bG1vbmFyeSB2ZWlucyBpcyBhYm91dCAxMDAgbW0gSGcgLSB0aGlzIGFsbG93cyBveHlnZW4gbW9sZWN1bGVzIHRvIHRyYW5zZmVyIGFjcm9zcyB0aGUgbHVuZyB3YWxsLjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IGFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBhcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48dGFibGUgd2lkdGg9IiIgYWxpZ249IiIgY2VsbHNwYWNpbmc9IjUiIGNlbGxwYWRkaW5nPSI1IiBzdHlsZT0iYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsgd2lkdGg6IDcwMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIwLCAyMjAsIDIyMCk7Ij48dGJvZHk+PHRyPjx0ZCBzdHlsZT0iYm9yZGVyOiAxcHggc29saWQgcmdiKDAsIDAsIDApOyI+PGgzIGlkPSJfX3NlYzN0aXRsZSI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyBmb250LXdlaWdodDogbm9ybWFsOyI+U2VhIGxldmVsIHByZXNzdXJlIGlzIDEwMSBrUGEgKDEwMTMgaFBhKSwgUGFydGlhbCBwcmVzc3VyZXMgb2Ygb3h5Z2VuIGlzIDIxIGtQYSBvdXRzaWRlIHRoZSBsdW5ncyBhbmQgMTQga1BhIGluIHRoZSBsdW5ncy48L3NwYW4+PC9oMz48L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdj48YnI+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4xMC4xMC42IEV4cGxhaW4gdGhlIG1lY2hhbmljYWwgZWZmZWN0IG9mIHRoZSBwYXJ0aWFsIHByZXNzdXJlIG9mIG94eWdlbiBvbiBveHlnZW4gdHJhbnNmZXIgaW4gdGhlIGx1bmdzLjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBTb2VobmUsIEFyaWFsLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPkluc2lkZSB0aGUgbHVuZyBhaXIgc2Fjcywgb3h5Z2VuIG1vdmVzIGFjcm9zcyBwYXBlci10aGluIHdhbGxzIHRvIHRpbnkgYmxvb2QgdmVzc2VscyBjYWxsZWQgY2FwaWxsYXJpZXMgYW5kIGludG8geW91ciBibG9vZC4mbmJzcDs8L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBTb2VobmUsIEFyaWFsLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHAgc3R5bGU9Im1hcmdpbjogMHB4IDBweCAxLjQyODU3ZW07IHBhZGRpbmc6IDBweDsgYm9yZGVyOiAwcHg7IGZvbnQtdmFyaWFudC1udW1lcmljOiBpbmhlcml0OyBmb250LXZhcmlhbnQtZWFzdC1hc2lhbjogaW5oZXJpdDsgZm9udC1zdHJldGNoOiBpbmhlcml0OyBsaW5lLWhlaWdodDogaW5oZXJpdDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyBvdmVyZmxvdy13cmFwOiBicmVhay13b3JkOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+VGhlIHdhbGxzIG9mIHRoZSBhbHZlb2xpIHNoYXJlIGEgbWVtYnJhbmUgd2l0aCB0aGUgY2FwaWxsYXJpZXMuIFRoYXQncyBob3cgY2xvc2UgdGhleSBhcmUuIFRoaXMgbGV0cyBveHlnZW4gYW5kIGNhcmJvbiBkaW94aWRlIGRpZmZ1c2UsIG9yIG1vdmUgZnJlZWx5LCBiZXR3ZWVuIHRoZSByZXNwaXJhdG9yeSBzeXN0ZW0gYW5kIHRoZSBibG9vZHN0cmVhbS48L3NwYW4+PC9wPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBTb2VobmUsIEFyaWFsLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPkEgcHJvdGVpbiBjYWxsZWQgaGFlbW9nbG9iaW4gaW4gdGhlIHJlZCBibG9vZCBjZWxscyB0aGVuIGNhcnJpZXMgdGhlIG94eWdlbiBhcm91bmQgeW91ciBib2R5LiBBdCB0aGUgc2FtZSB0aW1lLCBjYXJib24gZGlveGlkZSB0aGF0IGlzIGRpc3NvbHZlZCBpbiB0aGUgYmxvb2QgY29tZXMgb3V0IG9mIHRoZSBjYXBpbGxhcmllcyBiYWNrIGludG8gdGhlIGFpciBzYWNzLCByZWFkeSB0byBiZSBicmVhdGhlZCBvdXQuPC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogU29laG5lLCBBcmlhbCwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFNvZWhuZSwgQXJpYWwsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+THVuZyBhaXIgc2Fjczwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IFNvZWhuZSwgQXJpYWwsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PGltZyBzcmM9Imh0dHBzOi8vd3d3LmNvdXJzZXdhcmUudHJhaW5pbmcvaW1hZ2VzL2ZpbmFsLzQ4NTAzLmpwZyIgYWx0PSIiIGFsaWduPSIiIGJvcmRlcj0iMHB4Ij48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48YnI+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+RHVyaW5nIGluaGFsYXRpb24sIGVhY2ggYWx2ZW9saSByZWNlaXZlcyBhaXIgdGhhdCBjb250YWlucyB2YXJpb3VzIGdhc2VzOiBuaXRyb2dlbiAoYWxtb3N0IDgwJSksIG94eWdlbiAoYWxtb3N0IDIwJSkgYW5kIG90aGVyIGdhc2VzIGluY2x1ZGluZyAwLjA0JSBjYXJib24gZGlveGlkZS4gRXh0ZXJuYWwgZ2FzZW91cyBleGNoYW5nZSB0aGVuIHRha2VzIHBsYWNlLCB1c2luZyB0aGUgcHJpbmNpcGxlIG9mIGRpZmZ1c2lvbjo8L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2Pjx1bCBzdHlsZT0iYm94LXNpemluZzogYm9yZGVyLWJveDsgcGFkZGluZzogMHB4OyBtYXJnaW4tdG9wOiAwcHg7IG1hcmdpbi1yaWdodDogMHB4OyBtYXJnaW4tYm90dG9tOiAyNXB4OyBvdXRsaW5lOiBub25lOyBsaXN0LXN0eWxlOiBub25lOyBib3JkZXI6IDBweCBub25lOyBtYXJnaW4tbGVmdDogMjBweCAhaW1wb3J0YW50OyI+PGxpIHN0eWxlPSJib3gtc2l6aW5nOiBib3JkZXItYm94OyBwYWRkaW5nOiAwcHg7IG1hcmdpbjogMHB4IDBweCAxMnB4OyBvdXRsaW5lOiBub25lOyBsaXN0LXN0eWxlOiBpbml0aWFsOyBib3JkZXI6IDBweCBub25lOyBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwcHggMTBweDsgbGluZS1oZWlnaHQ6IGluaXRpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5PeHlnZW4gZGlmZnVzZXMgZnJvbSB0aGUgYWx2ZW9saSBpbnRvIHRoZSBwdWxtb25hcnkgY2FwaWxsYXJpZXMgYmVjYXVzZSB0aGVyZSBpcyBhIGhpZ2ggY29uY2VudHJhdGlvbiBvZiBveHlnZW4gaW4gdGhlIGx1bmdzIGFuZCBhIGxvdyBjb25jZW50cmF0aW9uIGluIHRoZSBibG9vZDs8L3NwYW4+PC9saT48bGkgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IHBhZGRpbmc6IDBweDsgbWFyZ2luOiAwcHggMHB4IDEycHg7IG91dGxpbmU6IG5vbmU7IGxpc3Qtc3R5bGU6IGluaXRpYWw7IGJvcmRlcjogMHB4IG5vbmU7IGJhY2tncm91bmQtcG9zaXRpb246IDBweCAxMHB4OyBsaW5lLWhlaWdodDogaW5pdGlhbDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkNhcmJvbiBkaW94aWRlIGRpZmZ1c2VzIGZyb20gdGhlIHB1bG1vbmFyeSBjYXBpbGxhcmllcyBpbnRvIHRoZSBhbHZlb2xpIGJlY2F1c2UgdGhlcmUgaXMgYSBoaWdoIGNvbmNlbnRyYXRpb24gb2YgY2FyYm9uIGRpb3hpZGUgaW4gdGhlIGJsb29kIGFuZCBhIGxvdyBjb25jZW50cmF0aW9uIGluIHRoZSBsdW5nczs8L3NwYW4+PC9saT48bGkgc3R5bGU9ImJveC1zaXppbmc6IGJvcmRlci1ib3g7IHBhZGRpbmc6IDBweDsgbWFyZ2luOiAwcHggMHB4IDEycHg7IG91dGxpbmU6IG5vbmU7IGxpc3Qtc3R5bGU6IGluaXRpYWw7IGJvcmRlcjogMHB4IG5vbmU7IGJhY2tncm91bmQtcG9zaXRpb246IDBweCAxMHB4OyBsaW5lLWhlaWdodDogaW5pdGlhbDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPk5pdHJvZ2VuIGRpZmZ1c2VzIGJvdGggd2F5cy48L3NwYW4+PC9saT48L3VsPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5BcnRlcmlhbCBveHlnZW4gbGV2ZWxzICh0PC9zcGFuPmhlIHJhdGUgb2YgZGlmZnVzaW9uKSBpczxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDtkZXRlcm1pbmVkIGJ5IGluc3BpcmVkIG94eWdlbiBjb25jZW50cmF0aW9uIGFuZCB0aGUgcDwvc3Bhbj5yZXNzdXJlIGRpZmZlcmVuY2UgYWNyb3NzIHRoZSBsdW5nIG1lbWJyYW5lLiZuYnNwOzxicj48YnI+PHRhYmxlIHdpZHRoPSIiIGFsaWduPSIiIGNlbGxzcGFjaW5nPSI1IiBjZWxscGFkZGluZz0iNSIgc3R5bGU9ImJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IHdpZHRoOiA3MDJweDsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIyMCwgMjIwLCAyMjApOyI+PHRib2R5Pjx0cj48dGQgc3R5bGU9ImJvcmRlcjogMXB4IHNvbGlkIHJnYigwLCAwLCAwKTsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTMuMzMzM3B4OyI+VGhlIHJhdGUgb2YgZGlmZnVzaW9uIG9mIG94eWdlbiBpcyBwcm9wb3J0aW9uYWwgdG8gaXRzIHBhcnRpYWwgcHJlc3N1cmUgd2l0aGluIHRoZSB0b3RhbCBnYXMgbWl4dHVyZS48L3NwYW4+PC90ZD48L3RyPjwvdGJvZHk+PC90YWJsZT48L3NwYW4+PGJyPjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxpZnJhbWUgd2lkdGg9IjU2MCIgaGVpZ2h0PSIzMTUiIHNyYz0iaHR0cHM6Ly93d3cueW91dHViZS5jb20vZW1iZWQvNnFuU3NWMnN5VUUiIHRpdGxlPSJZb3VUdWJlIHZpZGVvIHBsYXllciIgZnJhbWVib3JkZXI9IjAiIGFsbG93PSJhY2NlbGVyb21ldGVyOyBhdXRvcGxheTsgY2xpcGJvYXJkLXdyaXRlOyBlbmNyeXB0ZWQtbWVkaWE7IGd5cm9zY29wZTsgcGljdHVyZS1pbi1waWN0dXJlIiBhbGxvd2Z1bGxzY3JlZW49IiI+PC9pZnJhbWU+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyBmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MTAuMTAuOCBFeHBsYWluIHRoZSBjYXVzZXMgb2YgaHlwb3hpYS48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBpZD0iZG9jcy1pbnRlcm5hbC1ndWlkLTk2YjZiZjEyLTdmZmYtZWViMC1iNjUxLTQ5YTY4ZmZmNjIzNCI+PHAgZGlyPSJsdHIiPkh5cG94aWEgaGFzIHNldmVyYWwgY2F1c2FsIGZhY3RvcnMsIGluY2x1ZGluZyBhbiBpbnN1ZmZpY2llbnQgc3VwcGx5IG9mIG94eWdlbiwgaW5hZGVxdWF0ZSB0cmFuc3BvcnRhdGlvbiBvZiBveHlnZW4sIG9yIHRoZSBpbmFiaWxpdHkgb2YgdGhlIGJvZHkgdGlzc3VlcyB0byB1c2Ugb3h5Z2VuLiBUaGUgZm9ybXMgb2YgaHlwb3hpYSBhcmUgYmFzZWQgb24gdGhlaXIgY2F1c2VzOjwvcD48cCBkaXI9Imx0ciI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+SHlwb3hpYyBIeXBveGlhOjwvc3Bhbj48L3A+PHAgZGlyPSJsdHIiPkh5cG94aWMgaHlwb3hpYSByZXN1bHRzIGZyb20gaW5zdWZmaWNpZW50IG94eWdlbiBhdmFpbGFibGUgdG8gdGhlIGJvZHkgYXMgYSB3aG9sZS4gVGhlIHJlZHVjdGlvbiBpbiBwYXJ0aWFsIHByZXNzdXJlIG9mIG94eWdlbiBhdCBoaWdoIGFsdGl0dWRlIGNhbiBjYXVzZSBhIHBpbG90IHRvIGV4cGVyaWVuY2UgdGhpcyB0eXBlIG9mIGh5cG94aWEuIEFzIGFuIHVucHJlc3N1cml6ZWQgYWlyY3JhZnQgYXNjZW5kcyBkdXJpbmcgZmxpZ2h0LCB0aGUgcGVyY2VudGFnZSBvZiBhdG1vc3BoZXJpYyBveHlnZW4gcmVtYWlucyBjb25zdGFudCwgYnV0IGEgcmVkdWNlZCBudW1iZXIgb2Ygb3h5Z2VuIG1vbGVjdWxlcyBlbnRlciB0aGUgbHVuZ3MgYW5kIHBhc3MgYmV0d2VlbiB0aGUgbWVtYnJhbmVzIHdpdGhpbiB0aGUgcmVzcGlyYXRvcnkgc3lzdGVtLjwvcD48cCBkaXI9Imx0ciI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+SHlwZW1pYyBIeXBveGlhOjwvc3Bhbj48L3A+PHAgZGlyPSJsdHIiPkh5cGVtaWMgaHlwb3hpYSBvY2N1cnMgd2hlbiB0aGUgYmxvb2QgY2Fubm90IHRha2UgdXAgc3VmZmljaWVudCBveHlnZW4uIENhdXNlcyBvZiB0aGlzIGZvcm0gb2YgaHlwb3hpYSBpbmNsdWRlIHJlZHVjZWQgYmxvb2Qgdm9sdW1lIGZyb20gc2V2ZXJlIGJsZWVkaW5nIG9yIGNlcnRhaW4gYmxvb2QgZGlzZWFzZXMsIHN1Y2ggYXMgYW5lbWlhLiBDYXJib24gbW9ub3hpZGUgcG9pc29uaW5nIGNhdXNlcyB0aGlzIHR5cGUgb2YgaHlwb3hpYS4gSGVtb2dsb2JpbiwgdGhlIGJsb29kIG1vbGVjdWxlIHRoYXQgdHJhbnNwb3J0cyBveHlnZW4sIGJlY29tZXMgY2hlbWljYWxseSB1bmFibGUgdG8gYmluZCBveHlnZW4gbW9sZWN1bGVzIGlmIGV4cG9zZWQgdG8gY2FyYm9uIG1vbm94aWRlLiBIeXBlbWljIGh5cG94aWEgY2FuIGFsc28gb2NjdXIgYWZ0ZXIgYSBibG9vZCBkb25hdGlvbi4gV2hpbGUgYmxvb2Qgdm9sdW1lIG5vcm1hbGlzZXMgcXVpY2tseSBmb2xsb3dpbmcgYSBkb25hdGlvbiwgcmVzdG9yaW5nIHRoZSBsb3N0IGhlbW9nbG9iaW4gY2FuIHRha2Ugc2V2ZXJhbCB3ZWVrcy4gQWx0aG91Z2ggdGhlIGVmZmVjdHMgb2YgdGhlIGJsb29kIGxvc3Mgc2VlbSBzbGlnaHQgYXQgZ3JvdW5kIGxldmVsLCBibG9vZCBkb25hdGlvbiBjYW4gY3JlYXRlIGEgZmxpZ2h0IHJpc2sgZHVyaW5nIHRoZSByZWNvdmVyeSBwZXJpb2QuPC9wPjxwIGRpcj0ibHRyIj48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij5TdGFnbmFudCBIeXBveGlhOjwvc3Bhbj48L3A+PHAgZGlyPSJsdHIiPlN0YWduYW50IGh5cG94aWEgb3IgaXNjaGVtaWEgcmVzdWx0cyB3aGVuIHRoZSBveHlnZW4tcmljaCBibG9vZCBpbiB0aGUgbHVuZ3MgZG9lcyBub3QgbW92ZSB0byB0aGUgdGlzc3VlcyB0aGF0IG5lZWQgaXQuIEFuIGFybSBvciBsZWcgZ29pbmcgdG8gc2xlZXAgYmVjYXVzZSBvZiByZXN0cmljdGVkIGJsb29kIGZsb3cgaXMgb25lIGZvcm0gb2Ygc3RhZ25hbnQgaHlwb3hpYS4gVGhpcyBraW5kIG9mIGh5cG94aWEgY2FuIGFsc28gcmVzdWx0IGZyb20gc2hvY2ssIHRoZSBoZWFydCBmYWlsaW5nIHRvIHB1bXAgYmxvb2QgZWZmZWN0aXZlbHksIG9yIGEgY29uc3RyaWN0ZWQgYXJ0ZXJ5LiBEdXJpbmcgZmxpZ2h0LCBleGNlc3NpdmUgRyBmb3JjZXMgY2FuIGNhdXNlIHN0YWduYW50IGh5cG94aWEuIENvbGQgdGVtcGVyYXR1cmVzIGNhbiBhbHNvIHJlZHVjZSBjaXJjdWxhdGlvbiBhbmQgZGVjcmVhc2UgYmxvb2Qgc3VwcGx5IHRvIGV4dHJlbWl0aWVzLjwvcD48cCBkaXI9Imx0ciI+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+SGlzdG90b3hpYyBIeXBveGlhOjwvc3Bhbj48L3A+PHAgZGlyPSJsdHIiPldoZW4gaGlzdG90b3hpYyBoeXBveGlhIG9jY3VycywgdGhlIGJvZHkgdHJhbnNwb3J0cyBlbm91Z2ggb3h5Z2VuIHRvIHRoZSBjZWxscywgYnV0IHRoZXkgY2Fubm90IG1ha2UgdXNlIG9mIGl0LiBUaGlzIGltcGFpcm1lbnQgb2YgcmVzcGlyYXRpb24gYXQgdGhlIGNlbGx1bGFyIGxldmVsIG1heSByZXN1bHQgZnJvbSBhbGNvaG9sIGNvbnN1bXB0aW9uLCBleHBvc3VyZSB0byBjZXJ0YWluIGRydWdzIG9yIG5hcmNvdGljcywgb3IgZXhwb3N1cmUgdG8gcG9pc29ucy48L3A+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZSBtb3N0IGNvbW1vbiBjYXVzZXMgb2YgaHlwb3hpYSBpbiBhdmlhdGlvbiBhcmU6Jm5ic3A7Zmx5aW5nLCBub24tcHJlc3N1cmlzZWQgYWlyY3JhZnQgYWJvdmUgMTAsMDAwIGZ0IHdpdGhvdXQgc3VwcGxlbWVudGFsIG94eWdlbiwgcmFwaWQgZGVjb21wcmVzc2lvbiBkdXJpbmcgZmxpZ2h0LCBwcmVzc3VyaXNhdGlvbiBzeXN0ZW0gbWFsZnVuY3Rpb24sIHBpbG90IGVycm9yLCBveHlnZW4gc3lzdGVtIG1hbGZ1bmN0aW9uIChmYWlsdXJlIG9mIHRoZSBtYXNrIG9yIHJlZ3VsYXRvciksIG9yIGNhcmJvbiBtb25veGlkZSBwb2lzb25pbmcuPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGJyPjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij5QcmVzc3VyaXNhdGlvbiBwYW5lbCAtIHBhY2tzIG9mZiwgbm8gZHVjdCBwcmVzc3VyZSwgb3V0ZmxvdyB2YWx2ZSBmdWxseSBvcGVuIC0gdW5wcmVzc3VyaXNlZCBjYWJpbjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48aW1nIHNyYz0iaHR0cHM6Ly93d3cuY291cnNld2FyZS50cmFpbmluZy9pbWFnZXMvZmluYWwvNDg1MDQuanBnIiBhbHQ9IiIgYWxpZ249IiIgYm9yZGVyPSIwcHgiPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxicj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5JZiB0aGUgcGlsb3QgaXMgZml0IGFuZCBmcmVlIGZyb20gZGlzZWFzZSBhbmQgaWxsbmVzcyBpcyBzaXR0aW5nIHF1aWV0bHkgYXQgdGhlIGNvbnRyb2xzIGluIGEgd2FybSZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5jYWJpbiBvciBjb2NrcGl0IGhlIG9yIHNoZSB3aWxsIGhhdmUgYSBiZXR0ZXIgdG9sZXJhbmNlIHRvIGh5cG94aWEgKGJ1dCB3aWxsIGV2ZW50dWFsbHkgYmVjb21lJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPnVuY29uc2Npb3VzIHVubGVzcyBveHlnZW4gaXMgb2J0YWluZWQpLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5Ub2xlcmFuY2UgdG8gaHlwb3hpYSB3aWxsIGJlIGNvbnNpZGVyYWJseSBzaG9ydGVuZWQsIGFuZCBoeXBveGlhIGNhbiBiZSBleHBlY3RlZCB0byBvY2N1ciZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5iZWxvdyAxMCwwMDAgZnQgQU1TTCBpZiB0aGUgcGlsb3Q6PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHVsPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5IQVMgQSBDT0xEIE9SIENIRVNUIElORkVDVElPTiwgT1IgSVMgSUxMPC9zcGFuPjwvbGk+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkhBUyBBIEhBTkdPVkVSPC9zcGFuPjwvbGk+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkhBUyBPVEhFUiBEUlVHIEVGRkVDVFM8L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+TU9WRVMgUVVJQ0tMWSBBQk9VVCBUSEUgQUlSQ1JBRlQ8L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SVMgU1VCSkVDVEVEIFRPIENPTEQgVEVNUEVSQVRVUkVTIChMSVZFUiBVU0VTIE9YWUdFTiBUTyZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5XQVJNIFRIRSBCT0RZKTwvc3Bhbj48L2xpPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5JUyBTVUJKRUNURUQgVE8gU1RST05HIEcgRk9SQ0VTPC9zcGFuPjwvbGk+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPklTIEFOQUVNSUM8L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SVMgRkFUSUdVRUQ8L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SVMgQSBTTU9LRVI8L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+Q0FSQk9OIE1PTk9YSURFPC9zcGFuPjwvbGk+PC91bD48L2Rpdj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+VGhlIHByaW1hcnkgcGh5c2lvbG9naWNhbCBhbmQgYmVoYXZpb3VyYWwgY29uc2VxdWVuY2VzIG9mIGh5cG94aWEgZm9yIGZsaWdodCBjcmV3IGFuZCBwYXNzZW5nZXJzLjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+V2l0aG91dCBlbm91Z2ggb3h5Z2VuLCB0aGUgYm9keSB3aWxsIGxvc2UgY29uc2Npb3VzbmVzcy48L3NwYW4+PC9kaXY+PGRpdj48cCBkYXRhLWJpcmRzZW5kLXBhci1pbmRleD0iMTkiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5UaGUgaW5pdGlhbCBlZmZlY3RzIG9mIGh5cG94aWEgYXJlIG5vdCB1bmxpa2UgYWxjb2hvbC4gQSBmZWVsaW5nIG9mIGNhcmVmcmVlIGV1cGhvcmlhIGlzIHNvbWV0aW1lcyB0aGUgZmlyc3Qgc2lnbmFsIHRoYXQgc29tZXRoaW5n4oCZcyB3cm9uZy4gT3RoZXIgc2lnbnMgaW5jbHVkZSBibHVlIGZpbmdlcm5haWxzIG9yIGxpcHMsIGhlYWRhY2hlLCBkZWxheWVkIHJlc3BvbnNlIHRpbWVzLCBvciBpbXBhaXJlZCBqdWRnbWVudC48L3NwYW4+PC9wPjxkaXYgZGF0YS1iaXJkc2VuZC1mb3JtLXBsYWNlbWVudD0ibWlkZGxlIj48L2Rpdj48cCBkYXRhLWJpcmRzZW5kLXBhci1pbmRleD0iMjAiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5BcyB0aGUgYm9keeKAmXMgdGlzc3VlcyBiZWNvbWUgbW9yZSBhbmQgbW9yZSBzdGFydmVkIGZvciBveHlnZW4sIG51bWJuZXNzLCB0aW5nbGluZyBmaW5nZXJzIGFuZCB0b2VzLCBkcm93c2luZXNzLCBhbmQgbGlnaHRoZWFkZWRuZXNzIHdpbGwgZm9sbG93LiBUaGUgZmllbGQgb2YgdmlzaW9uIHdpbGwgbmFycm93LCBhbmQgdW5jb25zY2lvdXNuZXNzIGZvbGxvd3MuPC9zcGFuPjwvcD48cCBkYXRhLWJpcmRzZW5kLXBhci1pbmRleD0iMjAiPjwvcD48cCBkYXRhLWJpcmRzZW5kLXBhci1pbmRleD0iMjEiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5BcyB0aGUgYm9keSBnZXRzIGxlc3Mgb3h5Z2VuLCBoeXBveGlhIHByb2dyZXNzZXMgdGhyb3VnaCBmb3VyIHN0YWdlcy48L3NwYW4+PC9wPjxwIGRhdGEtYmlyZHNlbmQtcGFyLWluZGV4PSIyMiI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPlRoZSBmaXJzdCBzdGFnZSwgdGhlIEluZGlmZmVyZW50IFN0YWdlLCByZWFsbHkgb25seSBhZmZlY3RzIG9uZSBwYXJ0IG9mIHRoZSBib2R54oCTdGhlIGV5ZXMuIFRoZSBwcm9jZXNzIG9mIGRhcmsgYWRhcHRhdGlvbiBpcyBleHRyZW1lbHkgb3h5Z2VuIGludGVuc2l2ZS4gQXMgYSByZXN1bHQsIGV5ZXNpZ2h0IGlzIHNldmVyZWx5IGxpbWl0ZWQgYXQgbmlnaHQgaWYgdGhlcmUgaXMgbG93IG94eWdlbiBhdmFpbGFibGUuIFRoaXMgaXMgdGhlIHJlYXNvbiB0aGF0IHRoZSBGQUEgcmVjb21tZW5kcyBzdXBwbGVtZW50YWwgb3h5Z2VuIGFib3ZlIDUsMDAwIGZlZXQgTVNMIGF0IG5pZ2h0Ljwvc3Bhbj48L3A+PHAgZGF0YS1iaXJkc2VuZC1wYXItaW5kZXg9IjIzIj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+VGhlIHNlY29uZCBzdGFnZSBpcyB0aGUgQ29tcGVuc2F0b3J5IFN0YWdlLiBEdXJpbmcgdGhpcyBwaGFzZSwgdGhlIGJvZHkgYXV0b21hdGljYWxseSBhdHRlbXB0cyB0byBtYWtlIHVwIGZvciB0aGUgbGFjayBvZiBveHlnZW4gYnkgaW5jcmVhc2luZyB0aGUgYnJlYXRoaW5nIHJhdGUgb3IgdGFraW5nIGRlZXBlciBicmVhdGhzLjwvc3Bhbj48L3A+PGRpdiBpZD0iQWRUaHJpdmVfQ29udGVudF83X2Rlc2t0b3AiPjwvZGl2PjxwIGRhdGEtYmlyZHNlbmQtcGFyLWluZGV4PSIyNCI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPk5leHQgY29tZXMgdGhlIERpc3R1cmJhbmNlIFN0YWdlLCB3aGVyZSB0aGUgYm9keSBjYW4gbm8gbG9uZ2VyIG1ha2UgdXAgZm9yIHRoZSBsYWNrIG9mIG94eWdlbiwgYW5kIHNpZ25zIGFuZCBzeW1wdG9tcyBsaXN0ZWQgYWJvdmUgY2FuIGJlY29tZSBldmlkZW50Ljwvc3Bhbj48L3A+PHAgZGF0YS1iaXJkc2VuZC1wYXItaW5kZXg9IjI1Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+VGhlIGZpbmFsIHN0YWdlIG9mIGh5cG94aWEgaXMgdGhlIENyaXRpY2FsIFN0YWdlLCB3aGVyZSBjb25zY2lvdXNuZXNzIGlzIGxvc3QsIGFuZCBkZWF0aCBmb2xsb3dzIHNob3J0bHkgYWZ0ZXIgdGhhdC48L3NwYW4+PC9wPjxwIGRhdGEtYmlyZHNlbmQtcGFyLWluZGV4PSIyNSI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LXN0eWxlOiBpdGFsaWM7IGZvbnQtc2l6ZTogMTBwdDsiPkhlYXJpbmcmbmJzcDs8L3NwYW4+aXMgcGFydGljdWxhcmx5IHJlc2lzdGFudCB0byBoeXBveGlhIHdoaWNoIGlzIG9uZSByZWFzb24gbWFueSBjcmV3IG1lbWJlcnMgaGF2ZSBiZWVuIHNhdmVkIGZyb20gbmVhciB0cmFnZWR5LiBSYWRpbyBpcyB0aGUgYmVzdCB3YXkgdG8gY29tbXVuaWNhdGUgd2l0aCBhIHBpbG90IHN1ZmZlcmluZyBmcm9tIGFjdXRlIGh5cG94aWEuIFNpbXBsZSBvcmRlcnMgZnJvbSBwaWxvdHMgaW4gb3RoZXIgcGxhbmVzLCBjb250cm9sbGVycywgb3IgZmxpZ2h0IGVuZ2luZWVycyBoYXZlIGJlZW4gdXNlZCB0byBndWlkZSBwaWxvdHMgdG8gc2FmZXR5Ljwvc3Bhbj48L3A+PC9kaXY+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXdlaWdodDogYm9sZDsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsiPjxicj48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMnB0OyI+MTAuMTAuMTAgRGVzY3JpYmUgdGhlIGNvbW1vbiBzeW1wdG9tcyBvZiBoeXBveGlhLjwvc3Bhbj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+U3ltcHRvbXMgb2YgaHlwb3hpYTo8L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxkaXYgc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij5USEUgT05TRVQgQ0FOIEJFIFNVQlRMRSBTTyBUSEUgU1VGRkVSRVIgTUFZIE5PVCBCRSBBV0FSRSBPRiBJVC48L2Rpdj48ZGl2IHN0eWxlPSJmb250LXdlaWdodDogYm9sZDsiPjxicj48L2Rpdj48ZGl2PjxkaXYgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPlRoZSBtb3N0IGNvbXBsZXggcGFydHMgb2YgdGhlIGJyYWluIHVzZSB0aGUgbW9zdCBveHlnZW4gc28gd2lsbCBiZSBhZmZlY3RlZCBlYXJsaWVzdCBieSBoeXBveGlhLiZuYnNwOzxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5UaGV5IGFyZSByZXNwb25zaWJsZSBmb3IgZnVuY3Rpb25zIHN1Y2ggYXMgcGVyc29uYWxpdHksIHJlYXNvbmluZywgbWVtb3J5LCBqdWRnZW1lbnQsIGRlY2lzaW9uIG1ha2luZywgYW5kIHZpc2lvbi48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIGlkPSJkb2NzLWludGVybmFsLWd1aWQtOWI0ZTYzNWEtN2ZmZi1lMzM5LWFjNGYtYzcxOGYyNTg1ZmI2Ij5UaGUgZmlyc3Qgc3ltcHRvbXMgb2YgaHlwb3hpYSBjYW4gaW5jbHVkZSBldXBob3JpYSBhbmQgYSBjYXJlZnJlZSBmZWVsaW5nLiBXaXRoIGluY3JlYXNlZCBveHlnZW4gZGVwcml2YXRpb24sIHRoZSBleHRyZW1pdGllcyBiZWNvbWUgbGVzcyByZXNwb25zaXZlIGFuZCBmbHlpbmcgYmVjb21lcyBsZXNzIGNvb3JkaW5hdGVkLjwvc3Bhbj48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1zaXplOiAxMnB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPkhZUE9YSUEgV0lMTCBOT1QgQUZGRUNUIEFMTCBQSUxPVFMgSU4gVEhFIFNBTUUgV0FZPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtc2l6ZTogMTJweDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48cCBkaXI9Imx0ciI+PC9wPjx1bD48bGk+Q3lhbm9zaXMgKGJsdWUgZmluZ2VybmFpbHMgYW5kIGxpcHMpLjwvbGk+PGxpPkhlYWRhY2hlPC9saT48bGk+RGVjcmVhc2VkIHJlc3BvbnNlIHRvIHN0aW11bGkgYW5kIGluY3JlYXNlZCByZWFjdGlvbiB0aW1lLDwvbGk+PGxpPlBvb3Igb3IgSW1wYWlyZWQganVkZ21lbnQ8L2xpPjxsaT5FdXBob3JpYTwvbGk+PGxpPlZpc3VhbCBpbXBhaXJtZW50IC0gdHVubmVsIHZpc2lvbiwgcmVkdWNlZCBjb2xvdXIgdmlzaW9uPC9saT48bGk+RHJvd3NpbmVzczwvbGk+PGxpPkxpZ2h0aGVhZGVkIG9yIGRpenp5IHNlbnNhdGlvbjwvbGk+PGxpPlRpbmdsaW5nIGluIGZpbmdlcnMgYW5kIHRvZXM8L2xpPjxsaT5OdW1ibmVzczwvbGk+PGxpPk1lbnRhbCBmaXhhdGlvbiBvbiB1bmltcG9ydGFudCB0YXNrczwvbGk+PC91bD48cD48L3A+PHAgZGlyPSJsdHIiPkFzIGh5cG94aWEgd29yc2VucywgdGhlIHBpbG90J3MgZmllbGQgb2YgdmlzaW9uIGJlZ2lucyB0byBuYXJyb3csIGFuZCBpbnN0cnVtZW50IGludGVycHJldGF0aW9uIGNhbiBiZWNvbWUgZGlmZmljdWx0LiBFdmVuIHdpdGggYWxsIHRoZXNlIHN5bXB0b21zLCB0aGUgZWZmZWN0cyBvZiBoeXBveGlhIGNhbiBnaXZlIGEgcGlsb3QgYSBmYWxzZSBzZW5zZSBvZiBzZWN1cml0eSBhbmQgYmUgZGVjZWl2ZWQgaW50byBiZWxpZXZpbmcgZXZlcnl0aGluZyBpcyBub3JtYWwuPC9wPjwvc3Bhbj48L2Rpdj48L2Rpdj48L3NwYW4+PC9kaXY+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjM0LjEwLjEyIEV4cGxhaW4gdGhlIHJlYXNvbnMgaHlwb3hpYSBzeW1wdG9tcyBhcmUgZGlmZmljdWx0IHRvIGRldGVjdC48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+T25lIG9mIHRoZSBiaWdnZXN0IGNoYWxsZW5nZXMgaW4gZGVhbGluZyB3aXRoIGh5cG94aWEgZHVyaW5nIGZsaWdodCBpcyB0aGF0IHRoZSBlZmZlY3RzIGFyZSBub3QgYWx3YXlzIGV2aWRlbnQgYXQgZmlyc3QuIFRoaXMsIGNvdXBsZWQgd2l0aCB0aGUgZmFjdCB0aGF0IGl0cyBlZmZlY3RzIGFyZSBjdW11bGF0aXZlLCBtYWtlcyBpdCBkaWZmaWN1bHQgdG8gcmVjb2duaXNlLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MTAuMTAuMTQgRXhwbGFpbiB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gaHlwb3hpYyBvbnNldCBhbmQgYm90aCB2aXNpb24gYW5kIGNvZ25pdGl2ZSBwZXJmb3JtYW5jZS48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+VGhlIHN5bXB0b21zIG9mIGJyYWluIGh5cG94aWEgYXJlOjwvc3Bhbj48L2Rpdj48ZGl2Pjx1bD48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+dGVtcG9yYXJ5IG1lbW9yeSBsb3NzLjwvc3Bhbj48L2xpPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5yZWR1Y2VkIGFiaWxpdHkgdG8gbW92ZSB5b3VyIGJvZHkuPC9zcGFuPjwvbGk+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPmRpZmZpY3VsdHkgcGF5aW5nIGF0dGVudGlvbi48L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+ZGlmZmljdWx0eSBtYWtpbmcgc291bmQgZGVjaXNpb25zLjwvc3Bhbj48L2xpPjwvdWw+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5UaGUgdmlzdWFsIHN5c3RlbSBpcyBzZW5zaXRpdmUgdG8gaXRzIG94eWdlbiBzdXBwbHkgYXQgbXVsdGlwbGUgbGV2ZWxzLjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMzMsIDMzLCAzMyk7IGZvbnQtc2l6ZTogMTBwdDsiPkNvbmUgcGhvdG9yZWNlcHRvcnMsIHdoaWNoIGVuYWJsZSBjb2xvciB2aXNpb24sIGNvbnN1bWUgbW9yZSBlbmVyZ3kgdGhhbiByb2RzLCBhcyByb2RzIGRvIG5vdCBzYXR1cmF0ZSBpbiBicmlnaHQgbGlnaHQuJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMzMsIDMzLCAzMyk7IGZvbnQtc2l6ZTogMTBwdDsiPkluIHRvdGFsLCB2aXN1YWwgcHJvY2Vzc2luZyByYW5rcyBhcyBvbmUgb2YgdGhlIGhpZ2hlc3QgZW5lcmd5LSBhbmQgb3h5Z2VuLWRlbWFuZGluZyBzeXN0ZW1zIG9mIHRoZSBicmFpbi48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMzMsIDMzLCAzMyk7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyBmb250LXNpemU6IDEwcHQ7Ij5EdWUgdG8gdGhlc2UgZGVtYW5kcywgaXQgaXMgdW5zdXJwcmlzaW5nIHRoYXQgZXhwb3N1cmUgdG8gaHlwb3hpYyBjb25kaXRpb25zIHJlc3VsdHMgaW4gY2hhbmdlcyB0byB0aGUgcGVyY2VwdGlvbiBvZiBsaWdodCBpbnRlbnNpdHk8L3NwYW4+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMzMsIDMzLCAzMyk7IGZvbnQtc2l6ZTogMTBwdDsiPiZuYnNwO2FuZCBpbXBhaXJzIGNvbG91ciB2aXNpb248L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMzMsIDMzLCAzMyk7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDMzLCAzMywgMzMpOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+U29tZSBvZiB0aGUgbW9zdCBjb21tb25seSByZXBvcnRlZCBzeW1wdG9tcyBvZiBoeXBveGlhIGluY2x1ZGUgZ3JheWluZywgdHVubmVsIHZpc2lvbiwgYW5kIGJsdXJyeSB2aXNpb248L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXY+PGJyPjwvZGl2PjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+MzQuMTAuMTYgRGVzY3JpYmUgaG93IGh5cG94aWEgY2FuIGJlIHByZXZlbnRlZC48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPlRoZXJlIGFyZSB0d28gbWV0aG9kcyBmb3IgcHJldmVudGluZyBoeXBveGlhLiZuYnNwOzwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5PbmUgbWV0aG9kIGludm9sdmVzIGluY3JlYXNpbmcgYmFyb21ldHJpYyBwcmVzc3VyZSB0byBhIG1pbmltYWwgdmFsdWUgc3VjaCB0aGF0IHRoZSBjb25jZW50cmF0aW9uIG9mIG94eWdlbiBpcyBzdWZmaWNpZW50IHRvIHByZXZlbnQgaHlwb3hpYSBmcm9tIG9jY3VycmluZy4gVGhpcyBpcyBnZW5lcmFsbHkgZG9uZSBieSBwcmVzc3VyaXNpbmcgdGhlIGFpcmNyYWZ0IGNhYmluLiZuYnNwOzwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5UaGUgb3RoZXIgbWV0aG9kIGlzIHRvIGluY3JlYXNlIHRoZSBicmVhdGhhYmxlIG94eWdlbiBpbiBhIHN5c3RlbSB0aHJvdWdoIHRoZSB1c2Ugb2YgYW4gTzxzdWI+MiZuYnNwOzwvc3ViPmRldmljZS4gVGhpcyBpcyB1c3VhbGx5IGFjY29tcGxpc2hlZCBieSBoYXZpbmcgYSBwaWxvdCAob3IgcGFzc2VuZ2VycyBhbmQgY3Jldykgd2VhciBhbiBveHlnZW4gbWFzay48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SXQgaXMgYWxzbyBwb3NzaWJsZSB0byBjb21iaW5lIHRoZSBtZXRob2RzIHRvIHByb3ZpZGUgZ3JlYXRlciBhc3N1cmFuY2UgdGhhdCBoeXBveGlhIGlzIHByZXZlbnRlZC48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTMuMzMzM3B4OyI+VGhlIG1vc3QgZWZmZWN0aXZlIHdheSB0byBwcmV2ZW50IGh5cG94aWEgaXMgdGhyb3VnaCBlZHVjYXRpb24gYW5kIGV4cGVyaWVuY2UuIFdoZW4gcGlsb3RzIGFyZSB0cmFpbmVkIGluIHRoZSBwcm9wZXIgdXNlIGFuZCBjYXJlIG9mIHRoZWlyIHByZXNzdXJpc2F0aW9uIHN5c3RlbXMgYW5kIHN1cHBsZW1lbnRhbCBveHlnZW4gZXF1aXBtZW50LCBhbmQgYXJlIGF3YXJlIG9mIHRoZWlyIHBlcnNvbmFsIGh5cG94aWEgc2lnbnMgYW5kIHN5bXB0b21zLCB0aGV5IGFyZSBzYWZlci48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPlRoZSBtYWluIGZhY3RvcnMgaW5mbHVlbmNpbmcgdmFyaWF0aW9uIGluIGh5cG94aWEgb25zZXQgKHRvbGVyYW5jZSkgYmV0d2VlbiBpbmRpdmlkdWFscy48L3NwYW4+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5GYWN0b3JzIHRoYXQgd2lsbCBwbGFjZSBhIHBpbG904oCZcyB0aW1lIG9mIHVzZWZ1bCBjb25zY2lvdXNuZXNzIGluIHRoZSBsb3dlciAobW9yZSBkYW5nZXJvdXMpIGVuZCZuYnNwOzxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5vZiB0aGUgcmFuZ2UgYXJlIHRob3NlIHRoYXQgcGxhY2UgZXh0cmEgZGVtYW5kcyBvbiB0aGUgYm9keSBmb3Igb3h5Z2VuLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+VGhlc2UgaW5jbHVkZSBpbGxuZXNzLCBwaHlzaWNhbCBhY3Rpdml0eSwgYW5kIGEgY29sZCBib2R5IHRlbXBlcmF0dXJlLjwvZGl2PjxkaXY+PHVsIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxsaT48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+SUxMTkVTUyDigJMgZXNwZWNpYWxseSBjb2xkcyBhbmQgZmx1LiBUaGUgcmVzcGlyYXRpb24gc3lzdGVtIGlzIG5vdCB3b3JraW5nIGF0IGl0cyZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+ZnVsbCBjYXBhY2l0eS48L3NwYW4+PC9saT48bGk+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPlBIWVNJQ0FMIEFDVElWSVRZIOKAkyB0aGUgYm9keSBpcyBhbHJlYWR5IGJyZWF0aGluZyBmYXN0ZXIsIHRvIHByb3ZpZGUgY2VsbHMgd2l0aCZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+dGhlIHJlcXVpcmVkIG94eWdlbi4gVGhlcmUgaXMgbGVzcyByZXNpZHVhbCBveHlnZW4gdG8gYmUgdXNlZCBmb3IgcmVzcGlyYXRpb24uPC9zcGFuPjwvbGk+PGxpPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5DT0xEIEJPRFkgVEVNUEVSQVRVUkUg4oCTIHRoZSBsaXZlciB3aWxsIGJlIHVzaW5nIGEgbG90IG1vcmUgb3h5Z2VuIHRoYW4mbmJzcDs8L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPnVzdWFsIGluIHRyeWluZyB0byBoZWF0IHVwIHRoZSByZXN0IG9mIHRoZSBib2R5LiBMZXNzIG94eWdlbiBhZ2FpbiByZW1haW5zIGZvciZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMHB0OyI+cmVzcGlyYXRpb24uPC9zcGFuPjwvbGk+PC91bD48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkl0IGlzIGltcG9zc2libGUgdG8gcHJlZGljdCBleGFjdGx5IHdoZW4sIHdoZXJlLCBvciBob3cgaHlwb3hpYyByZWFjdGlvbnMgd2lsbCBvY2N1ciBpbiBhbiBpbmRpdmlkdWFsIHBpbG90LiBUaGUgYXBwZWFyYW5jZSBhbmQgc2V2ZXJpdHkgb2YgdGhlIHNpZ25zIGFuZCBzeW1wdG9tcyBhcmUgYWdncmF2YXRlZCBieSBzZXZlcmFsIGZhY3RvcnM7IHJhdGUgb2YgYXNjZW50LCB0aW1lIHNwZW50IGF0IGFsdGl0dWRlLCBwaHlzaWNhbCBhY3Rpdml0eSBhdCBhbHRpdHVkZSwgZmF0aWd1ZSwgc2VsZi1pbXBvc2VkIHN0cmVzcywgZXh0cmVtZSBhbWJpZW50IHRlbXBlcmF0dXJlLCBhbmQgaW5kaXZpZHVhbCBwaHlzaW9sb2dpY2FsIGZpdG5lc3MuPC9zcGFuPjwvZGl2PjxkaXY+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTMuMzMzM3B4OyBmb250LWZhbWlseTogQXJpYWw7Ij48YnI+PC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+SHlwb3hpYSBGYWN0czwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48ZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjEuIEEgaGVhbHRoeSBwaWxvdCBzaG91bGQgbm90IGJlIGFmZmVjdGVkIHNpZ25pZmljYW50bHkgYnkgaHlwb3hpYSBiZWxvdyAxMCwwMDBmdCBhbXNsLjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjIuIElmIGEgcGlsb3QgaXMgdW53ZWxsIHdpdGggYSBjaGVzdCBpbmZlY3Rpb24gaXQgaXMgcG9zc2libGUgdG8gc3VmZmVyIGVmZmVjdHMgb2YgaHlwb3hpYSBiZWxvdyZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij4xMCwwMDAgZnQuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+My4gQ2FyYm9uIG1vbm94aWRlIGdhcyBhbmQgaGlnaCBHIGxvYWRpbmcgY2FuIGFsc28gcHJvZHVjZSBoeXBveGlhIGF0IGFueSBhbHRpdHVkZS48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij40LiBUaGUgbW9zdCBjb21wbGV4IHBhcnRzIG9mIHRoZSBicmFpbiB1c2UgdGhlIG1vc3QgYW1vdW50IG9mIG94eWdlbiBzbyB3aWxsIGJlIGFmZmVjdGVkJm5ic3A7PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPmVhcmxpZXN0IGJ5IGh5cG94aWEuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+NS4gVGhleSBhcmUgcmVzcG9uc2libGUgZm9yIGZ1bmN0aW9ucyBzdWNoIGFzIHBlcnNvbmFsaXR5LCByZWFzb25pbmcsIG1lbW9yeSwganVkZ2VtZW50LCZuYnNwOzwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5kZWNpc2lvbi1tYWtpbmcsIGFuZCB2aXNpb24uPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBjYWxpYnJpLCB2ZXJkYW5hLCBhcmlhbCwgaGVsdmV0aWNhLCBzYW5zLXNlcmlmOyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+Ni4gSHlwb3hpYSBjYW4gYmUgcmVjb2duaXNlZCBieSBwcm9ncmVzc2l2ZSBzeW1wdG9tcy48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IGNhbGlicmksIHZlcmRhbmEsIGFyaWFsLCBoZWx2ZXRpY2EsIHNhbnMtc2VyaWY7Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij43LiBUaGUgb25zZXQgb2YgaHlwb3hpYSBjYW4gYmUgc3VidGxlIHNvIHRoZSBzdWZmZXJlciBtYXkgbm90IGJlIGF3YXJlIG9mIGl0Ljwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogY2FsaWJyaSwgdmVyZGFuYSwgYXJpYWwsIGhlbHZldGljYSwgc2Fucy1zZXJpZjsiPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjguIEh5cG94aWEgd2lsbCBub3QgYWZmZWN0IGFsbCBwaWxvdHMgaW4gdGhlIHNhbWUgd2F5Ljwvc3Bhbj48L2Rpdj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxMnB0OyBmb250LXdlaWdodDogYm9sZDsiPjQ2LjEwLjE4IFN0YXRlIHRoZSBmYWN0b3JzIHRoYXQgYWZmZWN0IHRoZSBsaWtlbGlob29kIG9mIHN1ZmZlcmluZyBmcm9tIGh5cG94aWEuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPklmIHRoZSBib2R54oCZcyByZWQgYmxvb2QgY2VsbHMgYXJlIHVuYWJsZSB0byBjYXJyeSBveHlnZW4gdG8gdGhlIG9yZ2FucyBpbiBtZWRpY2luZSwgaXQgaXMgY2F1c2VkIGJ5IHNldmVyZSBibG9vZCBsb3NzIG9yIGFuZW1pYS4gQSBwb3NzaWJsZSBjYXVzZSBvZiB0aGlzIGluIGF2aWF0aW9uIGlzIGNhcmJvbiBtb25veGlkZSBwb2lzb25pbmcuPGJyPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48YnI+PC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij5EcnVncyBhbmQgYWxjb2hvbCBjYW4gY2F1c2UgdGhlIG9yZ2FucyBub3QgdG8gdXNlIHN1ZmZpY2llbnQgb3h5Z2VuLiBXaGlsZSB0aGUgZWZmZWN0cyBtYXkgYmUgbmVnbGlnaWJsZSBhdCB0aGUgc3VyZmFjZSwgYXQgYWx0aXR1ZGUgdGhleSBtYXkgYmUgc2lnbmlmaWNhbnRseSBhbXBsaWZpZWQuPC9zcGFuPjwvZGl2PjxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEwcHQ7Ij48cCBkYXRhLWJpcmRzZW5kLXBhci1pbmRleD0iMTUiPkl04oCZcyBhbHNvIHBvc3NpYmxlIGZvciB0aGUgYmxvb2QgdG8gbm90IGZsb3cgZW5vdWdoIHRvIGZlZWQgdGhlIG9yZ2FucyBhbGwgb2YgdGhlIG94eWdlbiB0aGV5IG5lZWQuIE9uIHRoZSBncm91bmQsIHRoaXMgY291bGQgYmUgY2F1c2VkIGJ5IGNhcmRpb3Zhc2N1bGFyIGRpc2Vhc2UuIEluIGZsaWdodCwgdGhpcyBpcyBjb21tb25seSBjYXVzZWQgYnkgRy1mb3JjZXMuPC9wPjxwIGRhdGEtYmlyZHNlbmQtcGFyLWluZGV4PSIxNiI+QXMgYW4gYWlyY3JhZnQgcHVsbHMgbW9yZSBH4oCZcywgdGhlIGhlYXJ0IGFuZCBjYXJkaW92YXNjdWxhciBzeXN0ZW0gbXVzdCB3b3JrIGhhcmRlciB0byBrZWVwIGJsb29kIGZsb3dpbmcgdG8gdGhlIGhlYWQgYW5kIGJyYWluLiBUaGUgaW5jcmVhc2VkIHB1bGwgb2YgZ3Jhdml0eSB3aWxsIG1ha2UgaXQgaGFyZGVyIGFuZCBoYXJkZXIgdG8gZG8uPC9wPjxwIGRhdGEtYmlyZHNlbmQtcGFyLWluZGV4PSIxNyI+RXZlbnR1YWxseSwgdGhpcyB3aWxsIGxlYWQgdG8gdHVubmVsIHZpc2lvbiBhcyB0aGUgZXllcyByZWNlaXZlIGluc3VmZmljaWVudCBveHlnZW4sIGFuZCB0aGVuIGdyZXkgb3V0IGFuZCBibGFja291dC48L3A+PHAgZGF0YS1iaXJkc2VuZC1wYXItaW5kZXg9IjE3Ij5TbW9raW5nJm5ic3A7aW50cm9kdWNlcyBjYXJib24gbW9ub3hpZGUsIHdoaWNoIGJpbmRzIHRvIGhhZW1vZ2xvYmluIG1vcmUgc3Ryb25nbHkgdGhhbiBveHlnZW4sIHJlZHVjaW5nIG94eWdlbiBkZWxpdmVyeS4mbmJzcDtGYXRpZ3VlJm5ic3A7ZnVydGhlciByZWR1Y2VzIGVmZmljaWVuY3kgb2Ygb3h5Z2VuIHV0aWxpc2F0aW9uLjwvcD48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGJyPjwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTJwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij40Ni4xMC4yMCBEZXNjcmliZSBob3cgaHlwb3hpYSBjYW4gYmUgdHJlYXRlZC48L3NwYW4+PC9kaXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyI+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5UcmVhdG1lbnQgT2YgSHlwb3hpYTwvc3Bhbj48L2Rpdj48ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPjxicj48L3NwYW4+PC9kaXY+PGRpdj48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5BIHBlcnNvbiBzdWZmZXJpbmcgZnJvbSBoeXBveGlhIG11c3QgaGF2ZSB0aGUgcHJlc3N1cmUgb2Ygb3h5Z2VuIHRoYXQgdGhleSBhcmUgYnJlYXRoaW5nIGluY3JlYXNlZCBzbyB0aGUgY2VsbHMgY2FuIGFnYWluIGJlIHN1cHBsaWVkIHdpdGggb3h5Z2VuIHRvIGNvbXBsZXRlIHRoZSByZXNwaXJhdGlvbiBwcm9jZXNzLiBUaGlzIGNhbiBiZSBkb25lIGJ5Ojwvc3Bhbj48L2Rpdj48ZGl2Pjx1bD48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+QURNSU5JU1RFUklORyBPWFlHRU4gRlJPTSBBTiBPWFlHRU4gU1VQUExZIFNPVVJDRTsgYW5kL29yPC9zcGFuPjwvbGk+PC91bD48dWw+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPkRFU0NFTkRJTkcgVEhFIEFJUkNSQUZUIChvciB0aGUgYWlyY3JhZnQgY2FiaW4pIFRPIDEwLDAwMCBGVCBBTVNMIE9SIEJFTE9XLjwvc3Bhbj48L2xpPjwvdWw+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PGltZyBzcmM9Imh0dHBzOi8vd3d3LmNvdXJzZXdhcmUudHJhaW5pbmcvaW1hZ2VzL2ZpbmFsLzQzNDQwXzI1MC5qcGciIGFsdD0iIiBhbGlnbj0iIiBib3JkZXI9IjBweCI+PC9kaXY+PGRpdiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PGJyPjwvZGl2PjxkaXY+PHA+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SWYgaHlwb3hpYSBpcyBzdXNwZWN0ZWQgaW4geW91cnNlbGYgb3Igb3RoZXJzIG9uIGJvYXJkIGFuIGFpcmNyYWZ0LCBmb2xsb3cgdGhlc2Ugc2ltcGxlIHN0ZXBzOjwvc3Bhbj48L3A+PHVsPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5BZG1pbmlzdGVyIHN1cHBsZW1lbnRhbCBveHlnZW4gKGRvbiB5b3VyIG94eWdlbiBtYXNrKTwvc3Bhbj48L2xpPjwvdWw+PHVsPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5DaGVjayB5b3VyIGVxdWlwbWVudCBmb3IgcHJvcGVyIG9wZXJhdGlvbjwvc3Bhbj48L2xpPjwvdWw+PHVsPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5FbnN1cmUgdGhlIHJlZ3VsYXRvciBpcyB0dXJuZWQgb248L3NwYW4+PC9saT48L3VsPjx1bD48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+Q2hlY2sgdGhlIGZsb3cgaW5kaWNhdG9yICh0aGlzIHdpbGwgdGVsbCB5b3UgdGhhdCBzb21ldGhpbmcgaXMgY29taW5nIHRvIHRoZSBtYXNrKTwvc3Bhbj48L2xpPjwvdWw+PHVsPjxsaT48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDEwcHQ7Ij5FbnN1cmUgdGhhdCBhbGwgb3h5Z2VuIGVxdWlwbWVudCBjb25uZWN0aW9ucyBhcmUgc2VjdXJlPC9zcGFuPjwvbGk+PC91bD48dWw+PGxpPjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtc2l6ZTogMTBwdDsiPk1vbml0b3IgeW91ciBicmVhdGhpbmcgcmF0ZSBhbmQgZGVwdGggKGludGVudGlvbmFsbHkgc2xvdyB5b3VyIGJyZWF0aGluZyB0byBwcmV2ZW50IGh5cGVydmVudGlsYXRpb24sIHVzZSB0aGUgZmxvdyBpbmRpY2F0b3IgdG8gaGVscCB5b3UgbW9uaXRvciByZXNwaXJhdGlvbik8L3NwYW4+PC9saT48L3VsPjx1bD48bGk+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAxMHB0OyI+SWYgc2FmZSwgZGVzY2VuZCB0byBhbiBhbHRpdHVkZSAoYmVsb3cgMTAsMDAwIGZlZXQpIHdoZXJlIHN1cHBsZW1lbnRhbCBveHlnZW4gaXMgbm8gbG9uZ2VyIHJlcXVpcmVkPC9zcGFuPjwvbGk+PC91bD48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdj48ZGl2IHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PGRpdj48ZGl2Pjxicj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj48L3RkPjwvdHI+PC90Ym9keT48L3RhYmxlPmQCCQ8WAh8BBYcEPHRhYmxlIGJvcmRlcj0iMCIgc3R5bGU9IndpZHRoOjEwMCU7Ym9yZGVyLXdpZHRoOjFweDtib3JkZXItc3R5bGU6c29saWQ7Ym9yZGVyLWNvbG9yOiMwMDAwMDA7IiBjZWxscGFkZGluZz0iNSIgY2VsbHNwYWNpbmc9IjAiPjx0cj48dGQgY2xhc3M9ImJvZHl0ZXh0IiBhbGlnbj0ibGVmdCI+PGEgaHJlZj0iL2NvdXJzZS5hc3B4P2lkPTQwMzI4JnBpZD1lJmV4aWQ9Mzk2MzkiIGFsdD0iU0hPUlQgVEVTVCAxMC42IiB0aXRsZT0iU0hPUlQgVEVTVCAxMC42Ij5QcmV2IFBhZ2U8L2E+PC90ZD48IS0tPHRkIGNsYXNzPSJib2R5dGV4dCIgYWxpZ249ImNlbnRlciI+UGFnZSA5IG9mIDUwICgxMC4xMCBIeXBveGlhKTwvdGQ+Ly8tLT48dGQgY2xhc3M9ImJvZHl0ZXh0IiBhbGlnbj0icmlnaHQiPjxhIGhyZWY9Ii9jb3Vyc2UuYXNweD9pZD00MDMyOCZwaWQ9NjI3NzQiIGFsdD0iMTAuMTIgSHlwZXJ2ZW50aWxhdGlvbiIgdGl0bGU9IjEwLjEyIEh5cGVydmVudGlsYXRpb24iPk5leHQgUGFnZTwvYT48L3RkPjwvdGFibGU+ZGTcaIZZPhs6Gsg7CFhZmr9EU3+/g3n7auf/7yxDwvis8A==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="10.10_files/WebResource.js" type="text/javascript"></script>
+
+
+<script src="10.10_files/ScriptResource.js" type="text/javascript"></script>
+<script src="10.10_files/ScriptResource_002.js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="832A5EF1">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tpnlCookies',''], [], [], 90, '');
+//]]>
+</script>
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td style="text-align:left;background:#000000;"><img src="10.10_files/wtdjtdbf_1%20StoneyCoursetop2.jpg"></td></tr></tbody></table>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:168px;background-image:URL('/images/common/topmenubacker.gif');background-repeat:repeat-X;height:17px;"><img alt="" src="10.10_files/spacer.gif" width="168" height="17"><br></td><td style="width:100%;background-image:URL('/images/common/topmenubacker.gif');background-repeat:repeat-X;height:17px;padding:1px 0px 0px 0px;" id="topmenuitems"><div style="float:left;margin:0px 20px 0px 0px;padding:1px 1px 1px 1px;height:13px;" onmouseover="this.style.background='#FFFFFF';this.style.cursor='hand';" onmouseout="this.style.background='';"><img alt="" src="10.10_files/red_bullet.gif" align="middle" style="border-style:none;">&nbsp;<a href="javascript:popfeedback(40328);">Course Feedback</a></div><div style="float:left;margin:0px 20px 0px 0px;padding:1px 1px 1px 1px;height:13px;" onmouseover="this.style.background='#FFFFFF';this.style.cursor='hand';" onmouseout="this.style.background='';"><img alt="" src="10.10_files/red_bullet.gif" align="middle" style="border-style:none;">&nbsp;<a href="javascript:viewCourseTerms(40328);">Terms &amp; Conditions</a></div></td></tr></tbody></table>
+    
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%; height:90%;">
+		<tbody><tr style="height:100%;">
+				<td align="left" class="leftmenuitems" valign="top" style="height:100%; width:170px; background:#000000;">
+				    <table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><br><img src="10.10_files/FFFFFF.gif"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><br><a href="https://www.courseware.training/">Home/Menu Page</a><br></td></tr></tbody></table><br><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.10_files/CCCC66.gif" align="absmiddle"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="javascript:showhide('Menu_40328_42633');" onclick="document.getElementById('setterFrame').src = '/setter.aspx?Menu_40328_42633';"><span class="leftmenuitems2">PPL Human Factors</span></a><br></td></tr></tbody></table><table id="Menu_40328_42633" style="display:block;"><tbody><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52649&amp;mid=42633">PPL Human Factors Intro</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52545&amp;mid=42633">Syllabus</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52546&amp;mid=42633">10.2 Airmanship and Responsibility</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62772&amp;mid=42633">10.4 Human Factors Models and Programmes</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39638">SHORT TEST 10.2</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52548&amp;mid=42633">10.6 Atmosphere</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62773&amp;mid=42633">10.8 Circulation and Respiratory Systems</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39639">SHORT TEST 10.6</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52549&amp;mid=42633">10.10 Hypoxia</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62774&amp;mid=42633">10.12 Hyperventilation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39640">SHORT TEST 10.10</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52547&amp;mid=42633">10.14 Entrapped Gasses</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62775&amp;mid=42633">10.16 Decompression Sickness</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39641">PPL HF 10.14</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52551&amp;mid=42633">10.18 Vision</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52552&amp;mid=42633">10.18 Visual Perception</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39642">SHORT TEST 10.18</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52553&amp;mid=42633">10.20 Hearing and Balance</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62776&amp;mid=42633">10.22 Spacial Orientation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39643">SHORT TEST 10.20</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52556&amp;mid=42633">10.24 Gravitational Forces</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62777&amp;mid=42633">10.26-28 Motion Sickness, Flight Anxiety</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39644">SHORT TEST 10.24</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52557&amp;mid=42633">10.30 Fitness to Fly</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62778&amp;mid=42633">10.32-34 Alcohol and Drugs, Blood Donation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39645">SHORT TEST 10.30</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52550&amp;mid=42633">10.36 Environmental Hazards</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39646">SHORT TEST 10.36</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52558&amp;mid=42633">10.38 Stress Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39647">SHORT TEST 10.38</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=54269&amp;mid=42633">10.40 Sleep and Fatigue </a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39648">SHORT TEST 10.40</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62779&amp;mid=42633">10.42 Aging</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52559&amp;mid=42633">10.44 Information Processing</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39649">SHORT TEST 10.44</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=57885&amp;mid=42633">10.46 Situational Awareness</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=42980">SHORT TEST 10.46</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52560&amp;mid=42633">10.48 Judgement and Decision Making</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39650">SHORT TEST 10.48</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52561&amp;mid=42633">10.50 Flight Deck Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39651">SHORT Test 10.50</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52562&amp;mid=42633">10.52 Threat and Error Management</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62781&amp;mid=42633">10.54 Culture</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39652">SHORT TEST 10.52</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52563&amp;mid=42633">10.60 Instrumentation, Displays and Alerts</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62783&amp;mid=42633">10.62 Documentation</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39653">SHORT TEST 10.62</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=52564&amp;mid=42633">10.64 First Aid</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62785&amp;mid=42633">10.66 Survival</a><br></td></tr><tr><td class="leftmenuitems2" valign="middle" align="right" style="width:7px;">-</td><td class="leftmenuitemsnorm2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39654">SHORT TEST 10.64</a><br></td></tr></tbody></table><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.10_files/CCCC66.gif" align="absmiddle"><br></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39655">PRACTICE EXAMS</a><br></td></tr></tbody></table><br><table border="0" width="158" cellpadding="2" cellspacing="0"><tbody><tr><td class="leftmenuitems2" valign="middle" style="width:7px;"><img src="10.10_files/CCCC66.gif" align="absmiddle"></td><td class="leftmenuitems2" valign="middle" style="width:138px;"><a href="javascript:popfeedback(40328);">Course Feedback</a></td></tr></tbody></table>
+				    <br>
+					<iframe src="10.10_files/setter.html" id="setterFrame" width="0" height="0" style="visibility: hidden;"></iframe>
+                    <!-- document.getElementById(iframeId).src = url; -->
+					<div id="pnlCookies">
+
+</div>
+				</td>
+				<td valign="top" style="padding: 20px 20px 20px 20px;" align="left">
+				    <div class="bodytext" style="width:680px;" id="PageContent">
+                        <table style="border-collapse: collapse; width: 700px; border: none;" width="" align=""><tbody><tr><td style="border: none;"><div style="text-align: center;"><table width="" align="" style="border-collapse: collapse; width: 700px; border: none;"><tbody><tr><td style="border: none;"><table width="" align="" style="border-collapse: collapse; width: 700px; border: none;"><tbody><tr><td style="border: none;"><div style="text-align: center;"><span style="font-size: 14pt;"></span></div></td></tr></tbody></table></td></tr></tbody></table><div><table width="" align="" style="border-collapse: collapse; width: 700px; border: none;"><tbody><tr><td style="border: none;"><table width="" align="" style="border-collapse: collapse; width: 700px; border: none;"><tbody><tr><td style="border: none;"><div style="text-align: center;"><span style="font-size: 14pt;"><table width="" align="" style="border-collapse: collapse; width: 697px; background-image: url(&quot;http://www.courseware.co.nz/images/final/42893.jpg&quot;); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: 0% 0%; background-repeat: initial;"><tbody><tr><td style="border: 1px solid rgb(0, 0, 0);"><div><span style="font-family: Arial; font-size: 19px; text-align: center; color: rgb(255, 255, 255);">&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div><div><span style="font-family: Arial; font-size: 19px; text-align: center; color: rgb(255, 255, 255);">&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10.10 Hypoxia</span></div><div><span style="font-family: Arial; font-size: 19px; text-align: center; color: rgb(255, 255, 255);"><br></span></div></td></tr></tbody></table></span></div></td></tr></tbody></table></td></tr></tbody></table></div><div><span style="font-family: Arial; font-size: 10pt; font-weight: bold;"><br></span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 12pt;"><span style="font-weight: bold; font-size: 12pt;"><br></span></span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 12pt;"><span style="font-weight: bold; font-size: 12pt;">10.10.2&nbsp; - Define&nbsp;</span><span style="font-weight: bold; font-size: 12pt;">Hypoxia</span></span></div><div style="text-align: left;"><span style="font-family: Arial; font-size: 12pt;"><span style="font-weight: bold; font-size: 12pt;"><br></span></span></div><div style="text-align: left;"><div><span style="font-family: Arial; font-size: 10pt;"><span style="font-weight: bold;">Hypoxia</span>&nbsp;is a condition that exists when the available oxygen in the blood is inadequate for the&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">demands of the body cells.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;"><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="border: 1px solid rgb(0, 0, 0);"><span style="font-family: Arial; font-size: 10pt;">HYPOXIA
+ is the RESULT of INSUFFICIENT OXYGEN PRESSURE. The OXYGEN is UNABLE to 
+DIFFUSE THROUGH the LUNG LINING INTO the BLOOD SUPPLY to REACH the 
+CELLS.</span><br></td></tr></tbody></table><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">Hypoxia is caused when the oxygen breathed into the lungs has not got sufficient pressure to be&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">able to diffuse through the semi-permeable lining of the lungs into the blood stream.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">In flying this will most likely occur from a reduced atmospheric pressure at altitude.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><span style="font-weight: bold;">Hypoxia</span>&nbsp;is a condition that exists when the available oxygen in the blood is inadequate for the&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">demands of the body cells.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="border: 1px solid rgb(0, 0, 0);"><span style="font-family: Arial; font-size: 10pt;">HYPOXIA
+ is the RESULT of INSUFFICIENT OXYGEN PRESSURE. The OXYGEN is UNABLE to 
+DIFFUSE THROUGH the LUNG LINING INTO the BLOOD SUPPLY to REACH the 
+CELLS.</span><br></td></tr></tbody></table></span></div></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 13.3333px;">In flying this will most likely occur from a reduced atmospheric pressure at altitude.</span></div><div style="font-family: Arial;"><span style="font-size: 13.3333px;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 13.3333px;">The
+ key to flying safely at altitude is to be able to: identify the flight 
+condition in which you may become hypoxic, recognise your personal 
+hypoxia symptoms, and to recover from hypoxia before you have gone 
+beyond your ability or desire to help yourself.</span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">34.10.4 State the partial pressure of oxygen both inside and outside the lungs at sea level.</span><span style="font-size: 10pt;"></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;">The partial pressure of oxygen depends on several variables, but mainly on barometric pressure</span><span style="color: rgb(33, 33, 33); font-size: 10pt;">. Under physiological conditions, this relationship will be affected by any change in altitude.</span></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;"><br></span></span></div><div><div><span style="font-family: Arial; font-size: 10pt;"><span cambria="" math",="" stixgeneral,="" "times="" new="" roman",="" times,="" serif;="" font-size:="" 20px;"="" style="color: rgb(33, 33, 33); font-size: 10pt;">At sea level atmospheric barometric pressure is about 760 mmHg,&nbsp;</span><span style="color: rgb(33, 33, 33); font-size: 10pt;">the partial pressure of oxygen is 21% of that:</span></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;"><br></span></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;"><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="text-align: center; border: 1px solid rgb(0, 0, 0);"><span style="color: rgb(33, 33, 33); font-family: Arial; font-size: 13.3333px;">Sea level partial pressure of oxygen = 159 mmHg</span></td></tr></tbody></table></span></span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="text-align: center;"><span style="font-family: Arial; font-size: 10pt;">Barometric and Oxygen partial pressure vs altitude</span></div><div>&nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp;&nbsp;<img src="10.10_files/48501_450.jpg" alt="" align="" border="0px" style="font-family: Arial; text-align: center;"></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">Oxygen&nbsp;</span><span style="background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial; font-size: 10pt;">partial pressure in the lungs</span><span style="font-family: Arial; font-size: 10pt;">&nbsp;is lower than the atmospheric O</span><sub style="font-family: Arial; line-height: 1;">2</sub><span style="font-family: Arial; font-size: 10pt;">&nbsp;partial pressure for two reasons.</span></div></div><div><ul style="list-style-image: url(&quot;/w/skins/Vector/resources/common/images/bullet-icon.svg?d4515&quot;); margin: 0.3em 0px 0px 1.6em; padding: 0px;"><li style="margin-bottom: 0.1em;"><span style="font-family: Arial; font-size: 10pt;">Firstly,
+ as the air enters the lungs, it is humidified by the upper airway and 
+thus the partial pressure of water vapour (47 mmHg) reduces the oxygen 
+partial pressure to about 150 mmHg.</span></li></ul><ul style="list-style-image: url(&quot;/w/skins/Vector/resources/common/images/bullet-icon.svg?d4515&quot;); margin: 0.3em 0px 0px 1.6em; padding: 0px;"><li style="margin-bottom: 0.1em;"><span style="font-family: Arial; font-size: 10pt;">The rest of the difference is due to the continual uptake of oxygen by the&nbsp;<span style="background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 10pt;">pulmonary</span>&nbsp;<span style="background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 10pt;">capillaries</span>, and the continual diffusion of CO<sub style="line-height: 1;">2</sub>&nbsp;out of the capillaries into the alveoli.</span></li></ul><span style="font-size: 13.3333px; font-family: Arial;"><br></span><div><span style="font-size: 13.3333px; font-family: Arial;"><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="text-align: center; border: 1px solid rgb(0, 0, 0);"><span style="color: rgb(33, 33, 33); font-family: Arial; font-size: 13.3333px;">At sea level the partial pressure of oxygen in the lungs is 104 mmHg</span></td></tr></tbody></table></span></div></div><div><br></div><div><span style="font-family: arial;"><span style="font-size: 10pt;">The
+ partial pressure of oxygen in alveolar air is about 104 mm Hg, whereas 
+the partial pressure of oxygenated blood in pulmonary veins is about 100
+ mm Hg - this allows oxygen molecules to transfer across the lung wall.</span></span></div><div><span style="font-family: arial;"><span style="font-size: 10pt;"><br></span></span></div><div><span style="font-family: arial;"><span style="font-size: 10pt;"><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="border: 1px solid rgb(0, 0, 0);"><h3 id="__sec3title"><span style="font-family: Arial; font-size: 10pt; font-weight: normal;">Sea level pressure is 101 kPa (1013 hPa), Partial pressures of oxygen is 21 kPa outside the lungs and 14 kPa in the lungs.</span></h3></td></tr></tbody></table></span></span></div><div><br></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;">10.10.6 Explain the mechanical effect of the partial pressure of oxygen on oxygen transfer in the lungs.</span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;">Inside
+ the lung air sacs, oxygen moves across paper-thin walls to tiny blood 
+vessels called capillaries and into your blood.&nbsp;</span></span></div><div><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;"><br></span></span></div><div><p style="margin: 0px 0px 1.42857em; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;"><span style="font-family: Arial; font-size: 10pt;">The
+ walls of the alveoli share a membrane with the capillaries. That's how 
+close they are. This lets oxygen and carbon dioxide diffuse, or move 
+freely, between the respiratory system and the bloodstream.</span></p></div><div><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;">A
+ protein called haemoglobin in the red blood cells then carries the 
+oxygen around your body. At the same time, carbon dioxide that is 
+dissolved in the blood comes out of the capillaries back into the air 
+sacs, ready to be breathed out.</span></span></div><div><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;"><br></span></span></div><div style="text-align: center;"><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;">Lung air sacs</span></span></div><div><span style="font-family: Soehne, Arial, sans-serif;"><span style="font-size: 10pt;"><br></span></span></div><div style="text-align: center;"><img src="10.10_files/48503.jpg" alt="" align="" border="0px"></div><div style="text-align: center;"><br></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">During
+ inhalation, each alveoli receives air that contains various gases: 
+nitrogen (almost 80%), oxygen (almost 20%) and other gases including 
+0.04% carbon dioxide. External gaseous exchange then takes place, using 
+the principle of diffusion:</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><ul style="box-sizing: border-box; padding: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 25px; outline: none; list-style: none; border: 0px none; margin-left: 20px !important;"><li style="box-sizing: border-box; padding: 0px; margin: 0px 0px 12px; outline: none; list-style: initial; border: 0px none; background-position: 0px 10px; line-height: initial;"><span style="font-family: Arial; font-size: 10pt;">Oxygen
+ diffuses from the alveoli into the pulmonary capillaries because there 
+is a high concentration of oxygen in the lungs and a low concentration 
+in the blood;</span></li><li style="box-sizing: border-box; padding: 0px; margin: 0px 0px 12px; outline: none; list-style: initial; border: 0px none; background-position: 0px 10px; line-height: initial;"><span style="font-family: Arial; font-size: 10pt;">Carbon
+ dioxide diffuses from the pulmonary capillaries into the alveoli 
+because there is a high concentration of carbon dioxide in the blood and
+ a low concentration in the lungs;</span></li><li style="box-sizing: border-box; padding: 0px; margin: 0px 0px 12px; outline: none; list-style: initial; border: 0px none; background-position: 0px 10px; line-height: initial;"><span style="font-family: Arial; font-size: 10pt;">Nitrogen diffuses both ways.</span></li></ul><span style="font-family: Arial; font-size: 10pt;"><span style="font-size: 10pt;">Arterial oxygen levels (t</span>he rate of diffusion) is<span style="font-size: 10pt;">&nbsp;determined by inspired oxygen concentration and the p</span>ressure difference across the lung membrane.&nbsp;<br><br><table width="" align="" cellspacing="5" cellpadding="5" style="border-collapse: collapse; width: 702px; background-color: rgb(220, 220, 220);"><tbody><tr><td style="border: 1px solid rgb(0, 0, 0);"><span style="font-family: Arial; font-size: 13.3333px;">The rate of diffusion of oxygen is proportional to its partial pressure within the total gas mixture.</span></td></tr></tbody></table></span><br><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="text-align: center;"><iframe width="560" height="315" src="10.10_files/6qnSsV2syUE.html" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><div style="text-align: center; font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">10.10.8 Explain the causes of hypoxia.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><span id="docs-internal-guid-96b6bf12-7fff-eeb0-b651-49a68fff6234"><p dir="ltr">Hypoxia
+ has several causal factors, including an insufficient supply of oxygen,
+ inadequate transportation of oxygen, or the inability of the body 
+tissues to use oxygen. The forms of hypoxia are based on their causes:</p><p dir="ltr"><span style="font-weight: bold;">Hypoxic Hypoxia:</span></p><p dir="ltr">Hypoxic
+ hypoxia results from insufficient oxygen available to the body as a 
+whole. The reduction in partial pressure of oxygen at high altitude can 
+cause a pilot to experience this type of hypoxia. As an unpressurized 
+aircraft ascends during flight, the percentage of atmospheric oxygen 
+remains constant, but a reduced number of oxygen molecules enter the 
+lungs and pass between the membranes within the respiratory system.</p><p dir="ltr"><span style="font-weight: bold;">Hypemic Hypoxia:</span></p><p dir="ltr">Hypemic
+ hypoxia occurs when the blood cannot take up sufficient oxygen. Causes 
+of this form of hypoxia include reduced blood volume from severe 
+bleeding or certain blood diseases, such as anemia. Carbon monoxide 
+poisoning causes this type of hypoxia. Hemoglobin, the blood molecule 
+that transports oxygen, becomes chemically unable to bind oxygen 
+molecules if exposed to carbon monoxide. Hypemic hypoxia can also occur 
+after a blood donation. While blood volume normalises quickly following a
+ donation, restoring the lost hemoglobin can take several weeks. 
+Although the effects of the blood loss seem slight at ground level, 
+blood donation can create a flight risk during the recovery period.</p><p dir="ltr"><span style="font-weight: bold;">Stagnant Hypoxia:</span></p><p dir="ltr">Stagnant
+ hypoxia or ischemia results when the oxygen-rich blood in the lungs 
+does not move to the tissues that need it. An arm or leg going to sleep 
+because of restricted blood flow is one form of stagnant hypoxia. This 
+kind of hypoxia can also result from shock, the heart failing to pump 
+blood effectively, or a constricted artery. During flight, excessive G 
+forces can cause stagnant hypoxia. Cold temperatures can also reduce 
+circulation and decrease blood supply to extremities.</p><p dir="ltr"><span style="font-weight: bold;">Histotoxic Hypoxia:</span></p><p dir="ltr">When
+ histotoxic hypoxia occurs, the body transports enough oxygen to the 
+cells, but they cannot make use of it. This impairment of respiration at
+ the cellular level may result from alcohol consumption, exposure to 
+certain drugs or narcotics, or exposure to poisons.</p></span></span></div><div><span style="font-family: Arial; font-size: 10pt;">The
+ most common causes of hypoxia in aviation are:&nbsp;flying, 
+non-pressurised aircraft above 10,000 ft without supplemental oxygen, 
+rapid decompression during flight, pressurisation system malfunction, 
+pilot error, oxygen system malfunction (failure of the mask or 
+regulator), or carbon monoxide poisoning.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-size: 10pt;"><span style="font-family: Arial;"><br></span></span></div><div style="text-align: center;"><span style="font-size: 10pt;"><span style="font-family: Arial;">Pressurisation panel - packs off, no duct pressure, outflow valve fully open - unpressurised cabin</span></span></div><div style="text-align: center;"><span style="font-size: 10pt;"><span style="font-family: Arial;"><br></span></span></div><div style="text-align: center;"><img src="10.10_files/48504.jpg" alt="" align="" border="0px"></div><div style="font-family: Arial;"><br></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">If the pilot is fit and free from disease and illness is sitting quietly at the controls in a warm&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">cabin or cockpit he or she will have a better tolerance to hypoxia (but will eventually become&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">unconscious unless oxygen is obtained).</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">Tolerance to hypoxia will be considerably shortened, and hypoxia can be expected to occur&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">below 10,000 ft AMSL if the pilot:</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><ul><li><span style="font-family: Arial; font-size: 10pt;">HAS A COLD OR CHEST INFECTION, OR IS ILL</span></li><li><span style="font-family: Arial; font-size: 10pt;">HAS A HANGOVER</span></li><li><span style="font-family: Arial; font-size: 10pt;">HAS OTHER DRUG EFFECTS</span></li><li><span style="font-family: Arial; font-size: 10pt;">MOVES QUICKLY ABOUT THE AIRCRAFT</span></li><li><span style="font-family: Arial; font-size: 10pt;">IS SUBJECTED TO COLD TEMPERATURES (LIVER USES OXYGEN TO&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">WARM THE BODY)</span></li><li><span style="font-family: Arial; font-size: 10pt;">IS SUBJECTED TO STRONG G FORCES</span></li><li><span style="font-family: Arial; font-size: 10pt;">IS ANAEMIC</span></li><li><span style="font-family: Arial; font-size: 10pt;">IS FATIGUED</span></li><li><span style="font-family: Arial; font-size: 10pt;">IS A SMOKER</span></li><li><span style="font-family: Arial; font-size: 10pt;">CARBON MONOXIDE</span></li></ul></div></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-weight: bold;"><span style="font-size: 10pt;">The primary physiological and behavioural consequences of hypoxia for flight crew and passengers.</span></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><div><span style="font-size: 10pt;">Without enough oxygen, the body will lose consciousness.</span></div><div><p data-birdsend-par-index="19"><span style="font-size: 10pt;">The
+ initial effects of hypoxia are not unlike alcohol. A feeling of 
+carefree euphoria is sometimes the first signal that something’s wrong. 
+Other signs include blue fingernails or lips, headache, delayed response
+ times, or impaired judgment.</span></p><div data-birdsend-form-placement="middle"></div><p data-birdsend-par-index="20"><span style="font-size: 10pt;">As
+ the body’s tissues become more and more starved for oxygen, numbness, 
+tingling fingers and toes, drowsiness, and lightheadedness will follow. 
+The field of vision will narrow, and unconsciousness follows.</span></p><p data-birdsend-par-index="20"></p><p data-birdsend-par-index="21"><span style="font-size: 10pt;">As the body gets less oxygen, hypoxia progresses through four stages.</span></p><p data-birdsend-par-index="22"><span style="font-size: 10pt;">The
+ first stage, the Indifferent Stage, really only affects one part of the
+ body–the eyes. The process of dark adaptation is extremely oxygen 
+intensive. As a result, eyesight is severely limited at night if there 
+is low oxygen available. This is the reason that the FAA recommends 
+supplemental oxygen above 5,000 feet MSL at night.</span></p><p data-birdsend-par-index="23"><span style="font-size: 10pt;">The
+ second stage is the Compensatory Stage. During this phase, the body 
+automatically attempts to make up for the lack of oxygen by increasing 
+the breathing rate or taking deeper breaths.</span></p><div id="AdThrive_Content_7_desktop"></div><p data-birdsend-par-index="24"><span style="font-size: 10pt;">Next
+ comes the Disturbance Stage, where the body can no longer make up for 
+the lack of oxygen, and signs and symptoms listed above can become 
+evident.</span></p><p data-birdsend-par-index="25"><span style="font-size: 10pt;">The final stage of hypoxia is the Critical Stage, where consciousness is lost, and death follows shortly after that.</span></p><p data-birdsend-par-index="25"><span style="font-size: 10pt;"><span style="font-style: italic; font-size: 10pt;">Hearing&nbsp;</span>is
+ particularly resistant to hypoxia which is one reason many crew members
+ have been saved from near tragedy. Radio is the best way to communicate
+ with a pilot suffering from acute hypoxia. Simple orders from pilots in
+ other planes, controllers, or flight engineers have been used to guide 
+pilots to safety.</span></p></div></div><div><span style="font-weight: bold;"><span style="font-family: Arial; font-size: 12pt;"><br></span></span></div><div><span style="font-weight: bold;"><span style="font-family: Arial; font-size: 12pt;"><br></span></span></div><div><span style="font-weight: bold;"><span style="font-family: Arial; font-size: 12pt;">10.10.10 Describe the common symptoms of hypoxia.</span></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Symptoms of hypoxia:</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt; font-weight: bold;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><div style="font-weight: bold; text-align: center;">THE ONSET CAN BE SUBTLE SO THE SUFFERER MAY NOT BE AWARE OF IT.</div><div style="font-weight: bold;"><br></div><div><div style="font-size: 10pt;">The most complex parts of the brain use the most oxygen so will be affected earliest by hypoxia.&nbsp;<span style="font-size: 10pt;">They are responsible for functions such as personality, reasoning, memory, judgement, decision making, and vision.</span></div><div style="font-size: 10pt;"><span style="font-size: 10pt;"><br></span></div><div style="font-size: 10pt;"><span style="font-size: 10pt;"><span id="docs-internal-guid-9b4e635a-7fff-e339-ac4f-c718f2585fb6">The
+ first symptoms of hypoxia can include euphoria and a carefree feeling. 
+With increased oxygen deprivation, the extremities become less 
+responsive and flying becomes less coordinated.</span><br></span></div><div style="font-size: 10pt; font-weight: bold;"><br></div><div style="font-size: 12px; text-align: center; font-weight: bold;"><span style="font-size: 10pt;">HYPOXIA WILL NOT AFFECT ALL PILOTS IN THE SAME WAY</span></div><div style="font-size: 12px;"><span style="font-size: 10pt;"><p dir="ltr"></p><ul><li>Cyanosis (blue fingernails and lips).</li><li>Headache</li><li>Decreased response to stimuli and increased reaction time,</li><li>Poor or Impaired judgment</li><li>Euphoria</li><li>Visual impairment - tunnel vision, reduced colour vision</li><li>Drowsiness</li><li>Lightheaded or dizzy sensation</li><li>Tingling in fingers and toes</li><li>Numbness</li><li>Mental fixation on unimportant tasks</li></ul><p></p><p dir="ltr">As
+ hypoxia worsens, the pilot's field of vision begins to narrow, and 
+instrument interpretation can become difficult. Even with all these 
+symptoms, the effects of hypoxia can give a pilot a false sense of 
+security and be deceived into believing everything is normal.</p></span></div></div></span></div></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;">34.10.12 Explain the reasons hypoxia symptoms are difficult to detect.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div><span style="font-family: Arial;">One
+ of the biggest challenges in dealing with hypoxia during flight is that
+ the effects are not always evident at first. This, coupled with the 
+fact that its effects are cumulative, makes it difficult to recognise.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;">10.10.14 Explain the relationship between hypoxic onset and both vision and cognitive performance.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">The symptoms of brain hypoxia are:</span></div><div><ul><li><span style="font-family: Arial; font-size: 10pt;">temporary memory loss.</span></li><li><span style="font-family: Arial; font-size: 10pt;">reduced ability to move your body.</span></li><li><span style="font-family: Arial; font-size: 10pt;">difficulty paying attention.</span></li><li><span style="font-family: Arial; font-size: 10pt;">difficulty making sound decisions.</span></li></ul><div><span style="font-family: Arial; font-size: 10pt;">The visual system is sensitive to its oxygen supply at multiple levels.<br></span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;">Cone photoreceptors, which enable color vision, consume more energy than rods, as rods do not saturate in bright light.&nbsp;</span><span style="color: rgb(33, 33, 33); font-size: 10pt;">&nbsp;</span><span style="color: rgb(33, 33, 33); font-size: 10pt;">In total, visual processing ranks as one of the highest energy- and oxygen-demanding systems of the brain.</span></span></div><div><span style="color: rgb(33, 33, 33);"><span style="font-family: Arial; font-size: 10pt;"><br></span></span></div><div><span style="font-family: Arial; font-size: 10pt;"><span style="color: rgb(33, 33, 33); font-size: 10pt;">Due
+ to these demands, it is unsurprising that exposure to hypoxic 
+conditions results in changes to the perception of light intensity</span><span style="color: rgb(33, 33, 33); font-size: 10pt;">&nbsp;and impairs colour vision</span></span></div><div><span style="color: rgb(33, 33, 33);"><span style="font-family: Arial; font-size: 10pt;"><br></span></span></div><div><span style="color: rgb(33, 33, 33);"><span style="font-family: Arial; font-size: 10pt;">Some of the most commonly reported symptoms of hypoxia include graying, tunnel vision, and blurry vision</span></span></div><div><br></div></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;">34.10.16 Describe how hypoxia can be prevented.</span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">There are two methods for preventing hypoxia.&nbsp;</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">One
+ method involves increasing barometric pressure to a minimal value such 
+that the concentration of oxygen is sufficient to prevent hypoxia from 
+occurring. This is generally done by pressurising the aircraft 
+cabin.&nbsp;</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">The other method is to increase the breathable oxygen in a system through the use of an O<sub>2&nbsp;</sub>device. This is usually accomplished by having a pilot (or passengers and crew) wear an oxygen mask.</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">It is also possible to combine the methods to provide greater assurance that hypoxia is prevented.<br></span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 13.3333px;">The
+ most effective way to prevent hypoxia is through education and 
+experience. When pilots are trained in the proper use and care of their 
+pressurisation systems and supplemental oxygen equipment, and are aware 
+of their personal hypoxia signs and symptoms, they are safer.</span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-weight: bold;"><span style="font-size: 10pt;">The main factors influencing variation in hypoxia onset (tolerance) between individuals.</span></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div><div style="font-family: Arial; font-size: 10pt;">Factors that will place a pilot’s time of useful consciousness in the lower (more dangerous) end&nbsp;<span style="font-size: 10pt;">of the range are those that place extra demands on the body for oxygen.</span></div><div style="font-family: Arial; font-size: 10pt;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial; font-size: 10pt;">These include illness, physical activity, and a cold body temperature.</div><div><ul style="font-family: Arial; font-size: 10pt;"><li><span style="font-size: 10pt;">ILLNESS – especially colds and flu. The respiration system is not working at its&nbsp;</span><span style="font-size: 10pt;">full capacity.</span></li><li><span style="font-size: 10pt;">PHYSICAL ACTIVITY – the body is already breathing faster, to provide cells with&nbsp;</span><span style="font-size: 10pt;">the required oxygen. There is less residual oxygen to be used for respiration.</span></li><li><span style="font-size: 10pt;">COLD BODY TEMPERATURE – the liver will be using a lot more oxygen than&nbsp;</span><span style="font-size: 10pt;">usual in trying to heat up the rest of the body. Less oxygen again remains for&nbsp;</span><span style="font-size: 10pt;">respiration.</span></li></ul><div><span style="font-family: Arial; font-size: 10pt;">It
+ is impossible to predict exactly when, where, or how hypoxic reactions 
+will occur in an individual pilot. The appearance and severity of the 
+signs and symptoms are aggravated by several factors; rate of ascent, 
+time spent at altitude, physical activity at altitude, fatigue, 
+self-imposed stress, extreme ambient temperature, and individual 
+physiological fitness.</span></div><div><span style="font-size: 13.3333px; font-family: Arial;"><br></span></div></div></div><div style="font-family: Arial;"><span style="font-size: 10pt; font-weight: bold;">Hypoxia Facts</span></div><div style="font-family: Arial;"><div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">1. A healthy pilot should not be affected significantly by hypoxia below 10,000ft amsl.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">2. If a pilot is unwell with a chest infection it is possible to suffer effects of hypoxia below&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">10,000 ft.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">3. Carbon monoxide gas and high G loading can also produce hypoxia at any altitude.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">4. The most complex parts of the brain use the most amount of oxygen so will be affected&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">earliest by hypoxia.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">5. They are responsible for functions such as personality, reasoning, memory, judgement,&nbsp;</span><span style="font-family: Arial; font-size: 10pt;">decision-making, and vision.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">6. Hypoxia can be recognised by progressive symptoms.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">7. The onset of hypoxia can be subtle so the sufferer may not be aware of it.</span></div><div style="font-family: calibri, verdana, arial, helvetica, sans-serif;"><span style="font-family: Arial; font-size: 10pt;">8. Hypoxia will not affect all pilots in the same way.</span></div></div><div><span style="font-size: 10pt;"><br></span></div></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 12pt; font-weight: bold;">46.10.18 State the factors that affect the likelihood of suffering from hypoxia.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;">If
+ the body’s red blood cells are unable to carry oxygen to the organs in 
+medicine, it is caused by severe blood loss or anemia. A possible cause 
+of this in aviation is carbon monoxide poisoning.<br></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div style="font-family: Arial;"><span style="font-size: 10pt;">Drugs
+ and alcohol can cause the organs not to use sufficient oxygen. While 
+the effects may be negligible at the surface, at altitude they may be 
+significantly amplified.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><p data-birdsend-par-index="15">It’s
+ also possible for the blood to not flow enough to feed the organs all 
+of the oxygen they need. On the ground, this could be caused by 
+cardiovascular disease. In flight, this is commonly caused by G-forces.</p><p data-birdsend-par-index="16">As
+ an aircraft pulls more G’s, the heart and cardiovascular system must 
+work harder to keep blood flowing to the head and brain. The increased 
+pull of gravity will make it harder and harder to do.</p><p data-birdsend-par-index="17">Eventually, this will lead to tunnel vision as the eyes receive insufficient oxygen, and then grey out and blackout.</p><p data-birdsend-par-index="17">Smoking&nbsp;introduces
+ carbon monoxide, which binds to haemoglobin more strongly than oxygen, 
+reducing oxygen delivery.&nbsp;Fatigue&nbsp;further reduces efficiency 
+of oxygen utilisation.</p></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;"><br></span></div><div><span style="font-family: Arial; font-size: 12pt; font-weight: bold;">46.10.20 Describe how hypoxia can be treated.</span></div><div style="font-family: Arial;"><span style="font-size: 10pt;"><br></span></div><div><div><span style="font-family: Arial; font-size: 10pt; font-weight: bold;">Treatment Of Hypoxia</span></div><div><span style="font-family: Arial; font-size: 10pt;"><br></span></div><div><span style="font-family: Arial; font-size: 10pt;">A
+ person suffering from hypoxia must have the pressure of oxygen that 
+they are breathing increased so the cells can again be supplied with 
+oxygen to complete the respiration process. This can be done by:</span></div><div><ul><li><span style="font-family: Arial; font-size: 10pt;">ADMINISTERING OXYGEN FROM AN OXYGEN SUPPLY SOURCE; and/or</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">DESCENDING THE AIRCRAFT (or the aircraft cabin) TO 10,000 FT AMSL OR BELOW.</span></li></ul><div style="text-align: center;"><img src="10.10_files/43440_250.jpg" alt="" align="" border="0px"></div><div style="text-align: center;"><br></div><div><p><span style="font-family: Arial; font-size: 10pt;">If hypoxia is suspected in yourself or others on board an aircraft, follow these simple steps:</span></p><ul><li><span style="font-family: Arial; font-size: 10pt;">Administer supplemental oxygen (don your oxygen mask)</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">Check your equipment for proper operation</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">Ensure the regulator is turned on</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">Check the flow indicator (this will tell you that something is coming to the mask)</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">Ensure that all oxygen equipment connections are secure</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">Monitor
+ your breathing rate and depth (intentionally slow your breathing to 
+prevent hyperventilation, use the flow indicator to help you monitor 
+respiration)</span></li></ul><ul><li><span style="font-family: Arial; font-size: 10pt;">If safe, descend to an altitude (below 10,000 feet) where supplemental oxygen is no longer required</span></li></ul></div></div></div></div></div></div><div style="text-align: left;"><div><div style="text-align: left;"><div><div><br></div></div></div></div></div></td></tr></tbody></table>
+				        
+                        <br>
+                        
+                        <br>
+                        <table border="0" style="width:100%;border-width:1px;border-style:solid;border-color:#000000;" cellpadding="5" cellspacing="0"><tbody><tr><td class="bodytext" align="left"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=e&amp;exid=39639" alt="SHORT TEST 10.6" title="SHORT TEST 10.6">Prev Page</a></td><!--<td class="bodytext" align="center">Page 9 of 50 (10.10 Hypoxia)</td>//--><td class="bodytext" align="right"><a href="https://www.courseware.training/course.aspx?id=40328&amp;pid=62774" alt="10.12 Hyperventilation" title="10.12 Hyperventilation">Next Page</a></td></tr></tbody></table><br>
+                        <br>
+                        
+                    </div>
+                </td>
+      	 </tr>
+	</tbody></table> 
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+	    <tbody><tr>
+		    <td style="background:#000000;"><img alt="" src="10.10_files/spacer.gif" width="1" height="1"><br></td>
+	    </tr>
+	    <tr>
+		    <td style="background:#FFFFFF;"><img alt="" src="10.10_files/spacer.gif" width="1" height="2"><br></td>
+	    </tr>
+    </tbody></table>
+	<div id="footer">
+		<div style="width:183px;float:left;">
+		</div>
+		<div style="float:left;width:600px;color:white;font-family:verdana,arial,helvetica,geneva,sans-serif;font-size:11px;font-weight:normal;">
+			©&nbsp;2026&nbsp;Aviation Data Services - All Rights Reserved
+		</div>
+	</div>
+	</form>
+    
+
+
+
+</body></html>
