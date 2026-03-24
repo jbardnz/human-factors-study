@@ -1,5 +1,5 @@
 // PPL Human Factors Study - Service Worker for offline PWA
-const CACHE_VERSION = 'hf-study-v1';
+const CACHE_VERSION = 'hf-study-v2';
 
 // Core files that must be cached for the app to work
 const CORE_FILES = [
